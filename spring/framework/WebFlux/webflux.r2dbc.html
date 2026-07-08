@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>43.8. R2DBC</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../../index.html" title="Netkiller Spring 手札" /><link rel="up" href="webflux.html" title="第 43 章 WebFlux framework" /><link rel="prev" href="ch43s07.html" title="43.7. Webflux 安全" /><link rel="next" href="redis-reactive.html" title="43.9. Webflux Redis" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">43.8. R2DBC</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch43s07.html">上一页</a> </td><th width="60%" align="center">第 43 章 WebFlux framework</th><td width="20%" align="right"> <a accesskey="n" href="redis-reactive.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="webflux.r2dbc"></a>43.8. R2DBC</h2></div></div></div>
-	
-	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1155"></a>43.8.1. MySQL</h3></div></div></div>
-		
-		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1154"></a>43.8.1.1. </h4></div></div></div>
-			
-			<pre class="programlisting">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>44.8. R2DBC</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 44 章 WebFlux framework" /><link rel="prev" href="ch44s07.html" title="44.7. Webflux 安全" /><link rel="next" href="redis-reactive.html" title="44.9. Webflux Redis" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">44.8. R2DBC</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch44s07.html">上一页</a> </td><th width="60%" align="center">第 44 章 WebFlux framework</th><td width="20%" align="right"> <a accesskey="n" href="redis-reactive.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="webflux.r2dbc"></a>44.8. R2DBC</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1161"></a>44.8.1. MySQL</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1160"></a>44.8.1.1. </h4></div></div></div><pre class="programlisting">
 			
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -211,20 +205,13 @@
     &lt;/build&gt;
 &lt;/project&gt;
 			
-			</pre>
-			<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1150"></a>数据库配置</h5></div></div></div>
-				
-				<pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1156"></a>数据库配置</h5></div></div></div><pre class="programlisting">
 				
 spring.r2dbc.url=r2dbc:mysql://localhost:3306/beta?useUnicode=true&amp;characterEncoding=UTF-8
 spring.r2dbc.username=root
 spring.r2dbc.password=chen
 				
-				</pre>
-			</div>
-			<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1151"></a>启动文件</h5></div></div></div>
-				
-				<pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1157"></a>启动文件</h5></div></div></div><pre class="programlisting">
 				
 package cn.netkiller;
 
@@ -262,11 +249,7 @@ public class Application {
     }
 }				
 				
-				</pre>
-			</div>
-			<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1152"></a>仓库</h5></div></div></div>
-				
-				<pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1158"></a>仓库</h5></div></div></div><pre class="programlisting">
 				
 package cn.netkiller.domain;
 
@@ -306,8 +289,7 @@ public class Device implements Serializable {
 
 }				
 				
-				</pre>
-				<pre class="programlisting">
+				</pre><pre class="programlisting">
 				
 package cn.netkiller.repository;
 
@@ -322,11 +304,7 @@ public interface DeviceRepository extends ReactiveCrudRepository&lt;Device, Inte
 
 }				
 				
-				</pre>
-			</div>
-			<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1153"></a>控制器中调用</h5></div></div></div>
-				
-				<pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1159"></a>控制器中调用</h5></div></div></div><pre class="programlisting">
 			
     @GetMapping("count")
     public JsonResponse count() {
@@ -341,14 +319,7 @@ public interface DeviceRepository extends ReactiveCrudRepository&lt;Device, Inte
         return JsonResponse.data(mono.block());
     }			
 			
-				</pre>
-			</div>
-		</div>
-	</div>
-	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="R2dbcEntityTemplate"></a>43.8.2. R2dbcEntityTemplate</h3></div></div></div>
-		
-		<p>通过注解跳过 Token 验证</p>
-		<pre class="programlisting">
+				</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="R2dbcEntityTemplate"></a>44.8.2. R2dbcEntityTemplate</h3></div></div></div><p>通过注解跳过 Token 验证</p><pre class="programlisting">
 		
 package cn.netkiller.controller;
 
@@ -404,12 +375,7 @@ public class HomeController {
 }
 	
 		
-		</pre>
-	</div>
-	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1156"></a>43.8.3. MySQL Point 数据类型</h3></div></div></div>
-		
-		<p>数据库结构</p>
-		<pre class="programlisting">
+		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1162"></a>44.8.3. MySQL Point 数据类型</h3></div></div></div><p>数据库结构</p><pre class="programlisting">
 		
 CREATE TABLE `geo` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -424,9 +390,7 @@ CREATE TABLE `geo` (
   SPATIAL KEY `location` (`location`) COMMENT '定位索引'
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COMMENT='GEO(Geostationary Earth Orbit)'		
 		
-		</pre>
-		<p>数据类</p>
-		<pre class="programlisting">
+		</pre><p>数据类</p><pre class="programlisting">
 		
 package cn.netkiller.cordyceps.record;
 
@@ -437,9 +401,7 @@ public record GeoMySQL(
         Double latitude) {
 }
 		
-		</pre>
-		<p>仓库</p>
-		<pre class="programlisting">
+		</pre><p>仓库</p><pre class="programlisting">
 		
 package cn.netkiller.cordyceps.repository;
 
@@ -466,9 +428,7 @@ public interface GeoRepository extends ReactiveCrudRepository&lt;Geo, Integer&gt
     Flux&lt;GeoMySQL&gt; findByAndroidId(String androidId);
 }		
 		
-		</pre>
-		<p>控制器</p>
-		<pre class="programlisting">
+		</pre><p>控制器</p><pre class="programlisting">
 		
     @GetMapping("location/{androidId}")
     public JsonResponse&lt;Object&gt; location(@PathVariable("androidId") String androidId) {
@@ -488,9 +448,7 @@ public interface GeoRepository extends ReactiveCrudRepository&lt;Geo, Integer&gt
 
     }		
 		
-		</pre>
-		<p>Rest 测试</p>
-		<pre class="programlisting">
+		</pre><p>Rest 测试</p><pre class="programlisting">
 		
 ### 获取定位信息
 GET {{host}}/device/location/test
@@ -506,9 +464,7 @@ Content-Type: application/json
   "latitude": 144.4444
 }		
 		
-		</pre>
-	</div>
-</div><script xmlns="" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=r5HG&amp;d=9mi5r_kkDC8uxG8HuY3p4-2qgeeVypAK9vMD-2P6BYM"></script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch43s07.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="webflux.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="redis-reactive.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">43.7. Webflux 安全 </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 43.9. Webflux Redis</td></tr></table></div><script xmlns="">
+		</pre></div></div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch44s07.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="redis-reactive.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">44.7. Webflux 安全 </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 44.9. Webflux Redis</td></tr></table></div><script xmlns="">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -524,18 +480,5 @@ Content-Type: application/json
 			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
 			var s = document.getElementsByTagName("script")[0];
 			s.parentNode.insertBefore(hm, s);
-			})();
-</script><script xmlns="" async="async">
-			(function(){
-			var bp = document.createElement('script');
-			var curProtocol = window.location.protocol.split(':')[0];
-			if (curProtocol === 'https') {
-			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-			}
-			else {
-			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-			}
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(bp, s);
 			})();
 </script></body></html>
