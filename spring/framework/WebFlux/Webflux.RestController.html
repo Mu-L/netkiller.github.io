@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>44.4. RestController</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 44 章 WebFlux framework" /><link rel="prev" href="webflux.router.html" title="44.3. WebFlux Router" /><link rel="next" href="webflux.NDJSON.html" title="44.5. Newline Delimited JSON (NDJSON)" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">44.4. RestController</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="webflux.router.html">上一页</a> </td><th width="60%" align="center">第 44 章 WebFlux framework</th><td width="20%" align="right"> <a accesskey="n" href="webflux.NDJSON.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Webflux.RestController"></a>44.4. RestController</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1110"></a>44.4.1. Post 数据</h3></div></div></div><p>Webflux 不支持 @RequestParam 获取 Form 表单数据</p><pre class="programlisting">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>7.4. RestController</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 7 章 WebFlux framework" /><link rel="prev" href="webflux.router.html" title="7.3. WebFlux Router" /><link rel="next" href="webflux.NDJSON.html" title="7.5. Newline Delimited JSON (NDJSON)" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.4. RestController</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="webflux.router.html">上一页</a> </td><th width="60%" align="center">第 7 章 WebFlux framework</th><td width="20%" align="right"> <a accesskey="n" href="webflux.NDJSON.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Webflux.RestController"></a>7.4. RestController</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id915"></a>7.4.1. Post 数据</h3></div></div></div><p>Webflux 不支持 @RequestParam 获取 Form 表单数据</p><pre class="programlisting">
 		
     @PostMapping("post")
     public String post(@RequestParam("param") String test) {
@@ -45,14 +45,14 @@
                 });
     }
 		
-		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.Thymeleaf"></a>44.4.2. Thymeleaf</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1111"></a>44.4.2.1. 模板引擎 Thymeleaf 依赖</h4></div></div></div><pre class="screen">
+		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.Thymeleaf"></a>7.4.2. Thymeleaf</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id916"></a>7.4.2.1. 模板引擎 Thymeleaf 依赖</h4></div></div></div><pre class="screen">
 			
     &lt;dependency&gt;
       &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
       &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
     &lt;/dependency&gt;
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1112"></a>44.4.2.2. application.properties 相关的配置</h4></div></div></div><pre class="screen">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id917"></a>7.4.2.2. application.properties 相关的配置</h4></div></div></div><pre class="screen">
 			
 spring.thymeleaf.cache=true # Enable template caching.
 spring.thymeleaf.check-template=true # Check that the template exists before rendering it.
@@ -69,7 +69,7 @@ spring.thymeleaf.suffix=.html # Suffix that gets appended to view names when bui
 spring.thymeleaf.template-resolver-order= # Order of the template resolver in the chain.
 spring.thymeleaf.view-names= # Comma-separated list of view names that can be resolved.
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1113"></a>44.4.2.3. Webflux 控制器</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id918"></a>7.4.2.3. Webflux 控制器</h4></div></div></div><pre class="programlisting">
 			
 	@GetMapping("/welcome")
     public Mono&lt;String&gt; hello(final Model model) {
@@ -87,7 +87,7 @@ spring.thymeleaf.view-names= # Comma-separated list of view names that can be re
         return "cityList";
     }
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1114"></a>44.4.2.4. Tymeleaf 视图</h4></div></div></div><p>welcome.html</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id919"></a>7.4.2.4. Tymeleaf 视图</h4></div></div></div><p>welcome.html</p><pre class="programlisting">
 			
 &lt;!DOCTYPE html&gt;
 &lt;html lang="zh-CN"&gt;
@@ -144,11 +144,11 @@ spring.thymeleaf.view-names= # Comma-separated list of view names that can be re
 &lt;/body&gt;
 &lt;/html&gt;
 			
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.mono"></a>44.4.3. Mono</h3></div></div></div><p>Mono(返回0或1个元素)/Flux(返回0-n个元素)</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1115"></a>44.4.3.1. Mono.just()/Mono.justOrEmpty()</h4></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.mono"></a>7.4.3. Mono</h3></div></div></div><p>Mono(返回0或1个元素)/Flux(返回0-n个元素)</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id920"></a>7.4.3.1. Mono.just()/Mono.justOrEmpty()</h4></div></div></div><pre class="programlisting">
 		
 Mono.justOrEmpty(Optional.of("Netkiller")).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1116"></a>44.4.3.2. MonoSink 创建 Mono</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id921"></a>7.4.3.2. MonoSink 创建 Mono</h4></div></div></div><pre class="programlisting">
 		
 Mono.create(sink -&gt; sink.success("Netkiller")).subscribe(System.out::println);
 		
@@ -167,7 +167,7 @@ Mono.create(sink -&gt; sink.success("Netkiller")).subscribe(System.out::println)
                 });
     }
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1117"></a>44.4.3.3. Supplier 创建 Mono</h4></div></div></div><p>从 Supplier 创建 Mono</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id922"></a>7.4.3.3. Supplier 创建 Mono</h4></div></div></div><p>从 Supplier 创建 Mono</p><pre class="programlisting">
 		
     @GetMapping("/get")
     private Mono&lt;String&gt; get() {
@@ -183,7 +183,7 @@ Mono.create(sink -&gt; sink.success("Netkiller")).subscribe(System.out::println)
         return result;
     }
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1118"></a>44.4.3.4. then()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id923"></a>7.4.3.4. then()</h4></div></div></div><pre class="programlisting">
 		
 Mono.empty()
     .then()
@@ -215,7 +215,7 @@ Mono.error(new RuntimeException("Something wrong"))
     .doOnError(i -&gt; System.out.println("On error: " + i))
     .block();
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1119"></a>44.4.3.5. 异常处理</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id924"></a>7.4.3.5. 异常处理</h4></div></div></div><pre class="programlisting">
 		
 Mono.just("Netkiller")
         .concatWith(Mono.error(new IllegalStateException()))
@@ -237,7 +237,7 @@ Mono.just("Netkiller")
          .subscribe(System.out::println);
 
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1120"></a>44.4.3.6. 同步阻塞等待结果</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id925"></a>7.4.3.6. 同步阻塞等待结果</h4></div></div></div><pre class="programlisting">
 		
         Mono.just("Hello World")
                 .doOnNext(i -&gt; System.out.println("On next: " + i))
@@ -276,7 +276,7 @@ Mono.just("Netkiller")
             return d;
         }).subscribe(System.out::println);
 		
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.flux"></a>44.4.4. Flux 返回多条数据</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1121"></a>44.4.4.1. FluxSink 创建异步 Flux</h4></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.flux"></a>7.4.4. Flux 返回多条数据</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id926"></a>7.4.4.1. FluxSink 创建异步 Flux</h4></div></div></div><pre class="programlisting">
 		
         Flux&lt;String&gt; flux = Flux.create(sink -&gt; {
             sink.next("Neo");
@@ -285,7 +285,7 @@ Mono.just("Netkiller")
         });
         flux.subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1122"></a>44.4.4.2. SynchronousSink 创建同步 Flux</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id927"></a>7.4.4.2. SynchronousSink 创建同步 Flux</h4></div></div></div><pre class="programlisting">
 		
         Flux&lt;String&gt; generate = Flux.generate(synchronousSink -&gt; {
             synchronousSink.next("Neo");
@@ -306,21 +306,21 @@ Flux.generate(ArrayList::new, (list, sink) -&gt; {
     return list;
 }).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1123"></a>44.4.4.3. just()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id928"></a>7.4.4.3. just()</h4></div></div></div><pre class="programlisting">
 		
 //单个元素
 Flux.just("just").subscribe(System.out::println);
 //多个元素
 Flux.just("just", "just1", "just2").subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1124"></a>44.4.4.4. 从 Flux/Mono 创建 Flux</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id929"></a>7.4.4.4. 从 Flux/Mono 创建 Flux</h4></div></div></div><pre class="programlisting">
 		
 //Flux-&gt;Flux
 Flux.from(Flux.just("just", "just1", "just2")).subscribe(System.out::println);
 //Mono-&gt;Mono
 Flux.from(Mono.just("just")).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1125"></a>44.4.4.5. 消息订阅</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id930"></a>7.4.4.5. 消息订阅</h4></div></div></div><pre class="programlisting">
 		
 Flux.just("Netkiller1", "Netkiller2", "Netkiller3")
         .subscribe(data -&gt; System.out.println("onNext:" + data), err -&gt; {
@@ -349,11 +349,11 @@ Flux.just("Netkiller1", "Netkiller2", "Netkiller3")
         // 手动的开启消费数据
         con.connect();
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1126"></a>44.4.4.6. 从 Flux/Mono 创建 Flux</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id931"></a>7.4.4.6. 从 Flux/Mono 创建 Flux</h4></div></div></div><pre class="programlisting">
 		
 Flux.fromArray(new String[] { "arr", "arr", "arr", "arr" }).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1127"></a>44.4.4.7. 从 Iterable 创建 Flux</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id932"></a>7.4.4.7. 从 Iterable 创建 Flux</h4></div></div></div><pre class="programlisting">
 		
 Set&lt;String&gt; v = new HashSet&lt;&gt;();
 v.add("1");
@@ -384,7 +384,7 @@ Flux.fromIterable(() -&gt; v.iterator()).subscribe(System.out::println);
         auto.subscribe(System.out::println);
         auto.subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1128"></a>44.4.4.8. 从 Stream 创建 Flux</h4></div></div></div><p>从 Stream 返回 Flux</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id933"></a>7.4.4.8. 从 Stream 创建 Flux</h4></div></div></div><p>从 Stream 返回 Flux</p><pre class="programlisting">
 		
     @GetMapping(path = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     private Flux&lt;String&gt; getWords() {
@@ -392,34 +392,34 @@ Flux.fromIterable(() -&gt; v.iterator()).subscribe(System.out::println);
         return Flux.fromStream(items);
     }
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1129"></a>44.4.4.9. defer()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id934"></a>7.4.4.9. defer()</h4></div></div></div><pre class="programlisting">
 		
 Flux.defer(() -&gt; Flux.just("just", "just1", "just2")).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="Flux.interval"></a>44.4.4.10. Flux.interval()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="Flux.interval"></a>7.4.4.10. Flux.interval()</h4></div></div></div><pre class="programlisting">
 		
 Flux.interval(Duration.of(500, ChronoUnit.MILLIS)).subscribe(System.out::println);
 Flux.interval(Duration.ofSeconds(2), Duration.ofMillis(200)).subscribe(System.out::println);
 
 Flux.intervalMillis(1000).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1130"></a>44.4.4.11. Flux.empty()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id935"></a>7.4.4.11. Flux.empty()</h4></div></div></div><pre class="programlisting">
 		
 Flux.empty().subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1131"></a>44.4.4.12. Flux.error()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id936"></a>7.4.4.12. Flux.error()</h4></div></div></div><pre class="programlisting">
 		
 Flux.error(new RuntimeException()).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1132"></a>44.4.4.13. Flux.never()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id937"></a>7.4.4.13. Flux.never()</h4></div></div></div><pre class="programlisting">
 		
 Flux.never().subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1133"></a>44.4.4.14. Flux.range()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id938"></a>7.4.4.14. Flux.range()</h4></div></div></div><pre class="programlisting">
 		
 Flux.range(0, 100).subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1134"></a>44.4.4.15. 返回数据</h4></div></div></div><p>返回 List</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id939"></a>7.4.4.15. 返回数据</h4></div></div></div><p>返回 List</p><pre class="programlisting">
 		
     @GetMapping("flux")
     public Flux&lt;Picture&gt; flux() {
@@ -445,7 +445,7 @@ Flux.range(0, 100).subscribe(System.out::println);
         return Flux.fromIterable(map.entrySet());
     }
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1135"></a>44.4.4.16. 持续更新 Flux</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id940"></a>7.4.4.16. 持续更新 Flux</h4></div></div></div><pre class="programlisting">
 	
 		AtomicReference&lt;FluxSink&lt;String&gt;&gt; fluxSink = new AtomicReference&lt;FluxSink&lt;String&gt;&gt;();
 
@@ -515,7 +515,7 @@ Flux&lt;String&gt; bridge = Flux.create(sink -&gt; {
     });
 });
 	
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1136"></a>44.4.4.17. map(), flatMap()</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id941"></a>7.4.4.17. map(), flatMap()</h4></div></div></div><pre class="programlisting">
 		
         Flux.just(1, 2, 3, 4)
                 .log()
@@ -533,7 +533,7 @@ Flux&lt;String&gt; bridge = Flux.create(sink -&gt; {
                 })
                 .subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1137"></a>44.4.4.18. 过滤</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id942"></a>7.4.4.18. 过滤</h4></div></div></div><pre class="programlisting">
 		
         Flux&lt;Integer&gt; flux = Flux.just(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
@@ -541,7 +541,7 @@ Flux&lt;String&gt; bridge = Flux.create(sink -&gt; {
                 .filter(num -&gt; num % 2 == 0) // 过滤掉奇数
                 .subscribe(System.out::println);
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1138"></a>44.4.4.19. 触发操作</h4></div></div></div><p>doOnComplete 完成时执行</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id943"></a>7.4.4.19. 触发操作</h4></div></div></div><p>doOnComplete 完成时执行</p><pre class="programlisting">
 	
 AtomicBoolean onComplete = new AtomicBoolean();
         Flux&lt;Integer&gt; flux = Flux.just(1, 2, 3);
@@ -553,7 +553,7 @@ AtomicBoolean onComplete = new AtomicBoolean();
                 .subscribe(System.out::println);
         System.out.println(onComplete.get());
 	
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="flux.parallel"></a>44.4.4.20. 并发</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="flux.parallel"></a>7.4.4.20. 并发</h4></div></div></div><pre class="programlisting">
 	
         Flux.just(1, 2, 3, 4, 5, 6, 7, 8)
                 .publishOn(Schedulers.parallel())
@@ -640,7 +640,7 @@ Flux.just(1,2,3,4,5,6,7,8)
         .repeat()
         .subscribe();
 	
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.sse"></a>44.4.5. SSE</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1139"></a>44.4.5.1. 一次性事件</h4></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.sse"></a>7.4.5. SSE</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id944"></a>7.4.5.1. 一次性事件</h4></div></div></div><pre class="programlisting">
 			
     @GetMapping(path = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux&lt;String&gt; createConnectionAndSendEvents() {
@@ -654,7 +654,7 @@ data:Alpha
 
 data:Omega
 			
-			</pre><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[提示]" src="/graphics/tip.png" /></td><th align="left">提示</th></tr><tr><td align="left" valign="top">Safari 浏览器不支持 SSE推送，微软的 Egde 支持。</td></tr></table></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1140"></a>44.4.5.2. 从 Steam 返回数据</h4></div></div></div><pre class="programlisting">
+			</pre><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[提示]" src="/graphics/tip.png" /></td><th align="left">提示</th></tr><tr><td align="left" valign="top">Safari 浏览器不支持 SSE推送，微软的 Egde 支持。</td></tr></table></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id945"></a>7.4.5.2. 从 Steam 返回数据</h4></div></div></div><pre class="programlisting">
 		
     @GetMapping(path = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     private Flux&lt;String&gt; getWords() {
@@ -662,7 +662,7 @@ data:Omega
         return Flux.fromStream(items);
     }
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1141"></a>44.4.5.3. 周期性事件</h4></div></div></div><p>每间隔一秒发送一次数据</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id946"></a>7.4.5.3. 周期性事件</h4></div></div></div><p>每间隔一秒发送一次数据</p><pre class="programlisting">
 			
     @GetMapping(path = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     private Flux&lt;String&gt; getWords() {
@@ -683,7 +683,7 @@ data:Omega
 	      .map(sequence -&gt; "Flux - " + LocalTime.now().toString());
 	}
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1142"></a>44.4.5.4. 返回 ServerSentEvent 数据结构</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id947"></a>7.4.5.4. 返回 ServerSentEvent 数据结构</h4></div></div></div><pre class="programlisting">
 		
     @GetMapping(path = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     private Flux&lt;ServerSentEvent&lt;Object&gt;&gt; getWords() {
@@ -737,7 +737,7 @@ data:我的昵称是 netkiller
         return flux;
     }
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1143"></a>44.4.5.5. SSE 完整的例子</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id948"></a>7.4.5.5. SSE 完整的例子</h4></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.webflux.controller;
 
@@ -846,7 +846,7 @@ event:launch
 data:发射
 
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1144"></a>44.4.5.6. 判断 Flux 已经完成</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id949"></a>7.4.5.6. 判断 Flux 已经完成</h4></div></div></div><pre class="programlisting">
 			
     @GetMapping(value = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux&lt;ServerSentEvent&lt;String&gt;&gt; sse() {
@@ -878,7 +878,7 @@ data:发射
 ✅ SSE Flux 正常完成！
 🔚 SSE 流最终关闭：onComplete
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1145"></a>44.4.5.7. SSE Client 订阅实例</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id950"></a>7.4.5.7. SSE Client 订阅实例</h4></div></div></div><pre class="programlisting">
 			
  	@GetMapping("/server")
     public Flux&lt;ServerSentEvent&lt;String&gt;&gt; streamEvents() {
@@ -909,7 +909,7 @@ data:发射
                 () -&gt; log.info("Completed!!!"));
     }
 			
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="concatWithValues"></a>44.4.6. 末尾连接字符串 </h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1146"></a>44.4.6.1. concatWith</h4></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="concatWithValues"></a>7.4.6. 末尾连接字符串 </h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id951"></a>7.4.6.1. concatWith</h4></div></div></div><pre class="programlisting">
 		
 // 使用 concatWith() 追加另一个 Flux
 Flux.just(1, 2, 3)
@@ -918,7 +918,7 @@ Flux.just(1, 2, 3)
 
 // 效果等同于 concatWithValues(4, 5, 6)
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1147"></a>44.4.6.2. concatWithValues</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id952"></a>7.4.6.2. concatWithValues</h4></div></div></div><pre class="programlisting">
 		
 Flux.just(1, 2, 0)
     .map(num -&gt; 10 / num) // 除以 0 会触发错误
@@ -988,7 +988,7 @@ public Flux&lt;String&gt; deepseek(String device, String taskId, String speakId,
                 });
     }
 	
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="Flux.scan"></a>44.4.7. Flux scan</h3></div></div></div><p>计数</p><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="Flux.scan"></a>7.4.7. Flux scan</h3></div></div></div><p>计数</p><pre class="programlisting">
 	
 import reactor.core.publisher.Flux;
 
@@ -1055,14 +1055,14 @@ Flux.just("a", "b", "c", "d")
                 .skip(1)
                 .subscribe(System.out::println);
 	
-		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ConnectableFlux"></a>44.4.8. ConnectableFlux</h3></div></div></div><pre class="programlisting">
+		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ConnectableFlux"></a>7.4.8. ConnectableFlux</h3></div></div></div><pre class="programlisting">
 	
         AtomicBoolean onComplete = new AtomicBoolean();
         ConnectableFlux&lt;Integer&gt; f = Flux.just(1)
                 .doOnComplete(() -&gt; onComplete.set(true))
                 .publish();
 	
-		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1148"></a>44.4.9. 上传文件并保存</h3></div></div></div><pre class="programlisting">
+		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id953"></a>7.4.9. 上传文件并保存</h3></div></div></div><pre class="programlisting">
 		
 @PostMapping("/upload/files")
 Mono upload(@RequestPart("files") Flux&lt;FilePart&gt; filePartFlux) {
@@ -1143,7 +1143,15 @@ Mono uploadFileSave(@RequestPart("files") Flux&lt;FilePart&gt; filePartFlux) {
     }
 		
 		
-		</pre></div></div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="webflux.router.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="webflux.NDJSON.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">44.3. WebFlux Router </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 44.5. Newline Delimited JSON (NDJSON) </td></tr></table></div><script xmlns="">
+		</pre></div></div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="webflux.router.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="webflux.NDJSON.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">7.3. WebFlux Router </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 7.5. Newline Delimited JSON (NDJSON) </td></tr></table></div><script xmlns="">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

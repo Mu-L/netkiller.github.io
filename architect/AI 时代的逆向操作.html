@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>第 2 章 AI 时代的逆向操作</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="index.html" title="Netkiller Architect 手札" /><link rel="up" href="index.html" title="Netkiller Architect 手札" /><link rel="prev" href="microphone.html" title="1.24. 人工智能语音交互开发·麦克风" /><link rel="next" href="重回Session.html" title="2.2. 重回 HTTP Auth + Session" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">第 2 章 AI 时代的逆向操作</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="microphone.html">上一页</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="重回Session.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="AI 时代的逆向操作"></a>第 2 章 AI 时代的逆向操作</h1></div></div></div><div class="toc"><p><strong>目录</strong></p><dl class="toc"><dt><span class="section"><a href="AI 时代的逆向操作.html#重回服务器渲染">2.1. 重回服务器渲染：走过 26 年互联网技术路，我为何逆向选择</a></span></dt><dt><span class="section"><a href="重回Session.html">2.2. 重回 HTTP Auth + Session</a></span></dt><dt><span class="section"><a href="重回硬编码.html">2.3. 重回 hardcode 硬编码</a></span></dt><dt><span class="section"><a href="AI驱动运营.html">2.4. AI 驱动运营</a></span></dt><dt><span class="section"><a href="去前端框架.html">2.5. 去前端框架（Next.js / Vue / React / Angular）</a></span></dt></dl></div>
+	
+
+	<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="重回服务器渲染"></a>2.1. 重回服务器渲染：走过 26 年互联网技术路，我为何逆向选择</h2></div></div></div>
+		
+
+		<p>2000 年入行，完整走完互联网渲染技术的全周期，从最早的 CGI 到如今遍地开花的前后端分离，最后在 AI
+			浪潮里反向折返，重新拥抱服务端渲染，这段经历藏着互联网技术的轮回与当下 AI 时代的新解法。
+		</p>
+
+		<p>2000入职场，我经历了什么？</p>
+		<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+				<p>最早 Apache HTTPD C语音 / Perl语音开发CGI</p>
+			</li><li class="listitem">
+				<p>IIS + JSP + Access + SQL Server / Apache/Nginx fastcgi PHP +
+					MySQL
+				</p>
+			</li><li class="listitem">
+				<p>Tomcat Java JSP + JavaBean + PostgreSQL</p>
+			</li><li class="listitem">
+				<p>EJB Jboss, Oracle Weblogic , IBM websphere</p>
+			</li><li class="listitem">
+				<p>前后端分离 Nginx + Jquery / Angular / React /Vue.js /Next.js + Java
+					Springboot
+				</p>
+			</li></ol></div>
+
+		<p>前端发展过程：HTML拼接，HTML模版，前后框架+后端分离</p>
+
+		<p>事实上前后端分离这些问题才出现的：</p>
+		<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+				<p>页面刷新，每次访问页面都需要重新渲染和刷新</p>
+			</li><li class="listitem">
+				<p>加载性能，页面全量加载网络传输慢</p>
+			</li><li class="listitem">
+				<p>HTML拼接繁复</p>
+			</li><li class="listitem">
+				<p>等等问题，请帮我补充。</p>
+			</li></ol></div>
+
+		<p>前后端分离并为解决所有问题，而为还带来新的问题：</p>
+		<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+				<p>前端越来越复杂，导致全栈能力要求越来越高，不得不前后端变成两个岗位。诞生了新的岗位，前端和后端开发开发工作需要贫富密切沟通，对齐接口。
+				</p>
+			</li><li class="listitem">
+				<p>数据安全，接口json数据安全带来全新挑战，以往数据在服务端处理，用户只能看到输出经过。现在不得不为前端提供很多明文接口。一旦权限疏忽，就存在泄漏数据风险。
+				</p>
+			</li></ol></div>
+
+		<p>随之AI时代的到来，加上 IPv6 + HTTP3 + Ajax + HTML模版 +
+			分级缓存等等技术。我决定重回服务器端渲染，甚至重拾PHP，我需要的是立即看到效果，不想每次启动服务。
+		</p>
+
+		<p>我的做法是：</p>
+		<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+				<p>使用模版技术动态渲染HTML，同时给渲染结果做缓存。替代前端每次build dist 的过程。</p>
+			</li><li class="listitem">
+				<p>Web 服务器做 etag, 修改时间，cache 头，缓存所有所有静态资源。</p>
+			</li><li class="listitem">
+				<p>局部更新 ajax，json 也会做一层缓存（etag+修改时间+Cache-Control）</p>
+			</li><li class="listitem">
+				<p>开启 HTTP3+Ipv6，实际每次加载都是走本地缓存。动态内容 ajax</p>
+			</li></ol></div>
+
+		<p>最后，用户体验超好，AI写程序也不即完成前端还要写API接口。</p>
+
+		<p>目前我已经有多个项目用这种方式落地。</p>
+		<p>Springboot Webflux + Thymeleaf + Template</p>
+		<p>Python FastAPI + Jinja2 Template</p>
+		<p>下一个项目我打算回到 PHP 时代，因为 Springboot 和 FastAPI 每次都需要重启加载，真的太烦了。
+		</p>
+
+		<p>架构这东西要复合时代，不同时代适合不同架构，现在是AI时代，给了打工人一次逆天改命的机会，需要考虑用AI加杠杆，放大自己的能力。
+		</p>
+
+		<p>所以我不禁回到服务器端渲染，我还放弃了“微服务”返回到“单体服务”时代。</p>
+	</div>
+
+	
+	
+	
+	
+
+</div><script xmlns="" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=r5HG&amp;d=9mi5r_kkDC8uxG8HuY3p4-2qgeeVypAK9vMD-2P6BYM"></script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="microphone.html">上一页</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="重回Session.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">1.24. 人工智能语音交互开发·麦克风 </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 2.2. 重回 HTTP Auth + Session</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script><script xmlns="" async="async">
+			(function(){
+			var bp = document.createElement('script');
+			var curProtocol = window.location.protocol.split(':')[0];
+			if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+			}
+			else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			}
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(bp, s);
+			})();
+</script></body></html>

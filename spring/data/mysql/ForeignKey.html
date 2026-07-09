@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>47.4. 外键</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 47 章 Spring Data with MySQL" /><link rel="prev" href="@ElementCollection.html" title="47.3. 映射集合属性" /><link rel="next" href="indexes.html" title="47.5. 索引" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">47.4. 外键</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="@ElementCollection.html">上一页</a> </td><th width="60%" align="center">第 47 章 Spring Data with MySQL</th><td width="20%" align="right"> <a accesskey="n" href="indexes.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="ForeignKey"></a>47.4. 外键</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="JoinColumn"></a>47.4.1. @JoinColumn</h3></div></div></div><p>@JoinColumn与@Column注释类似，它的定义如下代码所示。 </p><pre class="screen">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>10.4. 外键</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 10 章 Spring Data with MySQL" /><link rel="prev" href="@ElementCollection.html" title="10.3. 映射集合属性" /><link rel="next" href="indexes.html" title="10.5. 索引" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">10.4. 外键</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="@ElementCollection.html">上一页</a> </td><th width="60%" align="center">第 10 章 Spring Data with MySQL</th><td width="20%" align="right"> <a accesskey="n" href="indexes.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="ForeignKey"></a>10.4. 外键</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="JoinColumn"></a>10.4.1. @JoinColumn</h3></div></div></div><p>@JoinColumn与@Column注释类似，它的定义如下代码所示。 </p><pre class="screen">
 			
 @Target({METHOD, FIELD}) @Retention(RUNTIME) 
 
@@ -45,7 +45,7 @@ CREATE TABLE `picture_psychoanalysis` (
   CONSTRAINT `picture_id` FOREIGN KEY (`id`) REFERENCES `picture` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='文生图心里分析'				
 				
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="OneToOne"></a>47.4.2. @OneToOne</h3></div></div></div><p>一对一表结构，如下面ER图所示，users表是用户表里面有登陆信息，profile
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="OneToOne"></a>10.4.2. @OneToOne</h3></div></div></div><p>一对一表结构，如下面ER图所示，users表是用户表里面有登陆信息，profile
 				保存的时死人信息，这样的目的是我们尽量减少users表的字段，在频繁操作该表的时候性能比较好，另外一个目的是为了横向水平扩展。
 			</p><pre class="programlisting">
 			
@@ -203,7 +203,7 @@ ENGINE=InnoDB;
 			
 @JoinColumn(name = "member_id",referencedColumnName="member_id") 			
 			
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1204"></a>47.4.2.1. 案例一</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1009"></a>10.4.2.1. 案例一</h4></div></div></div><pre class="programlisting">
 					
 package cn.netkiller.domain.demo;
 
@@ -258,7 +258,7 @@ CREATE TABLE `book_detail` (
   CONSTRAINT `FKl1hmgccsvfwcxhem3qw6l7gpm` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1205"></a>47.4.2.2. </h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1010"></a>10.4.2.2. </h4></div></div></div><pre class="programlisting">
 					
 package cn.netkiller.domain.demo;
 
@@ -315,7 +315,7 @@ CREATE TABLE `book_detail` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci					
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1206"></a>47.4.2.3. </h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1011"></a>10.4.2.3. </h4></div></div></div><pre class="programlisting">
 					
 package cn.netkiller.domain.demo;
 
@@ -403,7 +403,7 @@ CREATE TABLE `profile` (
   CONSTRAINT `FK6x079ilawxjrfsljwyyi5ujjq` FOREIGN KEY (`id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci					
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1207"></a>47.4.2.4. does not define an IdClass</h4></div></div></div><p>如果一对一的关系中，我们希望两端都是用 id 字段，而@OneToOne 一端是对象，必须定义一个 @Id，这时加入
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1012"></a>10.4.2.4. does not define an IdClass</h4></div></div></div><p>如果一对一的关系中，我们希望两端都是用 id 字段，而@OneToOne 一端是对象，必须定义一个 @Id，这时加入
 					@MapsId 可以解决 does not define an IdClass 错误，这时一段表中没有 @Id
 				</p><pre class="programlisting">
 					
@@ -495,7 +495,7 @@ CREATE TABLE `profile` (
   CONSTRAINT `FK6x079ilawxjrfsljwyyi5ujjq` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户信息表'
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="@PrimaryKeyJoinColumn"></a>47.4.2.5. 共享主键</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="@PrimaryKeyJoinColumn"></a>10.4.2.5. 共享主键</h4></div></div></div><pre class="programlisting">
 					
 package cn.netkiller.domain.demo;
 
@@ -575,7 +575,7 @@ CREATE TABLE `profile` (
   CONSTRAINT `FK6x079ilawxjrfsljwyyi5ujjq` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户信息表'					
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1208"></a>47.4.2.6. null identifier</h4></div></div></div><p>@OneToOne 保存提示 null identifier，经过排查需要配置</p><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1013"></a>10.4.2.6. null identifier</h4></div></div></div><p>@OneToOne 保存提示 null identifier，经过排查需要配置</p><pre class="programlisting">
 					
 package cn.netkiller.domain;
 
@@ -652,7 +652,7 @@ public class PicturePsychoanalysis implements Serializable {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Picture picture;					
 					
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="OneToMany"></a>47.4.3. OneToMany 一对多</h3></div></div></div><p>我们要实现一个一对多实体关系，ER 图如下</p><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="OneToMany"></a>10.4.3. OneToMany 一对多</h3></div></div></div><p>我们要实现一个一对多实体关系，ER 图如下</p><pre class="programlisting">
 			
     +----------+          +------------+
     | Classes  |          | Student    |
@@ -825,7 +825,7 @@ ENGINE=InnoDB;
       st2.setClasses(classes); 
       studentRepostitory.save(st2); 
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ManyToMany"></a>47.4.4. ManyToMany 多对多</h3></div></div></div><p>用户与角色就是一个多对多的关系，多对多是需要中间表做关联的。所以我方需要一个 user_has_role 表。</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ManyToMany"></a>10.4.4. ManyToMany 多对多</h3></div></div></div><p>用户与角色就是一个多对多的关系，多对多是需要中间表做关联的。所以我方需要一个 user_has_role 表。</p><pre class="programlisting">
 			
     +----------+          +---------------+            +--------+
     | users    |          | user_has_role |            | role   |
@@ -998,7 +998,7 @@ ENGINE=InnoDB;
 			</pre><pre class="programlisting">
 			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="orphanRemoval"></a>47.4.5. 外键级联删除</h3></div></div></div><p>orphanRemoval 是 JPA 定义，并不是数据库原生</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="orphanRemoval"></a>10.4.5. 外键级联删除</h3></div></div></div><p>orphanRemoval 是 JPA 定义，并不是数据库原生</p><pre class="programlisting">
 					
     @Id
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
@@ -1131,7 +1131,7 @@ public class Member implements Serializable {
 
 }			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="CascadeType"></a>47.4.6. 外键级联操作</h3></div></div></div><p>cascade 属性： 指定级联操作的行为(可多选)</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="CascadeType"></a>10.4.6. 外键级联操作</h3></div></div></div><p>cascade 属性： 指定级联操作的行为(可多选)</p><pre class="programlisting">
 				
 CascadeType.PERSIST：级联新增（又称级联保存）：对A对象保存时也会对B对象进行保存。并且，只有A类新增时，会级联B对象新增。若B对象在数据库存在则抛异常。对应EntityManager的presist方法。
 CascadeType.MERGE：级联合并（级联更新）：指A类新增或者变化，会级联B对象（新增或者变化）。对应EntityManager的merge方法。
@@ -1140,17 +1140,17 @@ CascadeType.REFRESH：级联刷新：获取A对象时也重新获取最新的B�
 CascadeType.DETACH：级联分离。
 CascadeType.ALL：级联所有操作。
 				
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="CascadeType.PERSIST"></a>47.4.6.1. CascadeType.PERSIST</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="CascadeType.PERSIST"></a>10.4.6.1. CascadeType.PERSIST</h4></div></div></div><pre class="programlisting">
 					
 @OneToMany(mappedBy = "boss", cascade = CascadeType.PERSIST)  
 private List&lt;Staff&gt; staffList;	
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="CascadeType.REMOVE"></a>47.4.6.2. CascadeType.REMOVE</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="CascadeType.REMOVE"></a>10.4.6.2. CascadeType.REMOVE</h4></div></div></div><pre class="programlisting">
 					
 @OneToMany(mappedBy = "boss", cascade = CascadeType.REMOVE)  
 private List&lt;Staff&gt; staffList;
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="CascadeType.REMOVE"></a>47.4.6.3. CascadeType.MERGE</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="CascadeType.REMOVE"></a>10.4.6.3. CascadeType.MERGE</h4></div></div></div><pre class="programlisting">
 				
 package cn.netkiller.domain;
 
@@ -1408,7 +1408,7 @@ public class Device implements Serializable {
 				
 @OneToOne(cascade = CascadeType.MERGE, optional = false)
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1209"></a>47.4.6.4. MySQL ON DELETE CASCADE</h4></div></div></div><p>@OnDelete(action = OnDeleteAction.CASCADE)</p><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1014"></a>10.4.6.4. MySQL ON DELETE CASCADE</h4></div></div></div><p>@OnDelete(action = OnDeleteAction.CASCADE)</p><pre class="programlisting">
 					
 package cn.netkiller.domain;
 
@@ -1484,7 +1484,7 @@ CREATE TABLE `picture_psychoanalysis` (
   CONSTRAINT `picture_id` FOREIGN KEY (`id`) REFERENCES `picture` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='文生图心里分析'					
 					
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@JoinTable"></a>47.4.7. @JoinTable</h3></div></div></div><pre class="screen">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@JoinTable"></a>10.4.7. @JoinTable</h3></div></div></div><pre class="screen">
 				
 @JoinTable(name = "table")				
 				
@@ -1517,7 +1517,7 @@ private List&lt;UserProfile&gt; userProfile;
     }
 )		
 				
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1210"></a>47.4.7.1. 多对多实例</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1015"></a>10.4.7.1. 多对多实例</h4></div></div></div><pre class="programlisting">
 					
 package cn.netkiller.domain;
 
@@ -1652,7 +1652,7 @@ CREATE TABLE `consumer_has_device` (
   CONSTRAINT `FKq7u4eyw8pmfkwg4yymjljx8ra` FOREIGN KEY (`consumer_id`) REFERENCES `consumer` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 					
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@OrderBy"></a>47.4.8. @OrderBy</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@OrderBy"></a>10.4.8. @OrderBy</h3></div></div></div><pre class="programlisting">
 				
 // JPA 默认根据 Student 的 ID 主键对 studentList 集合数据进行递增排序
 @OneToMany(cascade = CascadeType.ALL)
@@ -1685,7 +1685,7 @@ private List&lt;Student&gt; studentList;
 @OrderBy("sex asc,salary desc")
 private List&lt;Student&gt; studentList;				
 				
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@JsonIgnoreProperties"></a>47.4.9. @JsonIgnoreProperties</h3></div></div></div><p>当使用 @OneToMany 与 @ManyToOne 相互引用时，你会发现产生了循环调用，此时可以使用
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@JsonIgnoreProperties"></a>10.4.9. @JsonIgnoreProperties</h3></div></div></div><p>当使用 @OneToMany 与 @ManyToOne 相互引用时，你会发现产生了循环调用，此时可以使用
 				@JsonIgnoreProperties 避免出现循环，此时加入 @Transient 或 @JsonIgnore
 				注解可以解决，但要该字段就没有外键数据了。
 			</p><pre class="programlisting">
@@ -1715,7 +1715,7 @@ public class SubareaSet {
   private Subarea subarea;
 }
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1211"></a>47.4.10. 允许外键为 NULL</h3></div></div></div><p>optional = true 允许外键为空</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1016"></a>10.4.10. 允许外键为 NULL</h3></div></div></div><p>optional = true 允许外键为空</p><pre class="programlisting">
 			
     @Comment("合作商")
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
@@ -1924,7 +1924,7 @@ CREATE TABLE `picture` (
   CONSTRAINT `FK8qckqvv3cl83c9ant5wx1f6eo` FOREIGN KEY (`picture_group_id`) REFERENCES `picture_group` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5846 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='图片表'			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1212"></a>47.4.11. 只要外键，不要数据结构</h3></div></div></div><p>@ManyToOne 关系 PictureGroup 加载后会出很多数据，在网上传输比较占用带宽，我们要精简 JSON
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1017"></a>10.4.11. 只要外键，不要数据结构</h3></div></div></div><p>@ManyToOne 关系 PictureGroup 加载后会出很多数据，在网上传输比较占用带宽，我们要精简 JSON
 				数据，实现的方式是讲 pictureGroup 影射给 groupId
 			</p><pre class="programlisting">
 			
@@ -2050,7 +2050,15 @@ public class Picture implements Serializable {
 
 }
 			
-			</pre></div></div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="@ElementCollection.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="indexes.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">47.3. 映射集合属性 </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 47.5. 索引</td></tr></table></div><script xmlns="">
+			</pre></div></div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="@ElementCollection.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="indexes.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">10.3. 映射集合属性 </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 10.5. 索引</td></tr></table></div><script xmlns="">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

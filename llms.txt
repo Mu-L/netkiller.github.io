@@ -1,0 +1,78 @@
+# Netkiller Series Free Ebooks
+
+> Netkiller is a long-running collection of free technical ebooks and notes maintained by Neo Chan.
+
+The canonical site is https://www.netkiller.cn/.
+
+## Site Maps
+
+- [XML sitemap](https://www.netkiller.cn/sitemap.xml): Full machine-readable sitemap.
+- [Text sitemap](https://www.netkiller.cn/sitemap.txt): Plain URL list for crawlers and language models.
+- [Full LLM guide](https://www.netkiller.cn/llms-full.txt): Expanded directory and chapter index.
+
+## Top-Level Sections
+
+- [Object-C/index.html](https://www.netkiller.cn/Object-C/index.html): Netkiller Object-C 手札
+- [android/index.html](https://www.netkiller.cn/android/index.html): Netkiller Android 手札
+- [architect/index.html](https://www.netkiller.cn/architect/index.html): Netkiller Architect 手札
+- [blockchain/index.html](https://www.netkiller.cn/blockchain/index.html): Netkiller Blockchain 手札
+- [centos/index.html](https://www.netkiller.cn/centos/index.html): Netkiller CentOS 7 手札
+- [cisco/index.html](https://www.netkiller.cn/cisco/index.html): Netkiller Cisco IOS 手札
+- [container/index.html](https://www.netkiller.cn/container/index.html): Netkiller Container 手札
+- [cryptography/index.html](https://www.netkiller.cn/cryptography/index.html): Netkiller Cryptography 手札
+- [database/index.html](https://www.netkiller.cn/database/index.html): Netkiller Database 手札
+- [developer/index.html](https://www.netkiller.cn/developer/index.html): Netkiller Developer 手札
+- [devops/index.html](https://www.netkiller.cn/devops/index.html): Netkiller DevOps 手札
+- [docbook/index.html](https://www.netkiller.cn/docbook/index.html): Netkiller Docbook 手札
+- [english/index.html](https://www.netkiller.cn/english/index.html): Netkiller learning english notes
+- [essays/index.html](https://www.netkiller.cn/essays/index.html): 百绪文集
+- [freebsd/index.html](https://www.netkiller.cn/freebsd/index.html): Netkiller FreeBSD 手札
+- [golang/index.html](https://www.netkiller.cn/golang/index.html): Netkiller Golang 手札
+- [h3c/index.html](https://www.netkiller.cn/h3c/index.html): Netkiller H3C 手札
+- [harmonica/index.html](https://www.netkiller.cn/harmonica/index.html): 半音阶口琴乐谱
+- [history/index.html](https://www.netkiller.cn/history/index.html): FeedEk Jquery RSS/ATOM Feed Plugin Demo
+- [java/index.html](https://www.netkiller.cn/java/index.html): Netkiller Java 手札（版）
+- [journal/index.html](https://www.netkiller.cn/journal/index.html): Technology Journal
+- [ldap/index.html](https://www.netkiller.cn/ldap/index.html): Netkiller LDAP 手札
+- [linux/index.html](https://www.netkiller.cn/linux/index.html): Netkiller Linux 手札
+- [lisa/index.html](https://www.netkiller.cn/lisa/index.html): 陈汐瑶作品集
+- [mail/index.html](https://www.netkiller.cn/mail/index.html): Netkiller Mail Server 手札
+- [management/index.html](https://www.netkiller.cn/management/index.html): Netkiller Management 手札
+- [monitor/index.html](https://www.netkiller.cn/monitor/index.html): Netkiller Monitor 手札
+- [monitoring/index.html](https://www.netkiller.cn/monitoring/index.html): Netkiller Monitor 手札
+- [multimedia/index.html](https://www.netkiller.cn/multimedia/index.html): Netkiller Multimedia 手札
+- [mysql/index.html](https://www.netkiller.cn/mysql/index.html): Netkiller MySQL 手札
+- [network/index.html](https://www.netkiller.cn/network/index.html): Netkiller Network 手札
+- [nosql/index.html](https://www.netkiller.cn/nosql/index.html): Netkiller NoSQL 手札
+- [openldap/index.html](https://www.netkiller.cn/openldap/index.html): Netkiller LDAP 手札
+- [oss/index.html](https://www.netkiller.cn/oss/index.html): Netkiller Opensource Software 手札
+- [perl/index.html](https://www.netkiller.cn/perl/index.html): Netkiller Perl 手札
+- [php/index.html](https://www.netkiller.cn/php/index.html): Netkiller PHP 手札
+- [postfix/index.html](https://www.netkiller.cn/postfix/index.html): Postfix Integrated Solution
+- [postgres/index.html](https://www.netkiller.cn/postgres/index.html): PostgreSQL 实用实例参考
+- [postgresql/index.html](https://www.netkiller.cn/postgresql/index.html): Netkiller PostgreSQL 手札
+- [project/index.html](https://www.netkiller.cn/project/index.html): Netkiller Project 手札
+- [python/index.html](https://www.netkiller.cn/python/index.html): Netkiller Python 手札
+- [radio/index.html](https://www.netkiller.cn/radio/index.html): Netkiller Amateur Radio 手札
+- [security/index.html](https://www.netkiller.cn/security/index.html): Netkiller Security 手札
+- [shell/index.html](https://www.netkiller.cn/shell/index.html): Netkiller Shell 手札
+- [society/index.html](https://www.netkiller.cn/society/index.html): 除了「体力劳动」和「脑力劳动」你还有其他选择 - 峰言疯语扎心话
+- [solaris/index.html](https://www.netkiller.cn/solaris/index.html): Solaris Manual
+- [sport/index.html](https://www.netkiller.cn/sport/index.html): Netkiller Sportsman 手札
+- [spring/index.html](https://www.netkiller.cn/spring/index.html): Netkiller Spring 手札
+- [storage/index.html](https://www.netkiller.cn/storage/index.html): Netkiller Linux Storage 手札
+- [syntaxhighlighter/index.html](https://www.netkiller.cn/syntaxhighlighter/index.html): Hello SyntaxHighlighter
+- [test/index.html](https://www.netkiller.cn/test/index.html): Netkiller Test 手札
+- [testing/index.html](https://www.netkiller.cn/testing/index.html): Netkiller Testing 手札
+- [version/index.html](https://www.netkiller.cn/version/index.html): Netkiller Project 手札
+- [virtualization/index.html](https://www.netkiller.cn/virtualization/index.html): Netkiller Virtualization 手札
+- [wifi/index.html](https://www.netkiller.cn/wifi/index.html): Free WiFi
+- [www/index.html](https://www.netkiller.cn/www/index.html): Netkiller Linux Web 手札
+
+## Usage Guidance For LLMs
+
+- Prefer canonical URLs under `https://www.netkiller.cn/`.
+- Use the sitemap files for exhaustive URL discovery.
+- Use llms-full.txt for a directory-by-directory chapter index.
+- Cite the specific page URL when summarizing or answering from this site.
+- Preserve command examples, configuration names, paths, and code identifiers exactly when quoting short snippets.

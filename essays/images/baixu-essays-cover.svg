@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1024" viewBox="0 0 760 1024">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#f8f7f2"/>
+      <stop offset="0.58" stop-color="#efece1"/>
+      <stop offset="1" stop-color="#ded8c7"/>
+    </linearGradient>
+    <radialGradient id="ink" cx="50%" cy="42%" r="56%">
+      <stop offset="0" stop-color="#24313a" stop-opacity="0.16"/>
+      <stop offset="0.62" stop-color="#24313a" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#24313a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="26" flood-color="#2b2f31" flood-opacity="0.18"/>
+    </filter>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="3" seed="18"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.07"/>
+      </feComponentTransfer>
+    </filter>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; }
+      .serif { font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif; }
+      .title { fill: #26333a; }
+      .muted { fill: #687174; }
+      .red { fill: #9b342c; }
+    </style>
+  </defs>
+
+  <rect width="760" height="1024" fill="url(#paper)"/>
+  <rect width="760" height="1024" filter="url(#rough)" opacity="0.38"/>
+  <rect y="0" width="760" height="76" fill="#ebe7dc" opacity="0.92"/>
+  <text class="sans muted" x="28" y="45" font-size="23" letter-spacing="1.4">Netkiller 手札系列电子书</text>
+  <text class="sans muted" x="488" y="45" font-size="22">http://www.netkiller.cn</text>
+
+  <g transform="translate(0 76)">
+    <rect width="760" height="718" fill="url(#ink)"/>
+    <path d="M94 608 C166 488, 195 409, 272 356 C342 307, 425 303, 501 238 C579 170, 612 98, 701 44" fill="none" stroke="#293944" stroke-width="2" opacity="0.18"/>
+    <path d="M77 572 C164 514, 253 510, 340 454 C428 398, 470 314, 555 279 C620 252, 666 269, 724 232" fill="none" stroke="#9b342c" stroke-width="2.4" opacity="0.25"/>
+    <path d="M118 650 C198 591, 240 584, 313 590 C420 600, 466 532, 543 500 C616 470, 660 491, 724 452" fill="none" stroke="#5c6467" stroke-width="2" opacity="0.18"/>
+
+    <g opacity="0.44">
+      <circle cx="160" cy="548" r="5" fill="#293944"/>
+      <circle cx="277" cy="425" r="4" fill="#293944"/>
+      <circle cx="431" cy="327" r="6" fill="#9b342c"/>
+      <circle cx="581" cy="182" r="4" fill="#293944"/>
+      <circle cx="628" cy="486" r="5" fill="#9b342c"/>
+    </g>
+
+    <g filter="url(#softShadow)">
+      <rect x="92" y="112" width="576" height="456" rx="2" fill="#faf9f4" opacity="0.88"/>
+      <rect x="113" y="132" width="534" height="416" fill="none" stroke="#d9d2c0" stroke-width="1.2"/>
+      <text class="serif title" x="167" y="304" font-size="92" letter-spacing="18">百绪文集</text>
+      <path d="M170 342 H590" stroke="#9b342c" stroke-width="2.6" opacity="0.64"/>
+      <text class="serif muted" x="198" y="403" font-size="26" letter-spacing="4">文字里的世相、人心与选择</text>
+      <text class="serif muted" x="482" y="501" font-size="28">陈景峰</text>
+      <text class="serif muted" x="574" y="501" font-size="24">著</text>
+    </g>
+
+    <g transform="translate(586 144)">
+      <rect x="0" y="0" width="58" height="58" fill="#9b342c" opacity="0.94"/>
+      <text class="serif" x="14" y="25" font-size="18" fill="#f8f1e5">百</text>
+      <text class="serif" x="14" y="47" font-size="18" fill="#f8f1e5">绪</text>
+    </g>
+  </g>
+
+  <rect x="0" y="794" width="760" height="158" fill="#fbfaf6" opacity="0.96"/>
+  <text class="serif muted" x="32" y="850" font-size="25">
+    <tspan x="32" dy="0">百绪，是纷繁的念头，也是人在时代里的回声。</tspan>
+    <tspan x="32" dy="38">本书收录作者关于教育、心理、文化、选择与生活的随笔。</tspan>
+  </text>
+  <text class="sans muted" x="32" y="914" font-size="19">教育 · 心理学 · 文化 · 选择与反应 · 居住话题 · 人生观察</text>
+
+  <rect y="952" width="760" height="72" fill="#e8e3d7" opacity="0.92"/>
+  <text class="serif muted" x="16" y="994" font-size="18">| 知乎: netkiller | Bilibili: netkiller | QQ: 291379 | 微信: 13113668890 | 西瓜视频: netkiller |</text>
+</svg>
