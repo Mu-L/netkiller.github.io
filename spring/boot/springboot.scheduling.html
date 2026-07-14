@@ -6,7 +6,7 @@
 			
 @EnableScheduling		
 			
-		</pre><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1531"></a>Application.java</h4></div></div></div><p>Application.java</p><p>启用计划任务, 在Spring Boot启动类加上注解@EnableScheduling，表示该项目启用计划任务</p><pre class="programlisting">
+		</pre><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1532"></a>Application.java</h4></div></div></div><p>Application.java</p><p>启用计划任务, 在Spring Boot启动类加上注解@EnableScheduling，表示该项目启用计划任务</p><pre class="programlisting">
 			
 package api;
 
@@ -36,7 +36,7 @@ public class Application {
 
 }
 				
-			</pre><p>开启计划任务 @EnableScheduling</p><p>确保你的计划任务在 @ComponentScan 包中。</p></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1532"></a>配置</h4></div></div></div><pre class="screen">
+			</pre><p>开启计划任务 @EnableScheduling</p><p>确保你的计划任务在 @ComponentScan 包中。</p></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1533"></a>配置</h4></div></div></div><pre class="screen">
 		
 # 任务调度线程池大小 默认 1 建议根据任务加大
 spring.task.scheduling.pool.size=1
@@ -47,7 +47,7 @@ spring.task.scheduling.shutdown.await-termination=
 # 调度线程关闭前最大等待时间，确保最后一定关闭
 spring.task.scheduling.shutdown.await-termination-period=		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1533"></a>Component</h4></div></div></div><p>在计划任务方法上加上@Scheduled注解，表示该方法是一个计划任务，项目启动后会去扫描该注解的方法并加入计划任务列表。
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1534"></a>Component</h4></div></div></div><p>在计划任务方法上加上@Scheduled注解，表示该方法是一个计划任务，项目启动后会去扫描该注解的方法并加入计划任务列表。
 			</p><pre class="programlisting">
 			
 			
@@ -291,7 +291,7 @@ public void doSomething() {
 注意：在使用“L”参数时，不要指定列表或范围，因为这会导致问题
 
 			
-		</pre><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1534"></a>每3秒钟一运行一次</h4></div></div></div><pre class="screen">
+		</pre><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1535"></a>每3秒钟一运行一次</h4></div></div></div><pre class="screen">
 				
 @Component
 @EnableScheduling
@@ -303,7 +303,7 @@ public class MyTask {
     }
 }
 				
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1535"></a>凌晨23点运行</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1536"></a>凌晨23点运行</h4></div></div></div><pre class="programlisting">
 				
 	@Scheduled(cron = "0 0 23 * * ?")
 	private void cleanNewToday() {
@@ -315,7 +315,7 @@ public class MyTask {
 		logger.info("Schedule clean redis {} 耗时 {} 秒", "cleanNewFlash()", (end-begin) / 1000 );
 	}
 				
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1536"></a>周一 ～ 周五</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1537"></a>周一 ～ 周五</h4></div></div></div><pre class="programlisting">
 			
 @Scheduled(cron="*/5 * * * * MON-FRI")
 public void doSomething() {

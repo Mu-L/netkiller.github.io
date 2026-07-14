@@ -13,7 +13,7 @@ stringRedisTemplate.delete("test");												//根据key删除缓存
 stringRedisTemplate.hasKey("546545");											//检查key是否存在，返回boolean值
 stringRedisTemplate.expire("test",1000 , TimeUnit.MILLISECONDS);				//设置过期时间	
 			
-		</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1057"></a>11.3.1. 存储数据</h3></div></div></div><pre class="programlisting">
+		</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1056"></a>11.3.1. 存储数据</h3></div></div></div><pre class="programlisting">
 			
 stringRedisTemplate.opsForValue().set("neo", "netkiller");	//向redis里存入数据
 stringRedisTemplate.opsForValue().set("neo", "netkiller",60*10,TimeUnit.SECONDS);	//向redis里存入数据和设置缓存时间
@@ -23,7 +23,7 @@ stringRedisTemplate.opsForValue().set("neo", "netkiller",60*10,TimeUnit.SECONDS)
         String code = stringRedisTemplate.opsForValue().getAndDelete("captcha::".concat(mobile));
         String code = stringRedisTemplate.opsForValue().get("captcha::".concat(mobile));		
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1058"></a>11.3.3. 取出数据</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1057"></a>11.3.3. 取出数据</h3></div></div></div><pre class="programlisting">
 			
 stringRedisTemplate.getExpire("neo")			
 			

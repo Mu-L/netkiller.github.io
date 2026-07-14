@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>72.6. Repository/CrudRepository/PagingAndSortingRepository/JpaRepository</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="../../index.html" title="Netkiller Java 手札（版）" /><link rel="up" href="index.html" title="第 72 章 Spring Data with MySQL" /><link rel="prev" href="indexes.html" title="72.5. 索引" /><link rel="next" href="TransactionTemplate.html" title="72.7. TransactionTemplate" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">72.6. Repository/CrudRepository/PagingAndSortingRepository/JpaRepository
-		</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="indexes.html">上一页</a> </td><th width="60%" align="center">第 72 章 Spring Data with MySQL</th><td width="20%" align="right"> <a accesskey="n" href="TransactionTemplate.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Repository"></a>72.6. Repository/CrudRepository/PagingAndSortingRepository/JpaRepository
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>35.6. Repository/CrudRepository/PagingAndSortingRepository/JpaRepository</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="../../index.html" title="Netkiller Java 手札（版）" /><link rel="up" href="index.html" title="第 35 章 Spring Data with MySQL" /><link rel="prev" href="indexes.html" title="35.5. 索引" /><link rel="next" href="TransactionTemplate.html" title="35.7. TransactionTemplate" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">35.6. Repository/CrudRepository/PagingAndSortingRepository/JpaRepository
+		</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="indexes.html">上一页</a> </td><th width="60%" align="center">第 35 章 Spring Data with MySQL</th><td width="20%" align="right"> <a accesskey="n" href="TransactionTemplate.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Repository"></a>35.6. Repository/CrudRepository/PagingAndSortingRepository/JpaRepository
 		</h2></div></div></div><pre class="screen">
 		
 Repository： 仅仅是一个标识，没有任何方法，方便Spring自动扫描识别
@@ -53,7 +59,7 @@ Not --- 等价于 SQL 中的 "！ ="，比如 findByUsernameNot(String user)
 In --- 等价于 SQL 中的 "in"，比如 findByUsernameIn(Collection&lt;String&gt; userList) ，方法的参数可以是 Collection 类型，也可以是数组或者不定长参数
 NotIn --- 等价于 SQL 中的 "not in"，比如 findByUsernameNotIn(Collection&lt;String&gt; userList) ，方法的参数可以是 Collection 类型，也可以是数组或者不定长
 		
-		</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="JpaRepository"></a>72.6.1. JpaRepository</h3></div></div></div><p>
+		</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="JpaRepository"></a>35.6.1. JpaRepository</h3></div></div></div><p>
 				<a class="ulink" href="https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html" target="_top">https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html</a>
 			</p><pre class="screen">
 			
@@ -79,7 +85,7 @@ List&lt;S&gt;	saveAll(Iterable&lt;S&gt; entities)
 S	saveAndFlush(S entity)
 Saves an entity and flushes changes instantly.		
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="CrudRepository"></a>72.6.2. CrudRepository</h3></div></div></div><p>CrudRepository 接口提供了最基本的对实体类的添删改查操作</p><pre class="screen">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="CrudRepository"></a>35.6.2. CrudRepository</h3></div></div></div><p>CrudRepository 接口提供了最基本的对实体类的添删改查操作</p><pre class="screen">
 			
 T save(T entity);								//保存单个实体 
 Iterable&lt;T&gt; save(Iterable&lt;? extends T&gt; entities);//保存集合        
@@ -92,7 +98,7 @@ void delete(T entity);							//删除一个实体
 void delete(Iterable&lt;? extends T&gt; entities);		//删除一个实体的集合         
 void deleteAll();								//删除所有实体,不用或慎用! 		
 			
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1454"></a>72.6.2.1. 批量保存</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1259"></a>35.6.2.1. 批量保存</h4></div></div></div><pre class="programlisting">
 				
         List&lt;Book&gt; books = new ArrayList&lt;&gt;();
         books.add(new Book("Book A", new BookDetail(1)));
@@ -100,7 +106,7 @@ void deleteAll();								//删除所有实体,不用或慎用!
         books.add(new Book("Book C", new BookDetail(3)));
         bookRepository.save(books);				
 				
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="PagingAndSortingRepository"></a>72.6.3. PagingAndSortingRepository</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1455"></a>72.6.3.1. Pageable</h4></div></div></div><p>接口实现 PagingAndSortingRepository</p><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="PagingAndSortingRepository"></a>35.6.3. PagingAndSortingRepository</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1260"></a>35.6.3.1. Pageable</h4></div></div></div><p>接口实现 PagingAndSortingRepository</p><pre class="programlisting">
 				
 package api.repository.h5;
 
@@ -130,7 +136,7 @@ public interface GatherRepository extends PagingAndSortingRepository&lt;User, In
 		return mv;
 	}				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1456"></a>72.6.3.2. 解决 PagingAndSortingRepository 没有 save 等方法的问题</h4></div></div></div><p>如果 Repository 继承了 PagingAndSortingRepository 你会发
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1261"></a>35.6.3.2. 解决 PagingAndSortingRepository 没有 save 等方法的问题</h4></div></div></div><p>如果 Repository 继承了 PagingAndSortingRepository 你会发
 					CrudRepository 中的 save 等方法不能使用了，我的解决方法是写两个 Repository
 				</p><p>一个 CURD 的 ChatRepository 放在 cn.netkiller.repository</p><pre class="programlisting">
 				
@@ -169,7 +175,7 @@ public interface ChatPageableRepository extends PagingAndSortingRepository&lt;Ch
     Page&lt;Chat&gt; findAllByDevice(String device, Pageable pageable);
 }
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="PageableDefault"></a>72.6.3.3. @PageableDefault 分页</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="PageableDefault"></a>35.6.3.3. @PageableDefault 分页</h4></div></div></div><pre class="programlisting">
 		
 @RequestMapping(value = "/list", method=RequestMethod.GET)
 public Page&lt;Blog&gt; getEntryByPageable1(@PageableDefault( sort = { "id" }, direction = Sort.Direction.DESC) 
@@ -207,7 +213,7 @@ sort，排序相关的信息，以property,property(,ASC|DESC)的方式组织，
 Spring提供了@PageableDefault帮助我们个性化的设置pageable的默认配置。例如@PageableDefault(value = 15, sort = { "id" }, direction = Sort.Direction.DESC)表示默认情况下我们按照id倒序排列，每一页的大小为15。		
 		
 
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.find"></a>72.6.4. findByXXX</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.find"></a>35.6.4. findByXXX</h3></div></div></div><pre class="programlisting">
 			
 	@Autowired
 	private ArticleRepository articleRepository;
@@ -239,7 +245,7 @@ Spring提供了@PageableDefault帮助我们个性化的设置pageable的默认�
 		return tmp.get(0).getTitle();
 	}
 		
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1457"></a>72.6.4.1. 传 Boolean 参数</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1262"></a>35.6.4.1. 传 Boolean 参数</h4></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.wallet.repository.fcoin;
 
@@ -260,7 +266,7 @@ public interface FcoinRepository extends CrudRepository&lt;Fcoin, String&gt; {
 
 }
 			
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="eunm"></a>72.6.4.2. Eunm 传递枚举参数</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="eunm"></a>35.6.4.2. Eunm 传递枚举参数</h4></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.api.repository;
 
@@ -282,7 +288,7 @@ public interface StatisticsHistoryRepostitory extends CrudRepository&lt;Statisti
 			
 	statisticsHistoryRepostitory.findByMemberIdAndStatisticsIdAndType(uid, id, type);
 			
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.count"></a>72.6.5. count 操作</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.count"></a>35.6.5. count 操作</h3></div></div></div><pre class="programlisting">
 			
 public interface UserRepository extends CrudRepository&lt;User, Long&gt; {
 
@@ -290,7 +296,7 @@ public interface UserRepository extends CrudRepository&lt;User, Long&gt; {
 
 }
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.delete"></a>72.6.6. delete 删除操作</h3></div></div></div><p>deleteBy</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.delete"></a>35.6.6. delete 删除操作</h3></div></div></div><p>deleteBy</p><pre class="programlisting">
 			
     @Transactional
     Long deleteByFirstName(String firstName);
@@ -304,7 +310,7 @@ public interface UserRepository extends CrudRepository&lt;User, Long&gt; {
     @Transactional
     List&lt;User&gt; removeByFirstName(String firstName);      			
 			
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1458"></a>72.6.6.1. 返回删除数量</h4></div></div></div><p>仓库定义</p><pre class="programlisting">
+			</pre><div class="example"><a id="id1843"></a><p class="title"><strong>例 35.1. JPA deleteBy 返回删除数量</strong></p><div class="example-contents"><p>仓库定义</p><pre class="programlisting">
 				
 package cn.netkiller.repository;
 
@@ -355,7 +361,47 @@ public interface AssetsRepository extends CrudRepository&lt;Assets, Integer&gt; 
         return count;
     }
 				
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="IsNull"></a>72.6.7. IsNull</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><br class="example-break" /><div class="example"><a id="id1844"></a><p class="title"><strong>例 35.2. JPA 更多用法</strong></p><div class="example-contents"><pre class="programlisting">
+				
+import jakarta.annotation.Resource;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class UserService {
+
+    @Resource
+    private UserRepository userRepo;
+
+    public void testDelete() {
+        // 根据用户名删除单个
+        userRepo.deleteByUsername("zhangsan");
+
+        // 删除年龄小于18的所有人
+        userRepo.deleteAllByAgeLessThan(18);
+
+        // 删除姓名=李四 且年龄=25
+        userRepo.deleteAllByUsernameAndAge("lisi", 25);
+
+        // 删除手机号=138xxx 或姓名=wangwu
+        userRepo.deleteAllByPhoneOrUsername("13800138000", "wangwu");
+
+        // 模糊删除用户名带 test 的 %test%
+        userRepo.deleteAllByUsernameLike("%test%");
+
+        // 根据id批量删除
+        userRepo.deleteAllByIdIn(List.of(1L,2L,3L));
+
+        // 删除年龄20~30之间
+        userRepo.deleteAllByAgeBetween(20,30);
+
+        // 返回删除记录行数
+        long count = userRepo.deleteAllByAgeGreaterThan(60);
+        System.out.println("删除了：" + count + " 条");
+    }
+}				
+				
+				</pre></div></div><br class="example-break" /></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="IsNull"></a>35.6.7. IsNull</h3></div></div></div><pre class="programlisting">
 			
     Iterable&lt;PicturePsychoanalysis&gt; findByAnalysisIsNull();			
 			
@@ -367,7 +413,7 @@ public interface AssetsRepository extends CrudRepository&lt;Assets, Integer&gt; 
 			
     Page&lt;Picture&gt; findByImageIsNotNullAndStoryIsNotNullAndAudioIsNotNull(Pageable pageable);			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.InNotIn"></a>72.6.8. In/NotIn</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.InNotIn"></a>35.6.8. In/NotIn</h3></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.repository;
 
@@ -401,15 +447,15 @@ public interface LoraRepository extends CrudRepository&lt;Lora, Integer&gt; {
         return lora;
     }
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="find.true"></a>72.6.9. TRUE / FALSE</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="find.true"></a>35.6.9. TRUE / FALSE</h3></div></div></div><pre class="programlisting">
 			
     Page&lt;Picture&gt; findByShareTrueAndImageIsNotNullAndStoryIsNotNullAndAudioIsNotNull(Pageable pageable);
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="find.GreaterThan"></a>72.6.10. 比较数值大小</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1459"></a>72.6.10.1. 大于</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="find.GreaterThan"></a>35.6.10. 比较数值大小</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1263"></a>35.6.10.1. 大于</h4></div></div></div><pre class="programlisting">
 				
 boolean existsByDeviceAndGiftGreaterThan(String device, int i);				
 				
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="BeforeAfter"></a>72.6.11. 判断日期和时间 Before / After</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="BeforeAfter"></a>35.6.11. 判断日期和时间 Before / After</h3></div></div></div><pre class="programlisting">
 			
 //        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
@@ -469,11 +515,11 @@ public interface PictureRepository extends CrudRepository&lt;Picture, Long&gt; {
 		LocalDateTime beforeTime = LocalDateTime.now().minusMinutes(2);
         Iterable&lt;Assets&gt; iterable = assetsRepository.findByPlanIsNullOrPptxIsNullOrMinutesIsNullOrAudioIsNullAndStatusAndCtimeBefore("Processing", beforeTime);			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.Between"></a>72.6.12. Between</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.Between"></a>35.6.12. Between</h3></div></div></div><pre class="programlisting">
 			
 Iterable&lt;Assets&gt; iterable = assetsRepository.findByStatusAndCtimeBetween("Processing", afterTime, beforeTime);
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.Exists"></a>72.6.13. Exists</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.Exists"></a>35.6.13. Exists</h3></div></div></div><pre class="programlisting">
 			
 boolean exists = repository.existsById(searchId)			
 			
@@ -486,13 +532,13 @@ boolean exists = repository.existsById(searchId)
 			
 			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="OrderBy"></a>72.6.14. OrderBy</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="OrderBy"></a>35.6.14. OrderBy</h3></div></div></div><pre class="programlisting">
 			
 public List&lt;StudentEntity&gt; findAllByOrderByIdAsc();
 public List&lt;StudentEntity&gt; findAllByOrderByIdDesc();
 List&lt;RecentRead&gt; findByMemberIdOrderByIdDesc(int memberId, Pageable pageable);
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="GreaterThan"></a>72.6.15. GreaterThan</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="GreaterThan"></a>35.6.15. GreaterThan</h3></div></div></div><pre class="programlisting">
 			
 package schedule.repository;
 
@@ -522,7 +568,7 @@ public interface CmsTrashRepository extends CrudRepository&lt;CmsTrash, Integer&
         return pictureRepository.findFirstByShareTrueAndImageIsNotNullAndStoryIsNotNullAndAudioIsNotNullAndIdLessThanOrderByIdDesc(cursor);
     }			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sort"></a>72.6.16. Sort 排序操作操作</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sort"></a>35.6.16. Sort 排序操作操作</h3></div></div></div><pre class="programlisting">
 			
 List&lt;UserModel&gt; findByName(String name, Sort sort);
 			
@@ -543,7 +589,7 @@ userRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
 userRepository.findAll(Sort.by("LENGTH(name)"));
 
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="pageable"></a>72.6.17. Pageable 翻页操作</h3></div></div></div><p>Page 返回数据和页码等数据</p><pre class="screen">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="pageable"></a>35.6.17. Pageable 翻页操作</h3></div></div></div><p>Page 返回数据和页码等数据</p><pre class="screen">
 			
 PageRequest(int page, int size, Sort sort)  Deprecated. 
 use PageRequest.of(int, int, Sort) instead.			
@@ -597,7 +643,7 @@ curl -X 'GET' \
   'http://localhost:8080/picture/test/page?page=0&amp;size=1&amp;sort=id' \
   -H 'accept: */*'
 				
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1460"></a>72.6.17.1. PageRequest.of</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1264"></a>35.6.17.1. PageRequest.of</h4></div></div></div><pre class="programlisting">
 				
 package cn.netkiller.api.repository;
 
@@ -630,13 +676,13 @@ public interface RecentReadRepostitory extends CrudRepository&lt;RecentRead, Lon
 				
 List&lt;Fcoin&gt; fcoins = fcoinRepository.findByAirdrop(false, PageRequest.of(0, size));
 				
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@DynamicInsert"></a>72.6.18. @DynamicInsert 与 @DynamicUpdate</h3></div></div></div><p>@DynamicUpdate 只更新修改的字段</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1461"></a>72.6.19. 继承已存在的 Repository</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@DynamicInsert"></a>35.6.18. @DynamicInsert 与 @DynamicUpdate</h3></div></div></div><p>@DynamicUpdate 只更新修改的字段</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1265"></a>35.6.19. 继承已存在的 Repository</h3></div></div></div><pre class="programlisting">
 			
 public interface MemberRepository extends JpaRepository&lt;User, Integer&gt;, UserRepository {
     ...
 }			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="JPA.Optional"></a>72.6.20. Optional</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="JPA.Optional"></a>35.6.20. Optional</h3></div></div></div><pre class="programlisting">
 			
 package payroll;
 
@@ -747,7 +793,7 @@ try {
 			
 			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.stream"></a>72.6.21. stream 用法</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="jpa.stream"></a>35.6.21. stream 用法</h3></div></div></div><pre class="programlisting">
 			
 public Optional&lt;Map&lt;String, Object&gt;&gt; assetsDepartment(String taskId) {
         Map&lt;String, Object&gt; document = new HashMap&lt;&gt;();
@@ -780,7 +826,7 @@ el.id = "ttzz";
 var s = document.getElementsByTagName("script")[0];
 s.parentNode.insertBefore(el, s);
 })(window)
-</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="indexes.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="TransactionTemplate.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">72.5. 索引 </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 72.7. TransactionTemplate</td></tr></table></div><script xmlns="">
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="indexes.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="TransactionTemplate.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">35.5. 索引 </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 35.7. TransactionTemplate</td></tr></table></div><script xmlns="">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

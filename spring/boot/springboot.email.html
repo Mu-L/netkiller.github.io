@@ -112,14 +112,14 @@ public class EmailComponent {
 }
 
 			
-		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="spring-boot-starter-mail"></a>1.33.1. spring-boot-starter-mail</h3></div></div></div><p>Springboot 封装的 jakarta.mail</p><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3821"></a>Maven</h4></div></div></div><pre class="programlisting">
+		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="spring-boot-starter-mail"></a>1.33.1. spring-boot-starter-mail</h3></div></div></div><p>Springboot 封装的 jakarta.mail</p><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3822"></a>Maven</h4></div></div></div><pre class="programlisting">
         
         &lt;dependency&gt;
             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
             &lt;artifactId&gt;spring-boot-starter-mail&lt;/artifactId&gt;
         &lt;/dependency&gt;	
         
-			</pre><div class="example"><a id="id1380"></a><p class="title"><strong>例 1.6. Spring boot with Email (pom.xml)</strong></p><div class="example-contents"><pre class="programlisting">
+			</pre><div class="example"><a id="id1379"></a><p class="title"><strong>例 1.6. Spring boot with Email (pom.xml)</strong></p><div class="example-contents"><pre class="programlisting">
             
 &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
@@ -250,7 +250,7 @@ public class EmailComponent {
 &lt;/project&gt;
 
             
-				</pre></div></div><br class="example-break" /></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3826"></a>Resource</h4></div></div></div><p>application.properties</p><p>Postfix / Exam4 / Sendmail 邮件服务器配置</p><pre class="programlisting">
+				</pre></div></div><br class="example-break" /></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3827"></a>Resource</h4></div></div></div><p>application.properties</p><p>Postfix / Exam4 / Sendmail 邮件服务器配置</p><pre class="programlisting">
         
 spring.mail.host=smtp.163.com    
         
@@ -263,7 +263,7 @@ spring.mail.properties.mail.smtp.auth=true
 #spring.mail.properties.mail.smtp.starttls.enable=true  
 #spring.mail.properties.mail.smtp.starttls.required=true  
         
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3833"></a>POJO</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3834"></a>POJO</h4></div></div></div><pre class="programlisting">
         
 package api.pojo;
 
@@ -324,7 +324,7 @@ public Email(String from, String to, String subject, String text) {
 }
 
         
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3836"></a>RestController</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3837"></a>RestController</h4></div></div></div><pre class="programlisting">
         
 package api.rest;
 
@@ -418,7 +418,7 @@ public ResponseEntity&lt;Email&gt; sendmail(@RequestBody Email email) {
 }	
 }
         
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3839"></a>Test</h4></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3840"></a>Test</h4></div></div></div><pre class="screen">
         
 $ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"from":"root@netkiller.cn", "to":"21214094@qq.com","subject":"Hello","text":"Hello world!!!"}' http://172.16.0.20:8080/v1/email/send.json
 HTTP/1.1 200 OK
@@ -429,11 +429,11 @@ Date: Wed, 10 Aug 2016 06:38:00 GMT
 
 {"from":"root@netkiller.cn","to":"21214094@qq.com","subject":"Hello","text":"Hello world!!!","status":true}
         
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="spring-boot-starter-mail.detail"></a>1.33.2. 用法详解</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3844"></a>开启 DEBUG</h4></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="spring-boot-starter-mail.detail"></a>1.33.2. 用法详解</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3845"></a>开启 DEBUG</h4></div></div></div><pre class="programlisting">
 		
 spring.mail.properties.mail.debug=true
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3847"></a>SMTP SSL 配置</h4></div></div></div><p>ssl smtp 配置 spring.mail.properties.mail.smtp.ssl.enable=true
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3848"></a>SMTP SSL 配置</h4></div></div></div><p>ssl smtp 配置 spring.mail.properties.mail.smtp.ssl.enable=true
 			</p><pre class="programlisting">
 			
 # Email
@@ -450,7 +450,7 @@ spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.ssl.enable=true
 spring.mail.properties.mail.debug=true
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3851"></a>SMTP TLS 配置</h4></div></div></div><p>tls smtp 配置
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3852"></a>SMTP TLS 配置</h4></div></div></div><p>tls smtp 配置
 				spring.mail.properties.mail.smtp.starttls.enable=true
 			</p><pre class="programlisting">
 			
@@ -469,7 +469,7 @@ spring.mail.properties.mail.smtp.starttls.enable=true
 spring.mail.properties.mail.smtp.starttls.required=true
 spring.mail.properties.mail.debug=true
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3855"></a>发送文本邮件</h4></div></div></div><p>发送文本邮件</p><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3856"></a>发送文本邮件</h4></div></div></div><p>发送文本邮件</p><pre class="programlisting">
 			
 package cn.netkiller.component;
 
@@ -503,7 +503,7 @@ public class EmailComponent {
     }
 }
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3859"></a>发送HTML邮件</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3860"></a>发送HTML邮件</h4></div></div></div><pre class="programlisting">
 			
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 
@@ -512,7 +512,7 @@ public class EmailComponent {
         mimeMessageHelper.setSubject(subject);
         mimeMessageHelper.setText(body, true); // true = 支持HTML			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3862"></a>发送带附件的邮件</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3863"></a>发送带附件的邮件</h4></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.component;
 

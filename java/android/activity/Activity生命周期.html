@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>100.3. 生命周期</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="../../index.html" title="Netkiller Java 手札（版）" /><link rel="up" href="index.html" title="第 100 章 Activity" /><link rel="prev" href="startActivity.html" title="100.2. 切换 Activity" /><link rel="next" href="Intent.html" title="100.4. Activity 间数据传递" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">100.3. 生命周期</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="startActivity.html">上一页</a> </td><th width="60%" align="center">第 100 章 Activity</th><td width="20%" align="right"> <a accesskey="n" href="Intent.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Activity生命周期"></a>100.3. 生命周期</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="定时关闭"></a>100.3.1. 定时关闭</h3></div></div></div><pre class="programlisting">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>63.3. 生命周期</title><link rel="stylesheet" type="text/css" href="../../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="../../index.html" title="Netkiller Java 手札（版）" /><link rel="up" href="index.html" title="第 63 章 Activity" /><link rel="prev" href="startActivity.html" title="63.2. 切换 Activity" /><link rel="next" href="Intent.html" title="63.4. Activity 间数据传递" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">63.3. 生命周期</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="startActivity.html">上一页</a> </td><th width="60%" align="center">第 63 章 Activity</th><td width="20%" align="right"> <a accesskey="n" href="Intent.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="Activity生命周期"></a>63.3. 生命周期</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="定时关闭"></a>63.3.1. 定时关闭</h3></div></div></div><pre class="programlisting">
 		
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +32,7 @@
         }
     }, 10000);		
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="恢复触发"></a>100.3.2. 恢复触发</h3></div></div></div><p>程序回到桌面，例如设置WI-FI，让步在回到程序，安卓会调用 onResume()</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="恢复触发"></a>63.3.2. 恢复触发</h3></div></div></div><p>程序回到桌面，例如设置WI-FI，让步在回到程序，安卓会调用 onResume()</p><pre class="programlisting">
 		
     @Override
     public void onResume() {
@@ -34,7 +40,7 @@
         this.other();
     }		
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="返回触发"></a>100.3.3. 返回触发</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="返回触发"></a>63.3.3. 返回触发</h3></div></div></div><pre class="programlisting">
 		
     @Override
     public void onBackPressed() {
@@ -43,7 +49,7 @@
         ...
     }		
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="Activity.finish()"></a>100.3.4. Activity 关闭</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="Activity.finish()"></a>63.3.4. Activity 关闭</h3></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.album;
 
@@ -72,7 +78,7 @@ public class HotelActivity extends AppCompatActivity {
     }
 }		
 		
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1792"></a>100.3.4.1. 退出 App</h4></div></div></div><p>AndroidManifest.xml 中 activity 添加
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1596"></a>63.3.4.1. 退出 App</h4></div></div></div><p>AndroidManifest.xml 中 activity 添加
 					android:launchMode="singleTask"
 				</p><pre class="programlisting">
 			
@@ -110,7 +116,7 @@ public class HotelActivity extends AppCompatActivity {
         startActivity(intent);
     }			
 			
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1793"></a>100.3.5. 重启自己</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1597"></a>63.3.5. 重启自己</h3></div></div></div><pre class="programlisting">
 		
     private boolean privacyAgreement() {
         String key = "PrivacyAgreement";
@@ -165,7 +171,7 @@ el.id = "ttzz";
 var s = document.getElementsByTagName("script")[0];
 s.parentNode.insertBefore(el, s);
 })(window)
-</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="startActivity.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="Intent.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">100.2. 切换 Activity </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 100.4. Activity 间数据传递</td></tr></table></div><script xmlns="">
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="startActivity.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="Intent.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">63.2. 切换 Activity </td><td width="20%" align="center"><a accesskey="h" href="../../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 63.4. Activity 间数据传递</td></tr></table></div><script xmlns="">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

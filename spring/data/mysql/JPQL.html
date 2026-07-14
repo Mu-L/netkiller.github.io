@@ -53,7 +53,7 @@ public interface PersonRepository extends JpaRepository&lt;Person, Long&gt; {
     public List&lt;Person&gt; find(@Param("lastName") String lastName);
 }
 				
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="Query.nativeQuery"></a>10.8.3. 原生 SQL 操作</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1030"></a>10.8.3.1. 查询</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="Query.nativeQuery"></a>10.8.3. 原生 SQL 操作</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1029"></a>10.8.3.1. 查询</h4></div></div></div><pre class="programlisting">
 				
 public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
 
@@ -61,7 +61,7 @@ public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
 	User findByEmailAddress(String emailAddress);
 }
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1031"></a>10.8.3.2. 忽略插入</h4></div></div></div><p>insert ignore</p><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1030"></a>10.8.3.2. 忽略插入</h4></div></div></div><p>insert ignore</p><pre class="programlisting">
 				
 	@Modifying
     @Query(value = "insert ignore into emp(create, modified, user_id, user_name, user_nickname, user_mail) values(?1, ?2, ?3, ?4, ?5, ?6)", nativeQuery = true)
@@ -252,7 +252,7 @@ public interface TransactionHistoryRepository extends CrudRepository&lt;Transact
 
 }
 				
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1032"></a>10.8.5. 自定义返回字段</h3></div></div></div><p>我们并不希望每次返回所有字段，JPA默认查询等价 “SELECT * FROM TABLE”</p><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1031"></a>10.8.5. 自定义返回字段</h3></div></div></div><p>我们并不希望每次返回所有字段，JPA默认查询等价 “SELECT * FROM TABLE”</p><pre class="programlisting">
 			
 package cn.netkiller.repository.model;
 
@@ -600,7 +600,7 @@ public interface DiscoveryPictureGroup {
 }
 			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1036"></a>10.8.9. 修改返回数据</h3></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1035"></a>10.8.9. 修改返回数据</h3></div></div></div><pre class="programlisting">
 			
     @GetMapping("discovery/group")
 //    @Deprecated(since = "v4.0.0", forRemoval = true)
@@ -619,7 +619,7 @@ public interface DiscoveryPictureGroup {
         return new AigcResponse(newPage);
     }			
 			
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1033"></a>10.8.9.1. @Query 与 @ManyToOne</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1032"></a>10.8.9.1. @Query 与 @ManyToOne</h4></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.domain;
 
@@ -891,7 +891,7 @@ List&lt;User&gt; findUserByNameList(@Param("names") Collection&lt;String&gt; nam
 	@Query(value = "SELECT u FROM User u")
 	List&lt;User&gt; findAllUsers(Sort sort);		
 		
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1034"></a>10.8.9.4. 更新数据，返回值</h4></div></div></div><p>返回 0 表示更新失败，返回 1 表示更新成功</p><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1033"></a>10.8.9.4. 更新数据，返回值</h4></div></div></div><p>返回 0 表示更新失败，返回 1 表示更新成功</p><pre class="programlisting">
 			
     @Query("UPDATE Picture SET share = :status WHERE id=:id")
     @Modifying
@@ -938,7 +938,7 @@ public interface PictureClickRepository extends CrudRepository&lt;PictureClick, 
     @Query("SELECT new map(SUM(favorites) AS favorites, SUM(likes) AS likes) FROM PictureClick WHERE device.id = :deviceId")
     Optional&lt;Map&lt;String, Integer&gt;&gt; query(@Param("deviceId") Integer deviceId);
 			
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1035"></a>10.8.9.7. IFNULL</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1034"></a>10.8.9.7. IFNULL</h4></div></div></div><pre class="programlisting">
 			
     @Query("SELECT new map(IFNULL(SUM(favorites),0) AS favorites, IFNULL(SUM(likes),0) AS likes) FROM PictureClick WHERE device.id = :deviceId")
     Optional&lt;Map&lt;String, Integer&gt;&gt; query(@Param("deviceId") Integer deviceId);
@@ -975,7 +975,7 @@ public interface PictureClickRepository extends CrudRepository&lt;PictureClick, 
 Spring团队的建议是你在具体的类（或类的方法）上使用 @Transactional 注解，而不要使用在类所要实现的任何接口上。你当然可以在接口上使用 @Transactional 注解，但是这将只能当你设置了基于接口的代理时它才生效。因为注解是不能继承的，这就意味着如果你正在使用基于类的代理时，那么事务的设置将不能被基于类的代理所识别，而且对象也将不会被事务代理所包装（将被确认为严重的）。因此，请接受Spring团队的建议并且在具体的类上使用 @Transactional 注解。			<br />
 <br />
 			<br />
-			</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1037"></a>10.8.10.1. save() 不需要开启 @Transactional </h4></div></div></div><p>在SimpleJpaRepository中save()已经帮我们实现</p><pre class="programlisting">
+			</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1036"></a>10.8.10.1. save() 不需要开启 @Transactional </h4></div></div></div><p>在SimpleJpaRepository中save()已经帮我们实现</p><pre class="programlisting">
 					
 @Repository
 @Transactional(readOnly = true)
@@ -1231,15 +1231,15 @@ public class SimpleJpaRepository&lt;T, ID&gt; implements JpaRepositoryImplementa
     //......
 }			
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1038"></a>10.8.10.2. SERIALIZABLE</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1037"></a>10.8.10.2. SERIALIZABLE</h4></div></div></div><pre class="programlisting">
 					
 @Transactional(isolation = Isolation.SERIALIZABLE)					
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1039"></a>10.8.10.3. readOnly</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1038"></a>10.8.10.3. readOnly</h4></div></div></div><pre class="programlisting">
 					
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)			
 					
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1040"></a>10.8.10.4. 删除更新需要 @Transactional 注解</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1039"></a>10.8.10.4. 删除更新需要 @Transactional 注解</h4></div></div></div><pre class="programlisting">
 				
 package cn.netkiller.api.repository;
 
@@ -1276,7 +1276,7 @@ public interface RecentReadRepostitory extends CrudRepository&lt;RecentRead, Int
 
 }				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1041"></a>10.8.10.5. 回滚操作</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1040"></a>10.8.10.5. 回滚操作</h4></div></div></div><pre class="programlisting">
 				
 	// 指定Exception回滚
 	@Transactional(rollbackFor=Exception.class)
@@ -1321,7 +1321,7 @@ public class UserService {
 }
 				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1042"></a>10.8.10.6. private、default、protected 和 final 不支持事物 </h4></div></div></div><p>@Transactional 必须与 public 一起使用，不能定义为 private、default、protected
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1041"></a>10.8.10.6. private、default、protected 和 final 不支持事物 </h4></div></div></div><p>@Transactional 必须与 public 一起使用，不能定义为 private、default、protected
 				</p><pre class="programlisting">
 				
 @Service
@@ -1332,7 +1332,7 @@ public class UserService {
     }
 }
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1043"></a>10.8.10.7. Service 注意事项</h4></div></div></div><p>this 调用不支持事物</p><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1042"></a>10.8.10.7. Service 注意事项</h4></div></div></div><p>this 调用不支持事物</p><pre class="programlisting">
 				
 @Service
 public class UserService {
@@ -1374,7 +1374,7 @@ public class UserService {
 
 }				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1044"></a>10.8.10.8. 需要 @Service 注解配合使用</h4></div></div></div><p>@Transactional 需要在 @Controller、@Service、@Component、@Repository
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1043"></a>10.8.10.8. 需要 @Service 注解配合使用</h4></div></div></div><p>@Transactional 需要在 @Controller、@Service、@Component、@Repository
 					等注解下才能使用
 				</p><pre class="programlisting">
 				
@@ -1418,7 +1418,7 @@ public class RoleService {
     }
 }				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1045"></a>10.8.10.9. 事务回滚</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1044"></a>10.8.10.9. 事务回滚</h4></div></div></div><pre class="programlisting">
 				
     @Transactional
     public void test(SysConfigEntity entity) throws Exception {

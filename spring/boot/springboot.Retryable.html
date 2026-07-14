@@ -50,7 +50,7 @@ var retryPolicy = RetryPolicy.builder()
 var retryTemplate = new RetryTemplate(retryPolicy);
 retryTemplate.execute(() -&gt; jmsClient.destination("notifications").send(...));
 			
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id783"></a>1.38.2. spring-retry</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4055"></a>spring-retry 依赖</h4></div></div></div><p>添加依赖</p><pre class="screen">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id783"></a>1.38.2. spring-retry</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4056"></a>spring-retry 依赖</h4></div></div></div><p>添加依赖</p><pre class="screen">
 			
 		&lt;dependency&gt;
             &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt;
@@ -58,7 +58,7 @@ retryTemplate.execute(() -&gt; jmsClient.destination("notifications").send(...))
             &lt;version&gt;2.0.12&lt;/version&gt;
         &lt;/dependency&gt;
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4059"></a>@EnableRetry 启用重试</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4060"></a>@EnableRetry 启用重试</h4></div></div></div><pre class="programlisting">
 			
 package cn.aigcsst;
 
@@ -106,7 +106,7 @@ public class Application {
 
 }			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4062"></a></h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4063"></a></h4></div></div></div><pre class="programlisting">
 			
 package cn.aigcsst.controller.debug;
 
@@ -142,7 +142,7 @@ api  | 2026-01-12 17:52:54.305  WARN  --- [tomcat-handler-0] cn.aigcsst.service.
 api  | 2026-01-12 17:52:55.306  WARN  --- [tomcat-handler-0] cn.aigcsst.service.AiService             : ---&gt; Test ---&gt; &lt;- agent:42
 api  | 2026-01-12 17:52:55.308 ERROR  --- [tomcat-handler-0] c.aigcsst.config.GloablControllerAdvice  : RuntimeException: null &lt;- handleException:19			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4067"></a>高级用法</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id4068"></a>高级用法</h4></div></div></div><pre class="programlisting">
 			
     @Retryable(value = RuntimeException.class, maxAttempts = 2, backoff = @Backoff(delay = 1000, multiplier = 2))
     public void service() {

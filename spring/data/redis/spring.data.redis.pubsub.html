@@ -6,7 +6,7 @@
 订阅者（Subscriber）：订阅一个或多个频道，接收频道中的消息。
 频道（Channel）：消息的传输媒介，发布者向频道发送消息，订阅者从频道接收消息。		
 		
-		</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1100"></a>11.12.1. MessageListener 方案</h3></div></div></div><p>配置 Redis</p><pre class="programlisting">
+		</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1099"></a>11.12.1. MessageListener 方案</h3></div></div></div><p>配置 Redis</p><pre class="programlisting">
 			
 import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
@@ -50,7 +50,7 @@ public class RedisMessageListener implements MessageListener {
     }
 }			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1105"></a>11.12.2. @RedisListener 注解方案</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1101"></a>11.12.2.1. 配置 Redis 消息监听器容器</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1104"></a>11.12.2. @RedisListener 注解方案</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1100"></a>11.12.2.1. 配置 Redis 消息监听器容器</h4></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.config;
 
@@ -75,7 +75,7 @@ public class RedisConfiguration {
     }
 }
 			
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1102"></a>11.12.2.2. 订阅者（Subscriber）：订阅一个或多个频道，接收频道中的消息。</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1101"></a>11.12.2.2. 订阅者（Subscriber）：订阅一个或多个频道，接收频道中的消息。</h4></div></div></div><pre class="programlisting">
 				
 import org.springframework.data.redis.listener.annotation.RedisListener;
 import org.springframework.stereotype.Component;
@@ -117,7 +117,7 @@ public class RedisAnnotationListener {
     }
 }				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1103"></a>11.12.2.3. 发布者（Publisher）：发送消息到指定频道（Channel）</h4></div></div></div><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1102"></a>11.12.2.3. 发布者（Publisher）：发送消息到指定频道（Channel）</h4></div></div></div><pre class="programlisting">
 				
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
@@ -138,7 +138,7 @@ public class RedisMessagePublisher {
     }
 }
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1104"></a>11.12.2.4. 测试演示</h4></div></div></div><p></p><pre class="programlisting">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1103"></a>11.12.2.4. 测试演示</h4></div></div></div><p></p><pre class="programlisting">
 				
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -161,7 +161,7 @@ public class RedisPubSubController {
     }
 }			
 				
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1106"></a>11.12.3. 线程池</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1105"></a>11.12.3. 线程池</h3></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.config;
 

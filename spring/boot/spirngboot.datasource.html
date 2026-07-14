@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>1.16. Spring boot with Datasource</title><link rel="stylesheet" type="text/css" href="../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 1 章 Spring Boot" /><link rel="prev" href="springboot.phoenix.html" title="1.15. Spring boot with Phoenix" /><link rel="next" href="springboot.pool.html" title="1.17. 连接池配置" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.16. Spring boot with Datasource</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="springboot.phoenix.html">上一页</a> </td><th width="60%" align="center">第 1 章 Spring Boot</th><td width="20%" align="right"> <a accesskey="n" href="springboot.pool.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="spirngboot.datasource"></a>1.16. Spring boot with Datasource</h2></div><div><h3 class="subtitle">数据源配置</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id770"></a>1.16.1. Master / Slave 主从数据库数据源配置</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1509"></a>application.properties</h4></div></div></div><pre class="screen">
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.16. Spring boot with Datasource</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="springboot.phoenix.html">上一页</a> </td><th width="60%" align="center">第 1 章 Spring Boot</th><td width="20%" align="right"> <a accesskey="n" href="springboot.pool.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="spirngboot.datasource"></a>1.16. Spring boot with Datasource</h2></div><div><h3 class="subtitle">数据源配置</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id770"></a>1.16.1. Master / Slave 主从数据库数据源配置</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1510"></a>application.properties</h4></div></div></div><pre class="screen">
 			
 spring.datasource.master.driverClassName = com.mysql.cj.jdbc.Driver
 spring.datasource.master.url=jdbc:mysql://192.168.1.240:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false
@@ -14,7 +14,7 @@ spring.datasource.slave.password = password
 
 spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1510"></a>配置主从数据源</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1511"></a>配置主从数据源</h4></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.config;
 
@@ -70,7 +70,7 @@ public class MultiDataSourceConfig {
 
 }
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1511"></a>选择数据源</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1512"></a>选择数据源</h4></div></div></div><pre class="programlisting">
 			
 	// 默认是 Master
 	@Autowired
@@ -86,7 +86,7 @@ public class MultiDataSourceConfig {
 	@Autowired
 	private JdbcTemplate slaveJdbcTemplate;
 			
-			</pre></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1512"></a>多数据源配置</h3></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1513"></a>多数据源配置</h3></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.project.config;
 
@@ -241,7 +241,7 @@ spring.datasource.api.jdbc-interceptors=ConnectionState;SlowQueryReport(threshol
 	@Qualifier("apiJdbcTemplate")
 	JdbcTemplate jdbcTempalte;		
 		
-		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1513"></a>JPA 多数据源</h3></div></div></div><p>多个 JPA 数据配置非常简单，请参考下面的例子。注意两点，第一点是设置Repository的位置：</p><pre class="screen">
+		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1514"></a>JPA 多数据源</h3></div></div></div><p>多个 JPA 数据配置非常简单，请参考下面的例子。注意两点，第一点是设置Repository的位置：</p><pre class="screen">
 		
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryPrimary",

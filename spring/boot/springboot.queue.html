@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>1.19. Spring boot with Queue</title><link rel="stylesheet" type="text/css" href="../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 1 章 Spring Boot" /><link rel="prev" href="springboot.redis.html" title="1.18. Spring boot with Redis" /><link rel="next" href="springboot.scheduling.html" title="1.20. Spring boot with Scheduling" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.19. Spring boot with Queue</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="springboot.redis.html">上一页</a> </td><th width="60%" align="center">第 1 章 Spring Boot</th><td width="20%" align="right"> <a accesskey="n" href="springboot.scheduling.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="springboot.queue"></a>1.19. Spring boot with Queue</h2></div></div></div><p></p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="rabbitmq"></a>1.19.1. Spring boot with RabbitMQ(AMQP)</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1526"></a>maven</h4></div></div></div><pre class="programlisting">
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.19. Spring boot with Queue</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="springboot.redis.html">上一页</a> </td><th width="60%" align="center">第 1 章 Spring Boot</th><td width="20%" align="right"> <a accesskey="n" href="springboot.scheduling.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="springboot.queue"></a>1.19. Spring boot with Queue</h2></div></div></div><p></p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="rabbitmq"></a>1.19.1. Spring boot with RabbitMQ(AMQP)</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1527"></a>maven</h4></div></div></div><pre class="programlisting">
 			
 &lt;dependency&gt;
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-amqp&lt;/artifactId&gt;
 &lt;/dependency&gt;
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1527"></a>RabbitMQConfig</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1528"></a>RabbitMQConfig</h4></div></div></div><pre class="programlisting">
 			
 @Configuration
 public class RabbitMQConfig {
@@ -49,7 +49,7 @@ public class RabbitMQConfig {
 
 }
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1528"></a>生产者</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1529"></a>生产者</h4></div></div></div><pre class="programlisting">
 			
 @RestController
 public class ProducerController {
@@ -71,7 +71,7 @@ public class ProducerController {
 
 }
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1529"></a>消费者</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1530"></a>消费者</h4></div></div></div><pre class="programlisting">
 			
 @Component
 public class Consumer {
@@ -82,7 +82,7 @@ public class Consumer {
     }
 }
 			
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="kafka"></a>1.19.2. Spring boot with Apache Kafka</h3></div></div></div><p>Spring boot 1.5.1</p><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1530"></a>安装 kafka</h4></div></div></div><p>一下安装仅仅适合开发环境，生产环境请使用这个脚本安装 https://github.com/oscm/shell/tree/master/mq/kafka</p><pre class="screen">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="kafka"></a>1.19.2. Spring boot with Apache Kafka</h3></div></div></div><p>Spring boot 1.5.1</p><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1531"></a>安装 kafka</h4></div></div></div><p>一下安装仅仅适合开发环境，生产环境请使用这个脚本安装 https://github.com/oscm/shell/tree/master/mq/kafka</p><pre class="screen">
 		
 cd /usr/local/src
 wget http://apache.communilink.net/kafka/0.10.2.0/kafka_2.12-0.10.2.0.tgz
@@ -423,7 +423,7 @@ $ cd /srv/kafka
 $ bin/kafka-console-producer.sh --broker-list 47.89.35.55:9092 --topic test
 This is test message.
 			
-			</pre><p>每输入一行回车后发送到你的Spring boot kafka 程序</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="spring.boot.kafka.example"></a>1.19.2.1. 完整的发布订阅实例</h4></div></div></div><p>上面的例子仅仅是做了一个热身，现在我们将实现 一个完整的例子。</p><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="Consumer"></a>Consumer</h5></div></div></div><div class="example"><a id="id1377"></a><p class="title"><strong>例 1.3. Spring boot with Apache kafka.</strong></p><div class="example-contents"><p>SpringApplication</p><pre class="programlisting">
+			</pre><p>每输入一行回车后发送到你的Spring boot kafka 程序</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="spring.boot.kafka.example"></a>1.19.2.1. 完整的发布订阅实例</h4></div></div></div><p>上面的例子仅仅是做了一个热身，现在我们将实现 一个完整的例子。</p><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="Consumer"></a>Consumer</h5></div></div></div><div class="example"><a id="id1376"></a><p class="title"><strong>例 1.3. Spring boot with Apache kafka.</strong></p><div class="example-contents"><p>SpringApplication</p><pre class="programlisting">
 				
 package cn.netkiller;
 
@@ -542,7 +542,7 @@ public class Consumer {
 }
 				
 				
-					</pre></div></div><br class="example-break" /></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="Producer"></a>Producer</h5></div></div></div><div class="example"><a id="id1378"></a><p class="title"><strong>例 1.4. Spring boot with Apache kafka.</strong></p><div class="example-contents"><p>Producer configuration</p><pre class="programlisting">
+					</pre></div></div><br class="example-break" /></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="Producer"></a>Producer</h5></div></div></div><div class="example"><a id="id1377"></a><p class="title"><strong>例 1.4. Spring boot with Apache kafka.</strong></p><div class="example-contents"><p>Producer configuration</p><pre class="programlisting">
 				
 package cn.netkiller.kafka.config;
 
@@ -698,7 +698,7 @@ public class KafkaTestController {
 
 }				
 				
-					</pre></div></div><br class="example-break" /></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="test"></a>Test</h5></div></div></div><div class="example"><a id="id1379"></a><p class="title"><strong>例 1.5. Test Spring Kafka</strong></p><div class="example-contents"><p>SpringBootTest</p><pre class="programlisting">
+					</pre></div></div><br class="example-break" /></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="test"></a>Test</h5></div></div></div><div class="example"><a id="id1378"></a><p class="title"><strong>例 1.5. Test Spring Kafka</strong></p><div class="example-contents"><p>SpringBootTest</p><pre class="programlisting">
 				
 package cn.netkiller;
 import static org.assertj.core.api.Assertions.assertThat;

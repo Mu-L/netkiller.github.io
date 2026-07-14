@@ -99,7 +99,7 @@ public WebAsyncTask&lt;String&gt; webAsyncTask() {
         return deferredResult;
     }		
 		
-		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id782"></a>1.35.1. 带有返回值的异步任务</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3898"></a>Future</h4></div></div></div><pre class="programlisting">
+		</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id782"></a>1.35.1. 带有返回值的异步任务</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3899"></a>Future</h4></div></div></div><pre class="programlisting">
         
 @Service
 public class DemoAsyncServiceImpl implements DemoAsyncService {
@@ -142,7 +142,7 @@ public class DemoAsyncServiceImpl implements DemoAsyncService {
 			
 			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3902"></a>CompletableFuture</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3903"></a>CompletableFuture</h4></div></div></div><pre class="programlisting">
 			
         CompletableFuture&lt;String&gt; completableFuture = CompletableFuture.supplyAsync(() -&gt; {
             throw new RuntimeException();
@@ -223,7 +223,7 @@ public class AsyncTask {
     }
 }		
 		
-		</pre><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3915"></a>配置线程池</h4></div></div></div><p>默认线程池的配置很简单，配置参数如下：</p><pre class="screen">
+		</pre><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3916"></a>配置线程池</h4></div></div></div><p>默认线程池的配置很简单，配置参数如下：</p><pre class="screen">
 		
 spring.task.execution.pool.core-size：线程池创建时的初始化线程数，默认为8
 spring.task.execution.pool.max-size：线程池的最大线程数，默认为int最大值
@@ -261,7 +261,7 @@ spring:
         await-termination: true # 应用关闭时，是否等待定时任务执行完成。默认为 false ，建议设置为 true
         await-termination-period: 60 # 等待任务完成的最大时长，单位为秒。默认为 0 ，根据自己应用来设置		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3922"></a>@Service/@Component 中异步执行</h4></div></div></div><p>直接使用 @Async 注解，即可调用默认线程池</p><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3923"></a>@Service/@Component 中异步执行</h4></div></div></div><p>直接使用 @Async 注解，即可调用默认线程池</p><pre class="programlisting">
         
 @Component
 public class Task {
@@ -307,7 +307,7 @@ public class Task {
 
 }						
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3928"></a>applicationTaskExecutor</h4></div></div></div><p>SimpleAsyncTaskExecutor Bean 名字是 applicationTaskExecutor</p><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3929"></a>applicationTaskExecutor</h4></div></div></div><p>SimpleAsyncTaskExecutor Bean 名字是 applicationTaskExecutor</p><pre class="programlisting">
 			
 	"applicationTaskExecutor": {
           "aliases": [
@@ -443,7 +443,7 @@ public class Task {
         
 			</pre><p>注意：@Async 不会用到刚刚定义的线程池，@Async("asyncExecutor")，@Async("thread")
 				会正确调用
-			</p></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3948"></a>队列</h4></div></div></div><p>线程池能接受多少队列？</p><p>下面配置是 executor.setQueueCapacity(10); 也就是 10个，但是实测结果跟你想的不同
+			</p></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3949"></a>队列</h4></div></div></div><p>线程池能接受多少队列？</p><p>下面配置是 executor.setQueueCapacity(10); 也就是 10个，但是实测结果跟你想的不同
 			</p><pre class="programlisting">
 			
 package cn.netkiller.config;
@@ -484,7 +484,7 @@ public class ThreadPoolTaskExecutorConfiguration {
 			
 			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3957"></a>定义多个线程池</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3958"></a>定义多个线程池</h4></div></div></div><pre class="programlisting">
         
 package cn.netkiller.wallet.config;
 
@@ -569,7 +569,7 @@ public class DemoAsyncServiceImpl implements DemoAsyncService {
 
 }
         
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3961"></a>实现 AsyncConfigurer 接口方式创建自定义连接池</h4></div></div></div><p>这种方式可以直接使用 @Async </p><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3962"></a>实现 AsyncConfigurer 接口方式创建自定义连接池</h4></div></div></div><p>这种方式可以直接使用 @Async </p><pre class="programlisting">
 			
 package cn.netkiller.config;
 
@@ -626,7 +626,7 @@ public class ThreadPoolTaskExecutorConfiguration implements AsyncConfigurer {
 }
     
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3965"></a>继承 AsyncConfigurerSupport 创建自定义连接池 </h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3966"></a>继承 AsyncConfigurerSupport 创建自定义连接池 </h4></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.config;
 
@@ -682,7 +682,7 @@ public class ThreadPoolTaskExecutorConfiguration extends AsyncConfigurerSupport 
     }
 }			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3968"></a>生产环境完整代码 @Bean 注入方式</h4></div></div></div><p>这种方式多用在 Spring 2.x 中</p><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3969"></a>生产环境完整代码 @Bean 注入方式</h4></div></div></div><p>这种方式多用在 Spring 2.x 中</p><pre class="programlisting">
 			
 package cn.netkiller.config;
 
@@ -739,7 +739,7 @@ public class ThreadPoolTaskExecutorConfiguration {
     }
 }			
 			
-			</pre><p>注意：使用@Bean方式必须配合 @Async("threadPoolTaskExecutor")</p></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3973"></a>通过 @Bean 覆盖掉 SimpleAsyncTaskExecutor</h4></div></div></div><p>自定义连接池之后，系统内会存在两个连接吃 SimpleAsyncTaskExecutor 和
+			</pre><p>注意：使用@Bean方式必须配合 @Async("threadPoolTaskExecutor")</p></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3974"></a>通过 @Bean 覆盖掉 SimpleAsyncTaskExecutor</h4></div></div></div><p>自定义连接池之后，系统内会存在两个连接吃 SimpleAsyncTaskExecutor 和
 				ThreadPoolTaskExecutor
 			</p><pre class="programlisting">
 			
@@ -754,7 +754,7 @@ public class ThreadPoolTaskExecutorConfiguration {
         return executor;
     }			
 			
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ThreadPoolExecutor"></a>1.35.4. 自定义线程池 ThreadPoolExecutor</h3></div></div></div><p>自定义线程池</p><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3980"></a>ThreadPoolExecutor</h4></div></div></div><p></p><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ThreadPoolExecutor"></a>1.35.4. 自定义线程池 ThreadPoolExecutor</h3></div></div></div><p>自定义线程池</p><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3981"></a>ThreadPoolExecutor</h4></div></div></div><p></p><pre class="programlisting">
 			
     @Bean("queueThreadPool")
     public ThreadPoolExecutor queueThreadPool() {
@@ -769,7 +769,7 @@ public class ThreadPoolTaskExecutorConfiguration {
         return threadPoolExecutor;
     }
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3984"></a>注入自定义线程池bean</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3985"></a>注入自定义线程池bean</h4></div></div></div><pre class="programlisting">
 		
 	 // 注入自定义线程池bean
     @Autowired
@@ -784,7 +784,7 @@ public class ThreadPoolTaskExecutorConfiguration {
     });
     
 		
-			</pre></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id3987"></a>设置线程名称</h3></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id3988"></a>设置线程名称</h3></div></div></div><pre class="programlisting">
 		
 public static Random random = new Random();
 
@@ -798,7 +798,7 @@ public static Random random = new Random();
         System.out.println("完成任务一，耗时：" + (end - start) + "毫秒");
     }
 		
-		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id3990"></a>线程池监控</h3></div></div></div><p>监控指标</p><pre class="screen">
+		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id3991"></a>线程池监控</h3></div></div></div><p>监控指标</p><pre class="screen">
 		
 neo@MacBook-Pro-M2 ~&gt; curl -s http://www.netkiller.cn:8080/actuator/metrics | jq | grep executor
     "executor.active",
@@ -848,7 +848,7 @@ neo@MacBook-Pro-M2 ~&gt; curl -s http://www.netkiller.cn:8080/actuator/metrics/e
         return monitor;
     }	
 		
-		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id3998"></a>注意事项</h3></div></div></div><p>再 Service 中 通过 this 访问另一个 @Async 方法，异步会失效，必须使用 @@Autowired 入住。
+		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id3999"></a>注意事项</h3></div></div></div><p>再 Service 中 通过 this 访问另一个 @Async 方法，异步会失效，必须使用 @@Autowired 入住。
 		</p></div></div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
 (function(){
 var el = document.createElement("script");

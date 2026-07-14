@@ -304,7 +304,7 @@ public interface UserRepository extends CrudRepository&lt;User, Long&gt; {
     @Transactional
     List&lt;User&gt; removeByFirstName(String firstName);      			
 			
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1026"></a>10.6.6.1. 返回删除数量</h4></div></div></div><p>仓库定义</p><pre class="programlisting">
+			</pre><div class="example"><a id="id1382"></a><p class="title"><strong>例 10.1. JPA deleteBy 返回删除数量</strong></p><div class="example-contents"><p>仓库定义</p><pre class="programlisting">
 				
 package cn.netkiller.repository;
 
@@ -355,7 +355,47 @@ public interface AssetsRepository extends CrudRepository&lt;Assets, Integer&gt; 
         return count;
     }
 				
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="IsNull"></a>10.6.7. IsNull</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><br class="example-break" /><div class="example"><a id="id1383"></a><p class="title"><strong>例 10.2. JPA 更多用法</strong></p><div class="example-contents"><pre class="programlisting">
+				
+import jakarta.annotation.Resource;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class UserService {
+
+    @Resource
+    private UserRepository userRepo;
+
+    public void testDelete() {
+        // 根据用户名删除单个
+        userRepo.deleteByUsername("zhangsan");
+
+        // 删除年龄小于18的所有人
+        userRepo.deleteAllByAgeLessThan(18);
+
+        // 删除姓名=李四 且年龄=25
+        userRepo.deleteAllByUsernameAndAge("lisi", 25);
+
+        // 删除手机号=138xxx 或姓名=wangwu
+        userRepo.deleteAllByPhoneOrUsername("13800138000", "wangwu");
+
+        // 模糊删除用户名带 test 的 %test%
+        userRepo.deleteAllByUsernameLike("%test%");
+
+        // 根据id批量删除
+        userRepo.deleteAllByIdIn(List.of(1L,2L,3L));
+
+        // 删除年龄20~30之间
+        userRepo.deleteAllByAgeBetween(20,30);
+
+        // 返回删除记录行数
+        long count = userRepo.deleteAllByAgeGreaterThan(60);
+        System.out.println("删除了：" + count + " 条");
+    }
+}				
+				
+				</pre></div></div><br class="example-break" /></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="IsNull"></a>10.6.7. IsNull</h3></div></div></div><pre class="programlisting">
 			
     Iterable&lt;PicturePsychoanalysis&gt; findByAnalysisIsNull();			
 			
@@ -405,7 +445,7 @@ public interface LoraRepository extends CrudRepository&lt;Lora, Integer&gt; {
 			
     Page&lt;Picture&gt; findByShareTrueAndImageIsNotNullAndStoryIsNotNullAndAudioIsNotNull(Pageable pageable);
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="find.GreaterThan"></a>10.6.10. 比较数值大小</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1027"></a>10.6.10.1. 大于</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="find.GreaterThan"></a>10.6.10. 比较数值大小</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1026"></a>10.6.10.1. 大于</h4></div></div></div><pre class="programlisting">
 				
 boolean existsByDeviceAndGiftGreaterThan(String device, int i);				
 				
@@ -597,7 +637,7 @@ curl -X 'GET' \
   'http://localhost:8080/picture/test/page?page=0&amp;size=1&amp;sort=id' \
   -H 'accept: */*'
 				
-			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1028"></a>10.6.17.1. PageRequest.of</h4></div></div></div><pre class="programlisting">
+			</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1027"></a>10.6.17.1. PageRequest.of</h4></div></div></div><pre class="programlisting">
 				
 package cn.netkiller.api.repository;
 
@@ -630,7 +670,7 @@ public interface RecentReadRepostitory extends CrudRepository&lt;RecentRead, Lon
 				
 List&lt;Fcoin&gt; fcoins = fcoinRepository.findByAirdrop(false, PageRequest.of(0, size));
 				
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@DynamicInsert"></a>10.6.18. @DynamicInsert 与 @DynamicUpdate</h3></div></div></div><p>@DynamicUpdate 只更新修改的字段</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1029"></a>10.6.19. 继承已存在的 Repository</h3></div></div></div><pre class="programlisting">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="@DynamicInsert"></a>10.6.18. @DynamicInsert 与 @DynamicUpdate</h3></div></div></div><p>@DynamicUpdate 只更新修改的字段</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1028"></a>10.6.19. 继承已存在的 Repository</h3></div></div></div><pre class="programlisting">
 			
 public interface MemberRepository extends JpaRepository&lt;User, Integer&gt;, UserRepository {
     ...

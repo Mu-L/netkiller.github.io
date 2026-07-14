@@ -31,7 +31,7 @@ logging.file=target/spring.log
 logging.path=/tmp
 logging.config=classpath:logback.xml
 		
-			</pre></td></tr></table></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1421"></a>日志输出级别</h2></div></div></div><pre class="screen">
+			</pre></td></tr></table></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1422"></a>日志输出级别</h2></div></div></div><pre class="screen">
 		
 几种常见的日志级别由低到高分为：TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL
 		
@@ -60,11 +60,11 @@ logging:
     cn.netkiller.test: debug
     cn.netkiller.sharding.MonthShardingAlgorithm: DEBUG
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1422"></a>Spring boot 2.1 以后的版本不打印 Mapped 日志问题</h2></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1423"></a>Spring boot 2.1 以后的版本不打印 Mapped 日志问题</h2></div></div></div><pre class="screen">
 		
 logging.level.org.springframework.web=trace		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1423"></a>禁止控制台输出日志</h2></div></div></div><p>禁止控制台日志输出，同时将日志写入日志文件.</p><p>src/main/resources/application.properties</p><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1424"></a>禁止控制台输出日志</h2></div></div></div><p>禁止控制台日志输出，同时将日志写入日志文件.</p><p>src/main/resources/application.properties</p><pre class="screen">
 			
 logging.file.path=/tmp
 logging.file.name=/tmp/spring.log
@@ -85,7 +85,7 @@ $ cat src/main/resources/logback.xml
   &lt;/root&gt;
 &lt;/configuration&gt;
 			
-			</pre><p>使用 java -jar project-version-xxx.jar 启动后控制不会再输出日志</p></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1424"></a>定制日志格式</h2></div></div></div><div class="itemizedlist"><p class="title"><strong>定制日志格式有两个配置</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">logging.pattern.console：控制台的输出格式	</li><li class="listitem">logging.pattern.file：日志文件的输出格式</li></ul></div><p>分别是控制台的输出格式和文件中的日志输出格式</p><p>举例</p><pre class="screen">
+			</pre><p>使用 java -jar project-version-xxx.jar 启动后控制不会再输出日志</p></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1425"></a>定制日志格式</h2></div></div></div><div class="itemizedlist"><p class="title"><strong>定制日志格式有两个配置</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">logging.pattern.console：控制台的输出格式	</li><li class="listitem">logging.pattern.file：日志文件的输出格式</li></ul></div><p>分别是控制台的输出格式和文件中的日志输出格式</p><p>举例</p><pre class="screen">
 			
 logging.pattern.console=%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n
 logging.pattern.file=%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n			
@@ -99,7 +99,7 @@ logging.pattern.file=%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n
 %msg		日志消息
 %n			平台的换行符
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1425"></a>彩色输出</h2></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1426"></a>彩色输出</h2></div></div></div><pre class="programlisting">
 			
 spring.main.banner-mode=off 
 spring.output.ansi.enabled=ALWAYS
@@ -163,7 +163,7 @@ public class TestController {
 	}
 }
 			
-		</pre><p>然后通过application.properties配置那些需要显示，那些不需要，以及显示的级别是什么。 </p><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1426"></a>lombok</h2></div></div></div><pre class="screen">
+		</pre><p>然后通过application.properties配置那些需要显示，那些不需要，以及显示的级别是什么。 </p><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1427"></a>lombok</h2></div></div></div><pre class="screen">
 			
 		&lt;dependency&gt;
             &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
@@ -198,7 +198,7 @@ logging.config=classpath:logback.xml
     &lt;/root&gt;
 &lt;/configuration&gt;		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1427"></a>禁止 logback 日志输出</h2></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1428"></a>禁止 logback 日志输出</h2></div></div></div><pre class="screen">
 			
 	&lt;statusListener class="ch.qos.logback.core.status.NopStatusListener" /&gt;			
 			
@@ -245,7 +245,7 @@ debug:当此属性设置为true时，将打印出logback内部日志信息，实
 &lt;maxHistory&gt;30&lt;/maxHistory&gt;表示只保留最近30天的日志，以防止日志填满整个磁盘空间。
 &lt;totalSizeCap&gt;1GB&lt;/totalSizeCap&gt;用来指定日志文件的上限大小，例如设置为1GB的话，那么到了这个值，就会删除旧的日志。	
 			
-			</pre><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1428"></a>按日期分割日志</h5></div></div></div><pre class="screen">
+			</pre><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1429"></a>按日期分割日志</h5></div></div></div><pre class="screen">
 			
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration  scan="true" scanPeriod="60 seconds" debug="false"&gt;
@@ -274,7 +274,7 @@ debug:当此属性设置为true时，将打印出logback内部日志信息，实
     &lt;/root&gt;
 &lt;/configuration&gt;
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1429"></a>按照文件尺寸分割日志</h5></div></div></div><p>按日期分割文件</p><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1430"></a>按照文件尺寸分割日志</h5></div></div></div><p>按日期分割文件</p><pre class="screen">
 			
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration&gt;
@@ -394,7 +394,7 @@ debug:当此属性设置为true时，将打印出logback内部日志信息，实
 
 &lt;/configuration&gt;			
 			
-				</pre></div></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1430"></a>日志过滤</h2></div></div></div><p>将特定日志输出保存到指定位置</p><pre class="programlisting">
+				</pre></div></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1431"></a>日志过滤</h2></div></div></div><p>将特定日志输出保存到指定位置</p><pre class="programlisting">
 			
 package cn.netkiller;
 
@@ -454,7 +454,7 @@ public class Application {
 	&lt;/root&gt;
 &lt;/configuration&gt;
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1431"></a>MDC</h2></div></div></div><p>每个 userId 生成一个日志文件</p><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1432"></a>MDC</h2></div></div></div><p>每个 userId 生成一个日志文件</p><pre class="programlisting">
 			
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration&gt;
@@ -520,7 +520,7 @@ public class LogTest {
 			
 
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="logback.logstash"></a>2. 日志发送给 logstash</h4></div></div></div><p>https://github.com/logfellow/logstash-logback-encoder/</p><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1432"></a>logstash 配置</h5></div></div></div><p>配置 logstash 增加 tcp 接收输入端。</p><pre class="screen">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="logback.logstash"></a>2. 日志发送给 logstash</h4></div></div></div><p>https://github.com/logfellow/logstash-logback-encoder/</p><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1433"></a>logstash 配置</h5></div></div></div><p>配置 logstash 增加 tcp 接收输入端。</p><pre class="screen">
 				
 input {
     tcp {
@@ -531,7 +531,7 @@ input {
 	}
 }				
 				
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1433"></a>Java 项目</h5></div></div></div><p>Maven 配置文件 pom.xml 中添加</p><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1434"></a>Java 项目</h5></div></div></div><p>Maven 配置文件 pom.xml 中添加</p><pre class="screen">
 				
 &lt;dependency&gt;
     &lt;groupId&gt;net.logstash.logback&lt;/groupId&gt;
@@ -565,7 +565,7 @@ input {
 	&lt;/root&gt;
 &lt;/configuration&gt;				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1434"></a>通过 tags 区分日志文件</h5></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h6 class="title"><a id="id1435"></a>logstash pipeline 配置</h6></div></div></div><p></p><pre class="screen">
+				</pre></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1435"></a>通过 tags 区分日志文件</h5></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h6 class="title"><a id="id1436"></a>logstash pipeline 配置</h6></div></div></div><p></p><pre class="screen">
 				
 [root@netkiller ~]# cat /etc/logstash/conf.d/file.conf 
 input {
@@ -600,7 +600,7 @@ output {
 	}
 }				
 				
-					</pre></div><div class="simplesect"><div class="titlepage"><div><div><h6 class="title"><a id="id1436"></a>logback-spring.xml 配置</h6></div></div></div><pre class="screen">
+					</pre></div><div class="simplesect"><div class="titlepage"><div><div><h6 class="title"><a id="id1437"></a>logback-spring.xml 配置</h6></div></div></div><pre class="screen">
 				
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration scan="false" scanPeriod="60 seconds" debug="false"&gt;
@@ -682,7 +682,7 @@ output {
 	&lt;/root&gt;
 &lt;/configuration&gt;
 				
-					</pre></div><div class="simplesect"><div class="titlepage"><div><div><h6 class="title"><a id="id1437"></a>打印日志</h6></div></div></div><pre class="programlisting">
+					</pre></div><div class="simplesect"><div class="titlepage"><div><div><h6 class="title"><a id="id1438"></a>打印日志</h6></div></div></div><pre class="programlisting">
 				
 package cn.netkiller.controller;
 
@@ -736,7 +736,7 @@ public class HomeController {
 }
 				
 				
-					</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="springboot.fluentd"></a>3. fluentd</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1438"></a>Maven 依赖</h5></div></div></div><pre class="screen">
+					</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="springboot.fluentd"></a>3. fluentd</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1439"></a>Maven 依赖</h5></div></div></div><pre class="screen">
 			
 		&lt;dependency&gt;
 			&lt;groupId&gt;org.fluentd&lt;/groupId&gt;
@@ -749,7 +749,7 @@ public class HomeController {
 			&lt;version&gt;1.8.7&lt;/version&gt;
 		&lt;/dependency&gt;			
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1439"></a>安装 fluent-bit</h5></div></div></div><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1440"></a>安装 fluent-bit</h5></div></div></div><pre class="screen">
 			
 dnf install -y fluent-bit			
 			
@@ -768,7 +768,7 @@ Fluent Bit v1.9.7
 [2022/09/24 23:25:25] [ info] [sp] stream processor started
 [2022/09/24 23:25:25] [ info] [output:stdout:stdout.0] worker #0 started
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1440"></a>配置 logback-spring.xml</h5></div></div></div><pre class="programlisting">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1441"></a>配置 logback-spring.xml</h5></div></div></div><pre class="programlisting">
 		
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration debug="true"&gt;
@@ -797,7 +797,7 @@ Fluent Bit v1.9.7
 
 &lt;/configuration&gt;
 		
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1441"></a>查看 fluent 输出</h5></div></div></div><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1442"></a>查看 fluent 输出</h5></div></div></div><pre class="screen">
 			
 [0] development.normal: [1664033186.000000000, {"level"=&gt;"INFO", "logger"=&gt;"cn.netkiller.Application", "thread"=&gt;"main", "message"=&gt;"Starting Application using Java 18 on MacBook-Pro-Neo.local with PID 85696 (/Users/neo/workspace/bottleneck/target/classes started by neo in /Users/neo/workspace/bottleneck)"}]
 [1] development.normal: [1664033186.000000000, {"level"=&gt;"INFO", "logger"=&gt;"cn.netkiller.Application", "thread"=&gt;"main", "message"=&gt;"The following 1 profile is active: "prod""}]
@@ -813,7 +813,7 @@ Fluent Bit v1.9.7
 [0] development.normal: [1664033189.000000000, {"level"=&gt;"INFO", "logger"=&gt;"org.springframework.boot.web.embedded.tomcat.TomcatWebServer", "thread"=&gt;"main", "message"=&gt;"Tomcat started on port(s): 8080 (http) with context path ''"}]
 [1] development.normal: [1664033189.000000000, {"level"=&gt;"INFO", "logger"=&gt;"cn.netkiller.Application", "thread"=&gt;"main", "message"=&gt;"Started Application in 4.224 seconds (JVM running for 4.918)"}]			
 			
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="Loki4j"></a>4. Loki4j Logback</h4></div></div></div><p>https://loki4j.github.io/loki-logback-appender/</p><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1442"></a>Maven</h5></div></div></div><pre class="screen">
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="Loki4j"></a>4. Loki4j Logback</h4></div></div></div><p>https://loki4j.github.io/loki-logback-appender/</p><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1443"></a>Maven</h5></div></div></div><pre class="screen">
 			
 &lt;dependency&gt;
     &lt;groupId&gt;com.github.loki4j&lt;/groupId&gt;
@@ -821,7 +821,7 @@ Fluent Bit v1.9.7
     &lt;version&gt;1.3.2&lt;/version&gt;
 &lt;/dependency&gt;			
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1443"></a>logback.xml</h5></div></div></div><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1444"></a>logback.xml</h5></div></div></div><pre class="screen">
 			
 &lt;appender name="LOKI" class="com.github.loki4j.logback.Loki4jAppender"&gt;
     &lt;http&gt;
@@ -842,7 +842,7 @@ Fluent Bit v1.9.7
     &lt;appender-ref ref="LOKI" /&gt;
 &lt;/root&gt;
 			
-				</pre></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="log4j2-gelf-logstash"></a>Log4j2 + Gelf + Logstash</h3></div></div></div><p>https://logging.paluch.biz/examples/log4j-2.x.html</p><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1444"></a>Maven 配置</h2></div></div></div><pre class="screen">
+				</pre></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="log4j2-gelf-logstash"></a>Log4j2 + Gelf + Logstash</h3></div></div></div><p>https://logging.paluch.biz/examples/log4j-2.x.html</p><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1445"></a>Maven 配置</h2></div></div></div><pre class="screen">
 			
 		&lt;dependency&gt;
 			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
@@ -871,7 +871,7 @@ Fluent Bit v1.9.7
 			&lt;version&gt;1.15.0&lt;/version&gt;
 		&lt;/dependency&gt;		
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1445"></a>log4j2.xml 配置</h2></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1446"></a>log4j2.xml 配置</h2></div></div></div><pre class="screen">
 			
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;Configuration&gt;
@@ -944,7 +944,7 @@ Fluent Bit v1.9.7
 	&lt;/Loggers&gt;
 &lt;/Configuration&gt;			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1446"></a>Java 测试代码</h2></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1447"></a>Java 测试代码</h2></div></div></div><pre class="screen">
 			
 	@GetMapping("/log")
 	public String log() {
@@ -966,7 +966,7 @@ Fluent Bit v1.9.7
 		return msg;
 	}			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1447"></a>Logstash 配置</h2></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1448"></a>Logstash 配置</h2></div></div></div><pre class="screen">
 			
 [root@netkiller log]# cat /etc/logstash/conf.d/file.conf 
 input {
@@ -1002,7 +1002,7 @@ output {
 
 }			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1448"></a>测试结果</h2></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1449"></a>测试结果</h2></div></div></div><pre class="screen">
 			
 [root@netkiller log]# ls
 finance.2022-11-16.log  market.2022-11-16.log  origin.2022-11-16.log.gz
@@ -1071,7 +1071,7 @@ finance.2022-11-16.log  market.2022-11-16.log  origin.2022-11-16.log.gz
 }
 			
 			
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1449"></a>1. Log4j2 更多技巧</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1450"></a>多环境配置</h5></div></div></div><p>方案一</p><pre class="screen">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id1450"></a>1. Log4j2 更多技巧</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1451"></a>多环境配置</h5></div></div></div><p>方案一</p><pre class="screen">
 			
 logging:
   config: classpath:log4j2-${spring.profiles.active}.xml
@@ -1098,7 +1098,7 @@ public class Application implements CommandLineRunner {
     }
 }				
 				
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1451"></a>控制 class 日志输出级别</h5></div></div></div><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1452"></a>控制 class 日志输出级别</h5></div></div></div><pre class="screen">
 				
 #日志配置 无特殊需求无需更改
 logging:
@@ -1114,7 +1114,7 @@ logging:
     org.springframework: INFO
     com.chinamobile.cmss.bdpaas.resource.monitor: DEBUG				
 				
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1452"></a>日志输出级别</h5></div></div></div><pre class="programlisting">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1453"></a>日志输出级别</h5></div></div></div><pre class="programlisting">
 			
     &lt;Loggers&gt;
         &lt;Logger name="com.ensd.service.sharding.MonthShardingAlgorithm" level="ERROR" /&gt;
@@ -1125,12 +1125,12 @@ logging:
         &lt;/Root&gt;
     &lt;/Loggers&gt;			
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1453"></a>读取系统变量/环境变量</h5></div></div></div><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1454"></a>读取系统变量/环境变量</h5></div></div></div><pre class="screen">
 				
 ${sys:catalina.home}/logs
 ${env:log.home}/logs
 				
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1454"></a>读取 spring 配置</h5></div></div></div><p>引入依赖</p><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1455"></a>读取 spring 配置</h5></div></div></div><p>引入依赖</p><pre class="screen">
 				
 		&lt;dependency&gt;
 			&lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
@@ -1209,12 +1209,12 @@ ${env:log.home}/logs
 &lt;property name="service"&gt;${sys:spring.application.name}&lt;/property&gt;
 &lt;property name="environment"&gt;${sys:spring.profiles.active}&lt;/property&gt;				
 				
-				</pre></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1455"></a>变量默认值</h5></div></div></div><p>格式是 ${变量名:-默认值}</p><div class="simplesect"><div class="titlepage"></div>
+				</pre></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id1456"></a>变量默认值</h5></div></div></div><p>格式是 ${变量名:-默认值}</p><div class="simplesect"><div class="titlepage"></div>
 				
 &lt;property name="service"&gt;${sys:spring.application.name:-dev}&lt;/property&gt;
 &lt;property name="environment"&gt;${sys:spring.profiles.active:-dev}&lt;/property&gt;						
 				
-				</div></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="logging.dingtalk"></a>日志报警</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1456"></a>Logstash 配置</h2></div></div></div><p>将 ERROR 和 WARN 级别的日志发送到钉钉群</p><pre class="screen">
+				</div></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="logging.dingtalk"></a>日志报警</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1457"></a>Logstash 配置</h2></div></div></div><p>将 ERROR 和 WARN 级别的日志发送到钉钉群</p><pre class="screen">
 			 
 [root@netkiller ~]# cat /etc/logstash/conf.d/file.conf 
 input {
@@ -1258,7 +1258,7 @@ output {
 	}
 }			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1457"></a>监控 SpringBootApplication 的启动和退出</h2></div></div></div><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1458"></a>监控 SpringBootApplication 的启动和退出</h2></div></div></div><pre class="screen">
 			 
 neo@MacBook-Pro-M2 ~ % cat workspace/bottleneck/src/main/java/cn/netkiller/Application.java 
 package cn.netkiller;
@@ -1309,7 +1309,7 @@ public class Application {
 					elasticsearch
 				</p>
 				Kafka 方法适合大数据的情况。
-			</li></ol></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1458"></a>TCP 方案</h2></div></div></div><p>logstash 配置</p><pre class="programlisting">
+			</li></ol></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1459"></a>TCP 方案</h2></div></div></div><p>logstash 配置</p><pre class="programlisting">
 			
 input {
   tcp {
@@ -1357,7 +1357,7 @@ output {
     &lt;/root&gt;
 &lt;/configuration&gt;			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1459"></a>Redis 方案</h2></div></div></div><p>https://github.com/kmtong/logback-redis-appender</p><p>Maven pom.xml 增加 Logback Redis 依赖</p><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1460"></a>Redis 方案</h2></div></div></div><p>https://github.com/kmtong/logback-redis-appender</p><p>Maven pom.xml 增加 Logback Redis 依赖</p><pre class="programlisting">
 			
 &lt;!-- https://mvnrepository.com/artifact/com.cwbase/logback-redis-appender --&gt;
 &lt;dependency&gt;
@@ -1417,9 +1417,9 @@ output {
     }
 }
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1460"></a>Kafka 方案</h2></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1461"></a>Kafka 方案</h2></div></div></div><pre class="programlisting">
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1461"></a>Other</h2></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1462"></a>Other</h2></div></div></div><pre class="programlisting">
 			
 			</pre></div></div></div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
 (function(){

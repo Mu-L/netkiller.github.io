@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>1.21. Spring boot with Swagger</title><link rel="stylesheet" type="text/css" href="../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../index.html" title="Netkiller Spring 手札" /><link rel="up" href="index.html" title="第 1 章 Spring Boot" /><link rel="prev" href="springboot.scheduling.html" title="1.20. Spring boot with Scheduling" /><link rel="next" href="springboot.lombok.html" title="1.22. Spring boot with lombok" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.21. Spring boot with Swagger</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="springboot.scheduling.html">上一页</a> </td><th width="60%" align="center">第 1 章 Spring Boot</th><td width="20%" align="right"> <a accesskey="n" href="springboot.lombok.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="springboot.swagger"></a>1.21. Spring boot with Swagger</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springdoc"></a>1.21.1. Spring boot with Springdoc</h3></div></div></div><a class="ulink" href="https://springdoc.org" target="_top">https://springdoc.org</a><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1537"></a>WebMvc</h4></div></div></div><p>Ui</p><pre class="programlisting">
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.21. Spring boot with Swagger</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="springboot.scheduling.html">上一页</a> </td><th width="60%" align="center">第 1 章 Spring Boot</th><td width="20%" align="right"> <a accesskey="n" href="springboot.lombok.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="springboot.swagger"></a>1.21. Spring boot with Swagger</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springdoc"></a>1.21.1. Spring boot with Springdoc</h3></div></div></div><a class="ulink" href="https://springdoc.org" target="_top">https://springdoc.org</a><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1538"></a>WebMvc</h4></div></div></div><p>Ui</p><pre class="programlisting">
 			
     &lt;dependencies&gt;
         &lt;dependency&gt;
@@ -22,7 +22,7 @@
       &lt;version&gt;2.3.0&lt;/version&gt;
    &lt;/dependency&gt;			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1538"></a>Webflux</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1539"></a>Webflux</h4></div></div></div><pre class="programlisting">
 			
    &lt;dependency&gt;
       &lt;groupId&gt;org.springdoc&lt;/groupId&gt;
@@ -30,7 +30,7 @@
       &lt;version&gt;2.3.0&lt;/version&gt;
    &lt;/dependency&gt;			
 			
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1539"></a>Swagger UI</h4></div></div></div><a class="ulink" href="http://localhost:8080/swagger-ui.html" target="_top">http://localhost:8080/swagger-ui.html</a></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1540"></a>从 SpringFox 迁移到 Swagger3 注解变化</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1540"></a>Swagger UI</h4></div></div></div><a class="ulink" href="http://localhost:8080/swagger-ui.html" target="_top">http://localhost:8080/swagger-ui.html</a></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1541"></a>从 SpringFox 迁移到 Swagger3 注解变化</h4></div></div></div><pre class="programlisting">
 			
 @Api → @Tag
 @ApiIgnore → @Parameter(hidden = true) or @Operation(hidden = true) or @Hidden
@@ -43,7 +43,7 @@
 @ApiParam → @Parameter
 @ApiResponse(code = 404, message = "foo") → @ApiResponse(responseCode = "404", description = "foo")			
 			
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springboot.knife4j"></a>1.21.2. Spring boot with knife4j</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1541"></a>maven</h4></div></div></div><pre class="programlisting">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springboot.knife4j"></a>1.21.2. Spring boot with knife4j</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1542"></a>maven</h4></div></div></div><pre class="programlisting">
 		
         &lt;dependency&gt;
             &lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;
@@ -51,7 +51,7 @@
             &lt;version&gt;4.4.0&lt;/version&gt;
         &lt;/dependency&gt;		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1542"></a>Knife4jConfiguration</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1543"></a>Knife4jConfiguration</h4></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.config;
 
@@ -91,7 +91,7 @@ public class Knife4jConfiguration {
 
 }		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1543"></a>application.properties</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1544"></a>application.properties</h4></div></div></div><pre class="programlisting">
 		
 # springdoc-openapi项目配置
 springdoc.swagger-ui.path=/swagger-ui.html
@@ -102,7 +102,7 @@ springdoc.api-docs.path=/v3/api-docs
 knife4j.enable=true
 knife4j.setting.language=zh_cn		
 		
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springfox"></a>1.21.3. springfox</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1544"></a>Swagger3</h4></div></div></div><pre class="screen">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springfox"></a>1.21.3. springfox</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1545"></a>Swagger3</h4></div></div></div><pre class="screen">
 		
 &lt;dependency&gt;
     &lt;groupId&gt;io.springfox&lt;/groupId&gt;
@@ -110,7 +110,7 @@ knife4j.setting.language=zh_cn
     &lt;version&gt;3.0.0&lt;/version&gt;
 &lt;/dependency&gt;
 		
-			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id772"></a>1.21.3.1. Swagger2</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1545"></a>Maven 文件</h5></div></div></div><pre class="screen">
+			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id772"></a>1.21.3.1. Swagger2</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1546"></a>Maven 文件</h5></div></div></div><pre class="screen">
 		
 &lt;?xml version="1.0"?&gt;
 &lt;project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
@@ -154,7 +154,7 @@ knife4j.setting.language=zh_cn
 &lt;/project&gt;
 
 		
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1546"></a>SpringApplication</h5></div></div></div><pre class="programlisting">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1547"></a>SpringApplication</h5></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.swagger2;
 
@@ -171,7 +171,7 @@ public class Application {
 }
 
 		
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1547"></a>EnableSwagger2</h5></div></div></div><pre class="programlisting">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1548"></a>EnableSwagger2</h5></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.swagger2;
 
@@ -208,7 +208,7 @@ public class Swagger2Configuration {
 }
 
 		
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1548"></a>RestController</h5></div></div></div><pre class="programlisting">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1549"></a>RestController</h5></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.swagger2;
 
@@ -225,7 +225,7 @@ public class HelloController {
 	}
 }
 		
-				</pre></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="swagger.@Api"></a>1.21.3.2. @Api() 资源定义</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1549"></a>标签分类</h5></div></div></div><p>用于类；表示标识这个类是swagger的资源tags,value 是说明，可以使用tags替代,
+				</pre></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="swagger.@Api"></a>1.21.3.2. @Api() 资源定义</h4></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id1550"></a>标签分类</h5></div></div></div><p>用于类；表示标识这个类是swagger的资源tags,value 是说明，可以使用tags替代,
 				tags如果有多个值，生成多个list
 			</p><pre class="programlisting">
 		
@@ -239,7 +239,7 @@ public class UserController {
 		
 		
 		
-		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1550"></a>@ApiOperation()</h4></div></div></div><p>用于方法；表示一个http请求的操作，value用于方法描述，notes用于提示内容，tags可以重新分组</p><pre class="screen">
+		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1551"></a>@ApiOperation()</h4></div></div></div><p>用于方法；表示一个http请求的操作，value用于方法描述，notes用于提示内容，tags可以重新分组</p><pre class="screen">
 		
 @ApiImplicitParams() 请求参数，包含多个 @ApiImplicitParam 
 @ApiImplicitParam()  
@@ -284,7 +284,7 @@ public class TestController {
 
 }
 		
-		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1551"></a>@ApiResponses</h4></div></div></div><pre class="programlisting">
+		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1552"></a>@ApiResponses</h4></div></div></div><pre class="programlisting">
 		
 	@ApiOperation(value = "getGreeting", nickname = "getGreeting")
 	@ApiResponses(value = {
@@ -299,7 +299,7 @@ public class TestController {
 		return arrayList;
 	}
 		
-		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1552"></a>@ApiModel 实体类</h4></div></div></div><pre class="screen">
+		</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id1553"></a>@ApiModel 实体类</h4></div></div></div><pre class="screen">
 		
 @ApiModel()用于类 ；表示对类进行说明，用于参数用实体类接收 
 value–表示对象名,description–描述,都可省略 

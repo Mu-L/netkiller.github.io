@@ -59,7 +59,7 @@ server {
     }
 }		
 		
-		</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springboot.grafana"></a>1.29.2. Spring boot with Grafana</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3621"></a>Springboot 集成 InfluxDB</h4></div></div></div><p>Springboot 集成 InfluxDB 非常简单，先引入依赖即可，记得需要同时引入 actuator</p><pre class="screen">
+		</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springboot.grafana"></a>1.29.2. Spring boot with Grafana</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3622"></a>Springboot 集成 InfluxDB</h4></div></div></div><p>Springboot 集成 InfluxDB 非常简单，先引入依赖即可，记得需要同时引入 actuator</p><pre class="screen">
 		
 &lt;dependency&gt;
   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
@@ -96,7 +96,7 @@ management:
         compressed: true
         batch-size: 1000		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3627"></a>InfluxDB</h4></div></div></div><p>配置好 Springboot 后，启动应用，稍后Springboot 就会将数据源源不断地写入到 InfluxDB 中。</p><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3628"></a>InfluxDB</h4></div></div></div><p>配置好 Springboot 后，启动应用，稍后Springboot 就会将数据源源不断地写入到 InfluxDB 中。</p><pre class="screen">
 		
 &gt; show measurements
 name: measurements
@@ -140,7 +140,7 @@ visits
 		
 select * from process_cpu_usage
 		
-			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springboot.prometheus"></a>1.29.3. Spring Boot with Prometheus</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3635"></a>Maven 依赖</h4></div></div></div><pre class="screen">
+			</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="springboot.prometheus"></a>1.29.3. Spring Boot with Prometheus</h3></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3636"></a>Maven 依赖</h4></div></div></div><pre class="screen">
 		
 	&lt;dependencies&gt;
 		&lt;dependency&gt;
@@ -153,14 +153,14 @@ select * from process_cpu_usage
 		&lt;/dependency&gt;
 	&lt;/dependencies&gt;		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3638"></a>application.properties 配置文件</h4></div></div></div><p>开启 metrics</p><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3639"></a>application.properties 配置文件</h4></div></div></div><p>开启 metrics</p><pre class="screen">
 		
 spring.application.name=springboot-with-prometheus
 #management.endpoints.web.exposure.include=*
 management.endpoints.web.exposure.include=prometheus
 management.metrics.tags.application=${spring.application.name}
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3642"></a>启动类</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3643"></a>启动类</h4></div></div></div><pre class="programlisting">
 		
 package cn.netkiller.welcome;
 
@@ -208,7 +208,7 @@ public class Application {
 	}
 }		
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3645"></a>测试</h4></div></div></div><p>启动 Springboot</p><pre class="screen">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3646"></a>测试</h4></div></div></div><p>启动 Springboot</p><pre class="screen">
 		
 Welcome!
 
@@ -348,7 +348,7 @@ jvm_memory_max_bytes{application="springboot-with-prometheus",area="nonheap",id=
 # TYPE system_cpu_count gauge
 system_cpu_count{application="springboot-with-prometheus",} 8.0
 		
-			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3651"></a>控制器监控</h4></div></div></div><pre class="programlisting">
+			</pre></div><div class="simplesect"><div class="titlepage"><div><div><h4 class="title"><a id="id3652"></a>控制器监控</h4></div></div></div><pre class="programlisting">
 		
 @RestController
 @RequestMapping("/app")
@@ -369,7 +369,7 @@ public class AppController {
 			</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id780"></a>1.29.3.1. 自定义埋点监控</h4></div></div></div><p></p><div class="itemizedlist"><p class="title"><strong>prometheus 监控指标有如下几种类型</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">Counter 类型代表数据递增的指标，即只增不减，除非监控系统重置</li><li class="listitem">Guage 类型代表数据可以任意变化的指标，即可增可减</li><li class="listitem">Histogram 由bucket{le=""}，bucket{le="+Inf"},sum，count 组成，用于一段时间范围内对数据进行采样，并能够对其指定区间以及总数进行统计，通常它采集的数据展示为直方图。</li><li class="listitem">Summary
 					由{quantile="&lt;φ&gt;"}，sum，count
 					组成，用于一段时间内数据采样结果（通常是请求持续时间或响应大小），它直接存储了 quantile 数据，而不是根据统计区间计算出来的。
-				</li></ul></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3662"></a>拦截器</h5></div></div></div><pre class="programlisting">
+				</li></ul></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3663"></a>拦截器</h5></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.welcome.config;
 
@@ -398,7 +398,7 @@ public class PrometheusInterceptor implements HandlerInterceptor {
 
 }			
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3665"></a>计数器元件</h5></div></div></div><pre class="programlisting">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3666"></a>计数器元件</h5></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.welcome.component;
 
@@ -421,7 +421,7 @@ public class RestfulApiCounter {
 }
 			
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3668"></a>配置类</h5></div></div></div><pre class="programlisting">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3669"></a>配置类</h5></div></div></div><pre class="programlisting">
 			
 package cn.netkiller.welcome.config;
 
@@ -447,7 +447,7 @@ public class IntercepterConfiguration implements WebMvcConfigurer {
 }
 			
 			
-				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3671"></a>测试埋点效果</h5></div></div></div><pre class="screen">
+				</pre></div><div class="simplesect"><div class="titlepage"><div><div><h5 class="title"><a id="id3672"></a>测试埋点效果</h5></div></div></div><pre class="screen">
 			
 neo@MacBook-Pro-Neo ~ % curl -s http://localhost:8080/actuator/prometheus | grep restful
 # HELP restful_api_requests_total  
