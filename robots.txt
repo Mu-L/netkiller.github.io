@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /management/
 Sitemap: https://www.netkiller.cn/sitemap.xml
