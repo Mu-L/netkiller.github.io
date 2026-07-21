@@ -23,7 +23,6 @@ EXCLUDED_PREFIXES = (
 )
 PUBLIC_EXTRA_FILES = (
     "llms.txt",
-    "llms-full.txt",
 )
 
 
@@ -118,6 +117,30 @@ def git_lastmod_lookup(pages: Iterable[Path]) -> dict[str, str]:
     return lastmod
 
 
+def worktree_changed_paths() -> set[str]:
+    commands = (
+        ["git", "diff", "--name-only", "-z", "HEAD", "--", "."],
+        ["git", "ls-files", "--others", "--exclude-standard", "-z"],
+    )
+    changed: set[str] = set()
+    try:
+        for command in commands:
+            result = subprocess.run(
+                command,
+                cwd=REPO_ROOT,
+                check=True,
+                capture_output=True,
+            )
+            changed.update(
+                path.decode("utf-8", errors="surrogateescape")
+                for path in result.stdout.split(b"\0")
+                if path
+            )
+    except (OSError, subprocess.CalledProcessError):
+        return set()
+    return changed
+
+
 def fallback_lastmod(path: Path) -> str:
     modified = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
     return modified.date().isoformat()
@@ -169,44 +192,6 @@ def directory_link(base_url: str, directory: Path, index_page: Path | None) -> s
 
 
 def build_llms_txt(base_url: str, pages: list[Path]) -> str:
-    index_pages = [path for path in pages if path.name == "index.html" and path.parent != REPO_ROOT]
-    top_level_sections = [path for path in index_pages if len(path.relative_to(REPO_ROOT).parts) == 2]
-    lines = [
-        "# Netkiller Series Free Ebooks",
-        "",
-        "> Netkiller is a long-running collection of free technical ebooks and notes maintained by Neo Chan.",
-        "",
-        f"The canonical site is {base_url}/.",
-        "",
-        "## Site Maps",
-        "",
-        f"- [XML sitemap]({base_url}/sitemap.xml): Full machine-readable sitemap.",
-        f"- [Text sitemap]({base_url}/sitemap.txt): Plain URL list for crawlers and language models.",
-        f"- [Full LLM guide]({base_url}/llms-full.txt): Expanded directory and chapter index.",
-        "",
-        "## Top-Level Sections",
-        "",
-    ]
-    for page in top_level_sections:
-        lines.append(f"- {page_link(base_url, page)}")
-
-    lines.extend(
-        [
-            "",
-            "## Usage Guidance For LLMs",
-            "",
-            f"- Prefer canonical URLs under `{base_url}/`.",
-            "- Use the sitemap files for exhaustive URL discovery.",
-            "- Use llms-full.txt for a directory-by-directory chapter index.",
-            "- Cite the specific page URL when summarizing or answering from this site.",
-            "- Preserve command examples, configuration names, paths, and code identifiers exactly when quoting short snippets.",
-            "",
-        ]
-    )
-    return "\n".join(lines)
-
-
-def build_llms_full(base_url: str, pages: list[Path]) -> str:
     html_pages = [path for path in pages if is_public_html(path)]
     directories = sorted(
         {path.parent for path in html_pages},
@@ -227,8 +212,7 @@ def build_llms_full(base_url: str, pages: list[Path]) -> str:
         "",
         "## Recommended Discovery Files",
         "",
-        f"- [llms.txt]({base_url}/llms.txt): Concise LLM entry file.",
-        f"- [llms-full.txt]({base_url}/llms-full.txt): Expanded directory and chapter index.",
+        f"- [llms.txt]({base_url}/llms.txt): Complete directory and chapter index for language models.",
         f"- [sitemap.xml]({base_url}/sitemap.xml): Complete XML sitemap.",
         f"- [sitemap.txt]({base_url}/sitemap.txt): Complete plain-text URL inventory.",
         f"- [robots.txt]({base_url}/robots.txt): Crawler policy and sitemap declaration.",
@@ -298,15 +282,19 @@ def main() -> None:
     html_pages = collect_pages(include_extra_files=False)
 
     (REPO_ROOT / "llms.txt").write_text(build_llms_txt(base_url, html_pages), encoding="utf-8")
-    (REPO_ROOT / "llms-full.txt").write_text(build_llms_full(base_url, html_pages), encoding="utf-8")
 
     pages = collect_pages()
     git_lastmod = git_lastmod_lookup(pages)
+    changed_paths = worktree_changed_paths()
 
     urls: list[tuple[str, str]] = []
     for page in pages:
         rel = page.relative_to(REPO_ROOT).as_posix()
-        lastmod = git_lastmod.get(rel, fallback_lastmod(page))
+        lastmod = (
+            fallback_lastmod(page)
+            if rel in changed_paths
+            else git_lastmod.get(rel, fallback_lastmod(page))
+        )
         urls.append((encode_url(base_url, page), lastmod))
 
     sitemap_xml = build_xml(urls)

@@ -9,8 +9,8 @@ from pathlib import Path
 import generate_sitemap
 
 
-class LlmsFullGenerationTest(unittest.TestCase):
-    def test_llms_full_includes_nested_directories_and_chapter_pages(self) -> None:
+class LlmsGenerationTest(unittest.TestCase):
+    def test_llms_txt_includes_nested_directories_and_chapter_pages(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             (root / "CNAME").write_text("example.com\n", encoding="utf-8")
@@ -38,7 +38,7 @@ class LlmsFullGenerationTest(unittest.TestCase):
             generate_sitemap.REPO_ROOT = root
             try:
                 pages = generate_sitemap.collect_pages(include_extra_files=False)
-                content = generate_sitemap.build_llms_full("https://example.com", pages)
+                content = generate_sitemap.build_llms_txt("https://example.com", pages)
             finally:
                 generate_sitemap.REPO_ROOT = old_root
 
@@ -47,6 +47,7 @@ class LlmsFullGenerationTest(unittest.TestCase):
         self.assertIn("  - [book/chapter.html](https://example.com/book/chapter.html): Chapter One", content)
         self.assertIn("- [book/nested/](https://example.com/book/nested/index.html): Nested Index", content)
         self.assertIn("  - [book/nested/deep.html](https://example.com/book/nested/deep.html): Deep Chapter", content)
+        self.assertNotIn("llms-full.txt", content)
 
 
 if __name__ == "__main__":
