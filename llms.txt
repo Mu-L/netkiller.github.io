@@ -1769,48 +1769,85 @@ Use `sitemap.txt` or `sitemap.xml` for exhaustive URL discovery. This file lists
   - [essays/display.html](https://www.netkiller.cn/essays/display.html): 职位名称中英文对照
   - [essays/pr01s03.html](https://www.netkiller.cn/essays/pr01s03.html): 下载电子书
   - [essays/序言.html](https://www.netkiller.cn/essays/%E5%BA%8F%E8%A8%80.html): 序言
-- [essays/cognition/](https://www.netkiller.cn/essays/cognition/index.html): 第 5 章 认知
+- [essays/cognition/](https://www.netkiller.cn/essays/cognition/index.html): 第 5 章 认知与思辨
   - [essays/cognition/东西方差距是从什么时候拉开的.html](https://www.netkiller.cn/essays/cognition/%E4%B8%9C%E8%A5%BF%E6%96%B9%E5%B7%AE%E8%B7%9D%E6%98%AF%E4%BB%8E%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%8B%89%E5%BC%80%E7%9A%84.html): 东西方差距是从什么时候拉开的
+  - [essays/cognition/中国人游戏成瘾的根源在哪里.html](https://www.netkiller.cn/essays/cognition/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B8%B8%E6%88%8F%E6%88%90%E7%98%BE%E7%9A%84%E6%A0%B9%E6%BA%90%E5%9C%A8%E5%93%AA%E9%87%8C.html): 《黑悟空·神话》中国人游戏成瘾的根源在哪里？
+  - [essays/cognition/从管理者角度谈穷人思维以及对孩子的教育.html](https://www.netkiller.cn/essays/cognition/%E4%BB%8E%E7%AE%A1%E7%90%86%E8%80%85%E8%A7%92%E5%BA%A6%E8%B0%88%E7%A9%B7%E4%BA%BA%E6%80%9D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%AD%A9%E5%AD%90%E7%9A%84%E6%95%99%E8%82%B2.html): 从管理者角度谈穷人思维以及对孩子的教育
   - [essays/cognition/抛开科技领域西方最伟大的发明是什么.html](https://www.netkiller.cn/essays/cognition/%E6%8A%9B%E5%BC%80%E7%A7%91%E6%8A%80%E9%A2%86%E5%9F%9F%E8%A5%BF%E6%96%B9%E6%9C%80%E4%BC%9F%E5%A4%A7%E7%9A%84%E5%8F%91%E6%98%8E%E6%98%AF%E4%BB%80%E4%B9%88.html): 抛开科技领域西方最伟大的发明是什么?
+  - [essays/cognition/玩游戏的三个层次.html](https://www.netkiller.cn/essays/cognition/%E7%8E%A9%E6%B8%B8%E6%88%8F%E7%9A%84%E4%B8%89%E4%B8%AA%E5%B1%82%E6%AC%A1.html): 玩游戏的三个层次
   - [essays/cognition/自驱者的原动力是什么.html](https://www.netkiller.cn/essays/cognition/%E8%87%AA%E9%A9%B1%E8%80%85%E7%9A%84%E5%8E%9F%E5%8A%A8%E5%8A%9B%E6%98%AF%E4%BB%80%E4%B9%88.html): 自驱者的原动力是什么？
   - [essays/cognition/认识自己的差距.html](https://www.netkiller.cn/essays/cognition/%E8%AE%A4%E8%AF%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%AE%E8%B7%9D.html): 认识自己的差距
-- [essays/culture/](https://www.netkiller.cn/essays/culture/index.html): 第 1 章 谈文化
-- [essays/education/](https://www.netkiller.cn/essays/education/index.html): 第 2 章 谈教育
+- [essays/education/](https://www.netkiller.cn/essays/education/index.html): 第 1 章 教育与成长
+  - [essays/education/ch01s02.html](https://www.netkiller.cn/essays/education/ch01s02.html): 低学历者如何逆袭
   - [essays/education/一篇作文《没钱出去玩的暑假》引起的深度思考.html](https://www.netkiller.cn/essays/education/%E4%B8%80%E7%AF%87%E4%BD%9C%E6%96%87%E3%80%8A%E6%B2%A1%E9%92%B1%E5%87%BA%E5%8E%BB%E7%8E%A9%E7%9A%84%E6%9A%91%E5%81%87%E3%80%8B%E5%BC%95%E8%B5%B7%E7%9A%84%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83.html): 一篇作文《没钱出去玩的暑假》引起的深度思考
   - [essays/education/东西方差距是从什么时候拉开的.html](https://www.netkiller.cn/essays/education/%E4%B8%9C%E8%A5%BF%E6%96%B9%E5%B7%AE%E8%B7%9D%E6%98%AF%E4%BB%8E%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%8B%89%E5%BC%80%E7%9A%84.html): 东西方差距是从什么时候拉开的?
+  - [essays/education/东西方思维的本质差异是什么.html](https://www.netkiller.cn/essays/education/%E4%B8%9C%E8%A5%BF%E6%96%B9%E6%80%9D%E7%BB%B4%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%B7%AE%E5%BC%82%E6%98%AF%E4%BB%80%E4%B9%88.html): 东西方思维的本质差异是什么？
+  - [essays/education/中国英语教育失败的根源.html](https://www.netkiller.cn/essays/education/%E4%B8%AD%E5%9B%BD%E8%8B%B1%E8%AF%AD%E6%95%99%E8%82%B2%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%A0%B9%E6%BA%90.html): 中国英语教育·失败的根源
+  - [essays/education/为什么中国大学培养不出企业需要的人才.html](https://www.netkiller.cn/essays/education/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E5%9F%B9%E5%85%BB%E4%B8%8D%E5%87%BA%E4%BC%81%E4%B8%9A%E9%9C%80%E8%A6%81%E7%9A%84%E4%BA%BA%E6%89%8D.html): 为什么中国大学培养不出企业需要的人才
+  - [essays/education/为什么孩子小时候很聪明长大后却变得平庸.html](https://www.netkiller.cn/essays/education/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A9%E5%AD%90%E5%B0%8F%E6%97%B6%E5%80%99%E5%BE%88%E8%81%AA%E6%98%8E%E9%95%BF%E5%A4%A7%E5%90%8E%E5%8D%B4%E5%8F%98%E5%BE%97%E5%B9%B3%E5%BA%B8.html): 为什么孩子小时候很聪明，长大后却变得平庸？
+  - [essays/education/博士VS博主谁创造的价值更大.html](https://www.netkiller.cn/essays/education/%E5%8D%9A%E5%A3%ABVS%E5%8D%9A%E4%B8%BB%E8%B0%81%E5%88%9B%E9%80%A0%E7%9A%84%E4%BB%B7%E5%80%BC%E6%9B%B4%E5%A4%A7.html): 博士 VS 博主，谁创造的价值更大？
+  - [essays/education/如何引导和建立孩子正确的金钱价值观.html](https://www.netkiller.cn/essays/education/%E5%A6%82%E4%BD%95%E5%BC%95%E5%AF%BC%E5%92%8C%E5%BB%BA%E7%AB%8B%E5%AD%A9%E5%AD%90%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%87%91%E9%92%B1%E4%BB%B7%E5%80%BC%E8%A7%82.html): 如何引导和建立孩子正确的金钱价值观？
+  - [essays/education/孟母三迁的深层含义.html](https://www.netkiller.cn/essays/education/%E5%AD%9F%E6%AF%8D%E4%B8%89%E8%BF%81%E7%9A%84%E6%B7%B1%E5%B1%82%E5%90%AB%E4%B9%89.html): 《孟母三迁》的深层含义，你知道吗？
+  - [essays/education/年轻人被忽悠瘸了.html](https://www.netkiller.cn/essays/education/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E8%A2%AB%E5%BF%BD%E6%82%A0%E7%98%B8%E4%BA%86.html): 年轻人被忽悠瘸了·大学生就业难的根源是什么？
   - [essays/education/张雪峰不要总把猝死与工作联系在一起.html](https://www.netkiller.cn/essays/education/%E5%BC%A0%E9%9B%AA%E5%B3%B0%E4%B8%8D%E8%A6%81%E6%80%BB%E6%8A%8A%E7%8C%9D%E6%AD%BB%E4%B8%8E%E5%B7%A5%E4%BD%9C%E8%81%94%E7%B3%BB%E5%9C%A8%E4%B8%80%E8%B5%B7.html): 张雪峰·不要总把【猝死】与工作联系在一起
   - [essays/education/张雪峰被封的根源是什么？.html](https://www.netkiller.cn/essays/education/%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%A2%AB%E5%B0%81%E7%9A%84%E6%A0%B9%E6%BA%90%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.html): 张雪峰被封的根源是什么？
   - [essays/education/当能力已经拿到结果，学历就只是一张纸.html](https://www.netkiller.cn/essays/education/%E5%BD%93%E8%83%BD%E5%8A%9B%E5%B7%B2%E7%BB%8F%E6%8B%BF%E5%88%B0%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%AD%A6%E5%8E%86%E5%B0%B1%E5%8F%AA%E6%98%AF%E4%B8%80%E5%BC%A0%E7%BA%B8.html): 当能力已经拿到结果，学历就只是一张纸
   - [essays/education/教师的信息茧房.html](https://www.netkiller.cn/essays/education/%E6%95%99%E5%B8%88%E7%9A%84%E4%BF%A1%E6%81%AF%E8%8C%A7%E6%88%BF.html): 教师的信息茧房
+  - [essays/education/正确理解先就业再择业.html](https://www.netkiller.cn/essays/education/%E6%AD%A3%E7%A1%AE%E7%90%86%E8%A7%A3%E5%85%88%E5%B0%B1%E4%B8%9A%E5%86%8D%E6%8B%A9%E4%B8%9A.html): 正确理解先就业再择业
   - [essays/education/看中国家长怎么亲手毁掉自己的孩子.html](https://www.netkiller.cn/essays/education/%E7%9C%8B%E4%B8%AD%E5%9B%BD%E5%AE%B6%E9%95%BF%E6%80%8E%E4%B9%88%E4%BA%B2%E6%89%8B%E6%AF%81%E6%8E%89%E8%87%AA%E5%B7%B1%E7%9A%84%E5%AD%A9%E5%AD%90.html): 看中国「家长」怎么「亲手毁掉」自己的「孩子」
   - [essays/education/看父母怎么毁掉孩子过度提醒.html](https://www.netkiller.cn/essays/education/%E7%9C%8B%E7%88%B6%E6%AF%8D%E6%80%8E%E4%B9%88%E6%AF%81%E6%8E%89%E5%AD%A9%E5%AD%90%E8%BF%87%E5%BA%A6%E6%8F%90%E9%86%92.html): 看父母怎么毁掉孩子·过度提醒
+  - [essays/education/砸钱让孩子见世面真的值吗.html](https://www.netkiller.cn/essays/education/%E7%A0%B8%E9%92%B1%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%A7%81%E4%B8%96%E9%9D%A2%E7%9C%9F%E7%9A%84%E5%80%BC%E5%90%97.html): 砸钱让孩子见世面，真的值吗？
+  - [essays/education/老师们为何选择躺平.html](https://www.netkiller.cn/essays/education/%E8%80%81%E5%B8%88%E4%BB%AC%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9%E8%BA%BA%E5%B9%B3.html): 老师们为何选择"躺平"？
   - [essays/education/考研与工作怎么选择.html](https://www.netkiller.cn/essays/education/%E8%80%83%E7%A0%94%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%80%8E%E4%B9%88%E9%80%89%E6%8B%A9.html): 考研与工作怎么选择
   - [essays/education/谈AI时代大学生如何就业.html](https://www.netkiller.cn/essays/education/%E8%B0%88AI%E6%97%B6%E4%BB%A3%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%A6%82%E4%BD%95%E5%B0%B1%E4%B8%9A.html): 谈 AI 时代大学生如何就业
+  - [essays/education/贾浅浅蒋方舟管笑笑争议背后穷人孩子的上升通道被堵死.html](https://www.netkiller.cn/essays/education/%E8%B4%BE%E6%B5%85%E6%B5%85%E8%92%8B%E6%96%B9%E8%88%9F%E7%AE%A1%E7%AC%91%E7%AC%91%E4%BA%89%E8%AE%AE%E8%83%8C%E5%90%8E%E7%A9%B7%E4%BA%BA%E5%AD%A9%E5%AD%90%E7%9A%84%E4%B8%8A%E5%8D%87%E9%80%9A%E9%81%93%E8%A2%AB%E5%A0%B5%E6%AD%BB.html): 贾浅浅、蒋方舟、管笑笑争议背后：穷人孩子的上升通道被堵死
   - [essays/education/高考落幕填志愿：不少岗位正在消失.html](https://www.netkiller.cn/essays/education/%E9%AB%98%E8%80%83%E8%90%BD%E5%B9%95%E5%A1%AB%E5%BF%97%E6%84%BF%EF%BC%9A%E4%B8%8D%E5%B0%91%E5%B2%97%E4%BD%8D%E6%AD%A3%E5%9C%A8%E6%B6%88%E5%A4%B1.html): 高考落幕填志愿：不少岗位正在消失
-- [essays/global/](https://www.netkiller.cn/essays/global/index.html): 第 6 章 国际关系
+- [essays/global/](https://www.netkiller.cn/essays/global/index.html): 第 6 章 世界与格局
   - [essays/global/为什么巴以冲突不可调和.html](https://www.netkiller.cn/essays/global/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%B4%E4%BB%A5%E5%86%B2%E7%AA%81%E4%B8%8D%E5%8F%AF%E8%B0%83%E5%92%8C.html): 为什么巴以冲突不可调和？
   - [essays/global/俄罗斯不用核武器很难真正赢下俄乌战争.html](https://www.netkiller.cn/essays/global/%E4%BF%84%E7%BD%97%E6%96%AF%E4%B8%8D%E7%94%A8%E6%A0%B8%E6%AD%A6%E5%99%A8%E5%BE%88%E9%9A%BE%E7%9C%9F%E6%AD%A3%E8%B5%A2%E4%B8%8B%E4%BF%84%E4%B9%8C%E6%88%98%E4%BA%89.html): 俄罗斯不用核武器，很难真正赢下俄乌战争
   - [essays/global/美国人的斩杀线看美国如何清理社会低端人口.html](https://www.netkiller.cn/essays/global/%E7%BE%8E%E5%9B%BD%E4%BA%BA%E7%9A%84%E6%96%A9%E6%9D%80%E7%BA%BF%E7%9C%8B%E7%BE%8E%E5%9B%BD%E5%A6%82%E4%BD%95%E6%B8%85%E7%90%86%E7%A4%BE%E4%BC%9A%E4%BD%8E%E7%AB%AF%E4%BA%BA%E5%8F%A3.html): 美国人的斩杀线：看美国如何清理社会低端人口
   - [essays/global/英国强行国有化中国老板12亿英镑没了我们当年也干过同样的事.html](https://www.netkiller.cn/essays/global/%E8%8B%B1%E5%9B%BD%E5%BC%BA%E8%A1%8C%E5%9B%BD%E6%9C%89%E5%8C%96%E4%B8%AD%E5%9B%BD%E8%80%81%E6%9D%BF12%E4%BA%BF%E8%8B%B1%E9%95%91%E6%B2%A1%E4%BA%86%E6%88%91%E4%BB%AC%E5%BD%93%E5%B9%B4%E4%B9%9F%E5%B9%B2%E8%BF%87%E5%90%8C%E6%A0%B7%E7%9A%84%E4%BA%8B.html): 英国强行国有化，中国老板12亿英镑没了？我们当年也干过同样的事
-- [essays/livelihood/](https://www.netkiller.cn/essays/livelihood/index.html): 第 4 章 谈生活
-  - [essays/livelihood/东北没落的根源.html](https://www.netkiller.cn/essays/livelihood/%E4%B8%9C%E5%8C%97%E6%B2%A1%E8%90%BD%E7%9A%84%E6%A0%B9%E6%BA%90.html): 东北没落的根源
+- [essays/livelihood/](https://www.netkiller.cn/essays/livelihood/index.html): 第 4 章 民生与生活
   - [essays/livelihood/中国人买房的根源是什么.html](https://www.netkiller.cn/essays/livelihood/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E4%B9%B0%E6%88%BF%E7%9A%84%E6%A0%B9%E6%BA%90%E6%98%AF%E4%BB%80%E4%B9%88.html): 中国人「买房」的「根源」是什么？
-  - [essays/livelihood/大龄剩女社会现象的根源在哪里.html](https://www.netkiller.cn/essays/livelihood/%E5%A4%A7%E9%BE%84%E5%89%A9%E5%A5%B3%E7%A4%BE%E4%BC%9A%E7%8E%B0%E8%B1%A1%E7%9A%84%E6%A0%B9%E6%BA%90%E5%9C%A8%E5%93%AA%E9%87%8C.html): “大龄剩女”社会现象的根源在哪里？
+  - [essays/livelihood/年轻人的消费观.html](https://www.netkiller.cn/essays/livelihood/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E6%B6%88%E8%B4%B9%E8%A7%82.html): 年轻人的消费观
   - [essays/livelihood/洋节 PK 中国节，西方总是赢麻？不如取消春节算了！.html](https://www.netkiller.cn/essays/livelihood/%E6%B4%8B%E8%8A%82%20PK%20%E4%B8%AD%E5%9B%BD%E8%8A%82%EF%BC%8C%E8%A5%BF%E6%96%B9%E6%80%BB%E6%98%AF%E8%B5%A2%E9%BA%BB%EF%BC%9F%E4%B8%8D%E5%A6%82%E5%8F%96%E6%B6%88%E6%98%A5%E8%8A%82%E7%AE%97%E4%BA%86%EF%BC%81.html): 洋节 PK 中国节，西方总是赢麻？不如取消春节算了！
-  - [essays/livelihood/防止形成规模性返乡滞乡.html](https://www.netkiller.cn/essays/livelihood/%E9%98%B2%E6%AD%A2%E5%BD%A2%E6%88%90%E8%A7%84%E6%A8%A1%E6%80%A7%E8%BF%94%E4%B9%A1%E6%BB%9E%E4%B9%A1.html): 防止形成规模性返乡滞乡
   - [essays/livelihood/预制菜干净健康又卫生.html](https://www.netkiller.cn/essays/livelihood/%E9%A2%84%E5%88%B6%E8%8F%9C%E5%B9%B2%E5%87%80%E5%81%A5%E5%BA%B7%E5%8F%88%E5%8D%AB%E7%94%9F.html): 预制菜·干净·健康又卫生
-- [essays/psychology/](https://www.netkiller.cn/essays/psychology/index.html): 第 3 章 谈心理
-  - [essays/psychology/ch03s02.html](https://www.netkiller.cn/essays/psychology/ch03s02.html): 认知失调
+- [essays/psychology/](https://www.netkiller.cn/essays/psychology/index.html): 第 2 章 心理与自我
+  - [essays/psychology/ch02s02.html](https://www.netkiller.cn/essays/psychology/ch02s02.html): 认知失调
   - [essays/psychology/今天我退群了.html](https://www.netkiller.cn/essays/psychology/%E4%BB%8A%E5%A4%A9%E6%88%91%E9%80%80%E7%BE%A4%E4%BA%86.html): 今天我退群了
   - [essays/psychology/情绪喂养情绪输出情绪操控情绪管理情绪决策.html](https://www.netkiller.cn/essays/psychology/%E6%83%85%E7%BB%AA%E5%96%82%E5%85%BB%E6%83%85%E7%BB%AA%E8%BE%93%E5%87%BA%E6%83%85%E7%BB%AA%E6%93%8D%E6%8E%A7%E6%83%85%E7%BB%AA%E7%AE%A1%E7%90%86%E6%83%85%E7%BB%AA%E5%86%B3%E7%AD%96.html): 情绪喂养/情绪输出/情绪操控/情绪管理/情绪决策？
+  - [essays/psychology/杠精是如何产生的.html](https://www.netkiller.cn/essays/psychology/%E6%9D%A0%E7%B2%BE%E6%98%AF%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F%E7%9A%84.html): 杠精是如何产生的？
   - [essays/psychology/深圳中学生杀人案我有不同观点.html](https://www.netkiller.cn/essays/psychology/%E6%B7%B1%E5%9C%B3%E4%B8%AD%E5%AD%A6%E7%94%9F%E6%9D%80%E4%BA%BA%E6%A1%88%E6%88%91%E6%9C%89%E4%B8%8D%E5%90%8C%E8%A7%82%E7%82%B9.html): 深圳中学生杀人案，我有不同观点
   - [essays/psychology/深度分析当下社会的社交现状.html](https://www.netkiller.cn/essays/psychology/%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90%E5%BD%93%E4%B8%8B%E7%A4%BE%E4%BC%9A%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%8E%B0%E7%8A%B6.html): 深度分析「当下」社会的「社交现状」
   - [essays/psychology/现在的年轻人为什么越来越喜欢独处.html](https://www.netkiller.cn/essays/psychology/%E7%8E%B0%E5%9C%A8%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%96%9C%E6%AC%A2%E7%8B%AC%E5%A4%84.html): 现在的年轻人为什么越来越喜欢独处？
   - [essays/psychology/看中国家长怎么亲手毁掉自己的孩子.html](https://www.netkiller.cn/essays/psychology/%E7%9C%8B%E4%B8%AD%E5%9B%BD%E5%AE%B6%E9%95%BF%E6%80%8E%E4%B9%88%E4%BA%B2%E6%89%8B%E6%AF%81%E6%8E%89%E8%87%AA%E5%B7%B1%E7%9A%84%E5%AD%A9%E5%AD%90.html): 看中国「家长」怎么「亲手毁掉」自己的「孩子」
   - [essays/psychology/看父母怎么毁掉孩子过度提醒.html](https://www.netkiller.cn/essays/psychology/%E7%9C%8B%E7%88%B6%E6%AF%8D%E6%80%8E%E4%B9%88%E6%AF%81%E6%8E%89%E5%AD%A9%E5%AD%90%E8%BF%87%E5%BA%A6%E6%8F%90%E9%86%92.html): 看父母怎么毁掉孩子·过度提醒
+  - [essays/psychology/给疲惫的灵魂放一个假.html](https://www.netkiller.cn/essays/psychology/%E7%BB%99%E7%96%B2%E6%83%AB%E7%9A%84%E7%81%B5%E9%AD%82%E6%94%BE%E4%B8%80%E4%B8%AA%E5%81%87.html): 给疲惫的灵魂放一个假
   - [essays/psychology/选择与反应.html](https://www.netkiller.cn/essays/psychology/%E9%80%89%E6%8B%A9%E4%B8%8E%E5%8F%8D%E5%BA%94.html): 选择与反应
+- [essays/sociology/](https://www.netkiller.cn/essays/sociology/index.html): 第 3 章 社会与人性
+  - [essays/sociology/26岁才发现自己是男性染色体.html](https://www.netkiller.cn/essays/sociology/26%E5%B2%81%E6%89%8D%E5%8F%91%E7%8E%B0%E8%87%AA%E5%B7%B1%E6%98%AF%E7%94%B7%E6%80%A7%E6%9F%93%E8%89%B2%E4%BD%93.html): 26岁才发现自己是“男性染色体”，她该如何面对未来？
+  - [essays/sociology/4个半月女婴泡药浴离世.html](https://www.netkiller.cn/essays/sociology/4%E4%B8%AA%E5%8D%8A%E6%9C%88%E5%A5%B3%E5%A9%B4%E6%B3%A1%E8%8D%AF%E6%B5%B4%E7%A6%BB%E4%B8%96.html): 扎心！4个半月女婴泡药浴50分钟后离世，是时候整顿中医了
+  - [essays/sociology/专业与爱好贫穷限制了我的爱好.html](https://www.netkiller.cn/essays/sociology/%E4%B8%93%E4%B8%9A%E4%B8%8E%E7%88%B1%E5%A5%BD%E8%B4%AB%E7%A9%B7%E9%99%90%E5%88%B6%E4%BA%86%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD.html): 专业与爱好：贫穷限制了我的爱好
+  - [essays/sociology/东北没落的根源.html](https://www.netkiller.cn/essays/sociology/%E4%B8%9C%E5%8C%97%E6%B2%A1%E8%90%BD%E7%9A%84%E6%A0%B9%E6%BA%90.html): 东北没落的根源
+  - [essays/sociology/中国5000年祭祀文化之未有变革.html](https://www.netkiller.cn/essays/sociology/%E4%B8%AD%E5%9B%BD5000%E5%B9%B4%E7%A5%AD%E7%A5%80%E6%96%87%E5%8C%96%E4%B9%8B%E6%9C%AA%E6%9C%89%E5%8F%98%E9%9D%A9.html): 中国5000年祭祀文化之未有变革
+  - [essays/sociology/为什么现在有钱人不帮助穷人了.html](https://www.netkiller.cn/essays/sociology/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%B0%E5%9C%A8%E6%9C%89%E9%92%B1%E4%BA%BA%E4%B8%8D%E5%B8%AE%E5%8A%A9%E7%A9%B7%E4%BA%BA%E4%BA%86.html): 为什么现在有钱人不帮助穷人了？
+  - [essays/sociology/交通事故是怎么发生的该如何避免.html](https://www.netkiller.cn/essays/sociology/%E4%BA%A4%E9%80%9A%E4%BA%8B%E6%95%85%E6%98%AF%E6%80%8E%E4%B9%88%E5%8F%91%E7%94%9F%E7%9A%84%E8%AF%A5%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D.html): 交通事故是怎么发生的，该如何避免？
+  - [essays/sociology/你在社会中角色是什么.html](https://www.netkiller.cn/essays/sociology/%E4%BD%A0%E5%9C%A8%E7%A4%BE%E4%BC%9A%E4%B8%AD%E8%A7%92%E8%89%B2%E6%98%AF%E4%BB%80%E4%B9%88.html): 你在社会中角色是什么？
+  - [essays/sociology/别再给我推擦边女主播了.html](https://www.netkiller.cn/essays/sociology/%E5%88%AB%E5%86%8D%E7%BB%99%E6%88%91%E6%8E%A8%E6%93%A6%E8%BE%B9%E5%A5%B3%E4%B8%BB%E6%92%AD%E4%BA%86.html): 别再给我推擦边女主播了，我真不爱看
+  - [essays/sociology/大龄剩女社会现象的根源在哪里.html](https://www.netkiller.cn/essays/sociology/%E5%A4%A7%E9%BE%84%E5%89%A9%E5%A5%B3%E7%A4%BE%E4%BC%9A%E7%8E%B0%E8%B1%A1%E7%9A%84%E6%A0%B9%E6%BA%90%E5%9C%A8%E5%93%AA%E9%87%8C.html): “大龄剩女”社会现象的根源在哪里？
+  - [essays/sociology/巴菲特投资方法看似简单操作困难.html](https://www.netkiller.cn/essays/sociology/%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%8A%95%E8%B5%84%E6%96%B9%E6%B3%95%E7%9C%8B%E4%BC%BC%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C%E5%9B%B0%E9%9A%BE.html): 为什么沃伦·巴菲特的投资方法看似简单，操作起来却十分困难？
+  - [essays/sociology/年底清理微信好友.html](https://www.netkiller.cn/essays/sociology/%E5%B9%B4%E5%BA%95%E6%B8%85%E7%90%86%E5%BE%AE%E4%BF%A1%E5%A5%BD%E5%8F%8B.html): 年底了！你该清理微信好友了！
+  - [essays/sociology/年轻人躺平摆烂现象的根源是什么.html](https://www.netkiller.cn/essays/sociology/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E8%BA%BA%E5%B9%B3%E6%91%86%E7%83%82%E7%8E%B0%E8%B1%A1%E7%9A%84%E6%A0%B9%E6%BA%90%E6%98%AF%E4%BB%80%E4%B9%88.html): 年轻人「躺平」、「摆烂」现象的根源是什么？
+  - [essays/sociology/最快女护士张水华事件.html](https://www.netkiller.cn/essays/sociology/%E6%9C%80%E5%BF%AB%E5%A5%B3%E6%8A%A4%E5%A3%AB%E5%BC%A0%E6%B0%B4%E5%8D%8E%E4%BA%8B%E4%BB%B6.html): "最快女护士"张水华事件本质是什么？
+  - [essays/sociology/株洲杀猪宴.html](https://www.netkiller.cn/essays/sociology/%E6%A0%AA%E6%B4%B2%E6%9D%80%E7%8C%AA%E5%AE%B4.html): 株洲杀猪宴·中国社会背后潜规则
+  - [essays/sociology/给环卫工戴定位工牌.html](https://www.netkiller.cn/essays/sociology/%E7%BB%99%E7%8E%AF%E5%8D%AB%E5%B7%A5%E6%88%B4%E5%AE%9A%E4%BD%8D%E5%B7%A5%E7%89%8C.html): 给「环卫工」戴「定位」工牌
+  - [essays/sociology/老头乐闯红灯获赔36万.html](https://www.netkiller.cn/essays/sociology/%E8%80%81%E5%A4%B4%E4%B9%90%E9%97%AF%E7%BA%A2%E7%81%AF%E8%8E%B7%E8%B5%9436%E4%B8%87.html): 老头乐闯红灯获赔36万，法院以「生命权大于路权」判决，公平吗？
+  - [essays/sociology/西方吸血鬼文化对中华蝠文化的影响.html](https://www.netkiller.cn/essays/sociology/%E8%A5%BF%E6%96%B9%E5%90%B8%E8%A1%80%E9%AC%BC%E6%96%87%E5%8C%96%E5%AF%B9%E4%B8%AD%E5%8D%8E%E8%9D%A0%E6%96%87%E5%8C%96%E7%9A%84%E5%BD%B1%E5%93%8D.html): 西方「吸血鬼」文化对中华「蝠」文化的影响
+  - [essays/sociology/近期多地密集启动房车整治.html](https://www.netkiller.cn/essays/sociology/%E8%BF%91%E6%9C%9F%E5%A4%9A%E5%9C%B0%E5%AF%86%E9%9B%86%E5%90%AF%E5%8A%A8%E6%88%BF%E8%BD%A6%E6%95%B4%E6%B2%BB.html): "房车"为什么招人烦？
+  - [essays/sociology/防止形成规模性返乡滞乡.html](https://www.netkiller.cn/essays/sociology/%E9%98%B2%E6%AD%A2%E5%BD%A2%E6%88%90%E8%A7%84%E6%A8%A1%E6%80%A7%E8%BF%94%E4%B9%A1%E6%BB%9E%E4%B9%A1.html): 防止形成规模性返乡滞乡
 - [essays/workplace/](https://www.netkiller.cn/essays/workplace/index.html): 第 7 章 谈职场
   - [essays/workplace/ch07s02.html](https://www.netkiller.cn/essays/workplace/ch07s02.html): 职场中的贵人
+  - [essays/workplace/为什么年轻人天天喊累.html](https://www.netkiller.cn/essays/workplace/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B9%B4%E8%BD%BB%E4%BA%BA%E5%A4%A9%E5%A4%A9%E5%96%8A%E7%B4%AF.html): 为什么年轻人天天喊「累」？
   - [essays/workplace/也谈程序猿的职业规划.html](https://www.netkiller.cn/essays/workplace/%E4%B9%9F%E8%B0%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E7%9A%84%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92.html): 也谈程序猿的职业规划
   - [essays/workplace/劳动光荣劳动创造幸福.html](https://www.netkiller.cn/essays/workplace/%E5%8A%B3%E5%8A%A8%E5%85%89%E8%8D%A3%E5%8A%B3%E5%8A%A8%E5%88%9B%E9%80%A0%E5%B9%B8%E7%A6%8F.html): 劳动光荣，劳动创造幸福
   - [essays/workplace/外卖行业需400万人实际涌入2000万人超过5人抢1单.html](https://www.netkiller.cn/essays/workplace/%E5%A4%96%E5%8D%96%E8%A1%8C%E4%B8%9A%E9%9C%80400%E4%B8%87%E4%BA%BA%E5%AE%9E%E9%99%85%E6%B6%8C%E5%85%A52000%E4%B8%87%E4%BA%BA%E8%B6%85%E8%BF%875%E4%BA%BA%E6%8A%A21%E5%8D%95.html): 外卖行业需400万人，实际涌入2000万人，超过5人抢1单
@@ -3173,164 +3210,161 @@ Use `sitemap.txt` or `sitemap.xml` for exhaustive URL discovery. This file lists
   - [mail/spam/dkim.html](https://www.netkiller.cn/mail/spam/dkim.html): 6.2. DKIM
   - [mail/spam/spam.html](https://www.netkiller.cn/mail/spam/spam.html): 6.3. 邮件被拒收处理方法
 - [management/](https://www.netkiller.cn/management/index.html): Netkiller Management 手札
-  - [management/apas02.html](https://www.netkiller.cn/management/apas02.html): 1.2. 观点引用过的参考书籍
-  - [management/apas04.html](https://www.netkiller.cn/management/apas04.html): 1.4. 名词解释
-  - [management/apas07.html](https://www.netkiller.cn/management/apas07.html): 1.7. 人力资源工具
-  - [management/apas09.html](https://www.netkiller.cn/management/apas09.html): 1.9. 沟通管理
+  - [management/apas02.html](https://www.netkiller.cn/management/apas02.html): 观点引用过的参考书籍
+  - [management/apas04.html](https://www.netkiller.cn/management/apas04.html): 名词解释
+  - [management/apas07.html](https://www.netkiller.cn/management/apas07.html): 人力资源工具
+  - [management/apas09.html](https://www.netkiller.cn/management/apas09.html): 沟通管理
   - [management/appendix.html](https://www.netkiller.cn/management/appendix.html): 附录 1. 附录
-  - [management/contacts.html](https://www.netkiller.cn/management/contacts.html): 1.2. 联系方式
-  - [management/display.html](https://www.netkiller.cn/management/display.html): 1.3. 职位名称中英文对照
-  - [management/law.html](https://www.netkiller.cn/management/law.html): 1.6. 理论与定律
-  - [management/pr01s03.html](https://www.netkiller.cn/management/pr01s03.html): 1.3. 下载电子书
-  - [management/pt01.html](https://www.netkiller.cn/management/pt01.html): 部分 I. 管理手札
-  - [management/smart.html](https://www.netkiller.cn/management/smart.html): 1.8. SMART
+  - [management/contacts.html](https://www.netkiller.cn/management/contacts.html): 联系方式
+  - [management/display.html](https://www.netkiller.cn/management/display.html): 职位名称中英文对照
+  - [management/law.html](https://www.netkiller.cn/management/law.html): 理论与定律
+  - [management/pr01s03.html](https://www.netkiller.cn/management/pr01s03.html): 下载电子书
+  - [management/smart.html](https://www.netkiller.cn/management/smart.html): SMART
   - [management/序言.html](https://www.netkiller.cn/management/%E5%BA%8F%E8%A8%80.html): 序言
-- [management/business/](https://www.netkiller.cn/management/business/index.html): 第 1 章 企业管理
-  - [management/business/ai.empower.transformation.html](https://www.netkiller.cn/management/business/ai.empower.transformation.html): 1.13. 企业AI赋能转型的核心痛点、底层逻辑与破局路径
-  - [management/business/ch01s03.html](https://www.netkiller.cn/management/business/ch01s03.html): 1.3. 企业管理制度
-  - [management/business/opc.html](https://www.netkiller.cn/management/business/opc.html): 1.14. 超级个体时代
-  - [management/business/workflow.html](https://www.netkiller.cn/management/business/workflow.html): 1.11. 流程管理
-  - [management/business/为什么远程办公不被公司普遍接受.html](https://www.netkiller.cn/management/business/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC%E4%B8%8D%E8%A2%AB%E5%85%AC%E5%8F%B8%E6%99%AE%E9%81%8D%E6%8E%A5%E5%8F%97.html): 1.10. 为什么远程办公不被公司普遍接受?
-  - [management/business/企业在海外扩张.html](https://www.netkiller.cn/management/business/%E4%BC%81%E4%B8%9A%E5%9C%A8%E6%B5%B7%E5%A4%96%E6%89%A9%E5%BC%A0.html): 1.6. 互联网企业在海外扩张中会遇到哪些困难和问题
-  - [management/business/企业数字化转型.html](https://www.netkiller.cn/management/business/%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B.html): 1.12. 企业数字化转型失败原因分析
-  - [management/business/企业生命周期.html](https://www.netkiller.cn/management/business/%E4%BC%81%E4%B8%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html): 1.4. 企业生命周期
-  - [management/business/出现问题为什么会相互推诿.html](https://www.netkiller.cn/management/business/%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%9B%B8%E4%BA%92%E6%8E%A8%E8%AF%BF.html): 1.8. 出现问题为什么会相互推诿
-  - [management/business/商业的本质.html](https://www.netkiller.cn/management/business/%E5%95%86%E4%B8%9A%E7%9A%84%E6%9C%AC%E8%B4%A8.html): 1.2. 商业的本质
-  - [management/business/成为管理者.html](https://www.netkiller.cn/management/business/%E6%88%90%E4%B8%BA%E7%AE%A1%E7%90%86%E8%80%85.html): 1.9. 成为管理者
-  - [management/business/推动企业前行的动力.html](https://www.netkiller.cn/management/business/%E6%8E%A8%E5%8A%A8%E4%BC%81%E4%B8%9A%E5%89%8D%E8%A1%8C%E7%9A%84%E5%8A%A8%E5%8A%9B.html): 1.5. 推动企业前行的动力
-  - [management/business/谈谈办公环境.html](https://www.netkiller.cn/management/business/%E8%B0%88%E8%B0%88%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83.html): 1.7. 谈谈办公环境
+- [management/business/](https://www.netkiller.cn/management/business/index.html): 第 1 章 管理手札
+  - [management/business/ai.empower.transformation.html](https://www.netkiller.cn/management/business/ai.empower.transformation.html): 企业AI赋能转型的核心痛点、底层逻辑与破局路径
+  - [management/business/ch01s03.html](https://www.netkiller.cn/management/business/ch01s03.html): 企业管理制度
+  - [management/business/fool.resonance.html](https://www.netkiller.cn/management/business/fool.resonance.html): 团队本质上是“傻子共振”
+  - [management/business/opc.html](https://www.netkiller.cn/management/business/opc.html): 超级个体时代
+  - [management/business/workflow.html](https://www.netkiller.cn/management/business/workflow.html): 流程管理
+  - [management/business/为什么远程办公不被公司普遍接受.html](https://www.netkiller.cn/management/business/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC%E4%B8%8D%E8%A2%AB%E5%85%AC%E5%8F%B8%E6%99%AE%E9%81%8D%E6%8E%A5%E5%8F%97.html): 为什么远程办公不被公司普遍接受?
+  - [management/business/企业在海外扩张.html](https://www.netkiller.cn/management/business/%E4%BC%81%E4%B8%9A%E5%9C%A8%E6%B5%B7%E5%A4%96%E6%89%A9%E5%BC%A0.html): 互联网企业在海外扩张中会遇到哪些困难和问题
+  - [management/business/企业数字化转型.html](https://www.netkiller.cn/management/business/%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B.html): 企业数字化转型失败原因分析
+  - [management/business/企业生命周期.html](https://www.netkiller.cn/management/business/%E4%BC%81%E4%B8%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html): 企业生命周期
+  - [management/business/出现问题为什么会相互推诿.html](https://www.netkiller.cn/management/business/%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%9B%B8%E4%BA%92%E6%8E%A8%E8%AF%BF.html): 出现问题为什么会相互推诿
+  - [management/business/商业的本质.html](https://www.netkiller.cn/management/business/%E5%95%86%E4%B8%9A%E7%9A%84%E6%9C%AC%E8%B4%A8.html): 商业的本质
+  - [management/business/成为管理者.html](https://www.netkiller.cn/management/business/%E6%88%90%E4%B8%BA%E7%AE%A1%E7%90%86%E8%80%85.html): 成为管理者
+  - [management/business/推动企业前行的动力.html](https://www.netkiller.cn/management/business/%E6%8E%A8%E5%8A%A8%E4%BC%81%E4%B8%9A%E5%89%8D%E8%A1%8C%E7%9A%84%E5%8A%A8%E5%8A%9B.html): 推动企业前行的动力
+  - [management/business/老板也有生命周期.html](https://www.netkiller.cn/management/business/%E8%80%81%E6%9D%BF%E4%B9%9F%E6%9C%89%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html): 老板也有生命周期
+  - [management/business/胖东来复辟旧社会体制.html](https://www.netkiller.cn/management/business/%E8%83%96%E4%B8%9C%E6%9D%A5%E5%A4%8D%E8%BE%9F%E6%97%A7%E7%A4%BE%E4%BC%9A%E4%BD%93%E5%88%B6.html): 胖东来，复辟旧社会体制
+  - [management/business/评东方甄选小作文事件.html](https://www.netkiller.cn/management/business/%E8%AF%84%E4%B8%9C%E6%96%B9%E7%94%84%E9%80%89%E5%B0%8F%E4%BD%9C%E6%96%87%E4%BA%8B%E4%BB%B6.html): 评东方甄选"小作文"事件
+  - [management/business/谈谈办公环境.html](https://www.netkiller.cn/management/business/%E8%B0%88%E8%B0%88%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83.html): 谈谈办公环境
 - [management/financial/](https://www.netkiller.cn/management/financial/index.html): 第 5 章 财务管理
-  - [management/financial/ch05s03.html](https://www.netkiller.cn/management/financial/ch05s03.html): 5.3. 财务管理面对的最大的问题是什么
-  - [management/financial/财务人员的五层境界.html](https://www.netkiller.cn/management/financial/%E8%B4%A2%E5%8A%A1%E4%BA%BA%E5%91%98%E7%9A%84%E4%BA%94%E5%B1%82%E5%A2%83%E7%95%8C.html): 5.2. 财务人员的五层境界
-- [management/hrm/](https://www.netkiller.cn/management/hrm/index.html): 部分 II. 人力资源管理
-  - [management/hrm/AI 平权时代，人与人差距在哪里？.html](https://www.netkiller.cn/management/hrm/AI%20%E5%B9%B3%E6%9D%83%E6%97%B6%E4%BB%A3%EF%BC%8C%E4%BA%BA%E4%B8%8E%E4%BA%BA%E5%B7%AE%E8%B7%9D%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F.html): 7.3. AI 平权时代，人与人差距在哪里？
-  - [management/hrm/ch10s11.html](https://www.netkiller.cn/management/hrm/ch10s11.html): 10.11. 职场心理学中的「延迟满足」
+  - [management/financial/ch05s03.html](https://www.netkiller.cn/management/financial/ch05s03.html): 财务管理面对的最大的问题是什么
+  - [management/financial/财务人员的五层境界.html](https://www.netkiller.cn/management/financial/%E8%B4%A2%E5%8A%A1%E4%BA%BA%E5%91%98%E7%9A%84%E4%BA%94%E5%B1%82%E5%A2%83%E7%95%8C.html): 财务人员的五层境界
+- [management/hrm/](https://www.netkiller.cn/management/hrm/index.html): 部分 I. 人力资源管理
+  - [management/hrm/AI 平权时代，人与人差距在哪里？.html](https://www.netkiller.cn/management/hrm/AI%20%E5%B9%B3%E6%9D%83%E6%97%B6%E4%BB%A3%EF%BC%8C%E4%BA%BA%E4%B8%8E%E4%BA%BA%E5%B7%AE%E8%B7%9D%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F.html): AI 平权时代，人与人差距在哪里？
+  - [management/hrm/ch10s11.html](https://www.netkiller.cn/management/hrm/ch10s11.html): 职场心理学中的「延迟满足」
   - [management/hrm/performance.html](https://www.netkiller.cn/management/hrm/performance.html): 第 10 章 绩效管理
   - [management/hrm/planning.html](https://www.netkiller.cn/management/hrm/planning.html): 第 6 章 规划和战略
   - [management/hrm/recruitment.html](https://www.netkiller.cn/management/hrm/recruitment.html): 第 7 章 招聘与配置
   - [management/hrm/salary.html](https://www.netkiller.cn/management/hrm/salary.html): 第 9 章 薪酬管理
   - [management/hrm/training.html](https://www.netkiller.cn/management/hrm/training.html): 第 8 章 培训与开发
-  - [management/hrm/个人能力大于团队力量.html](https://www.netkiller.cn/management/hrm/%E4%B8%AA%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%A4%A7%E4%BA%8E%E5%9B%A2%E9%98%9F%E5%8A%9B%E9%87%8F.html): 9.4. 个人能力大于团队力量
-  - [management/hrm/中国企业的等级制度.html](https://www.netkiller.cn/management/hrm/%E4%B8%AD%E5%9B%BD%E4%BC%81%E4%B8%9A%E7%9A%84%E7%AD%89%E7%BA%A7%E5%88%B6%E5%BA%A6.html): 9.2. 中国企业的等级制度
-  - [management/hrm/中国员工的诉求.html](https://www.netkiller.cn/management/hrm/%E4%B8%AD%E5%9B%BD%E5%91%98%E5%B7%A5%E7%9A%84%E8%AF%89%E6%B1%82.html): 9.3. 中国员工和老板的诉求
-  - [management/hrm/为什么中国大学培养不出企业需要的人才.html](https://www.netkiller.cn/management/hrm/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E5%9F%B9%E5%85%BB%E4%B8%8D%E5%87%BA%E4%BC%81%E4%B8%9A%E9%9C%80%E8%A6%81%E7%9A%84%E4%BA%BA%E6%89%8D.html): 7.6. 为什么中国大学培养不出企业需要的人才?
-  - [management/hrm/为什么你读了那么多书依然没有改变命运.html](https://www.netkiller.cn/management/hrm/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E8%AF%BB%E4%BA%86%E9%82%A3%E4%B9%88%E5%A4%9A%E4%B9%A6%E4%BE%9D%E7%84%B6%E6%B2%A1%E6%9C%89%E6%94%B9%E5%8F%98%E5%91%BD%E8%BF%90.html): 8.4. 为什么你读了那么多书依然没有改变命运？
-  - [management/hrm/买土豆的故事.html](https://www.netkiller.cn/management/hrm/%E4%B9%B0%E5%9C%9F%E8%B1%86%E7%9A%84%E6%95%85%E4%BA%8B.html): 8.9. 买土豆的故事
-  - [management/hrm/人力资源管理面临的问题.html](https://www.netkiller.cn/management/hrm/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E9%9D%A2%E4%B8%B4%E7%9A%84%E9%97%AE%E9%A2%98.html): 6.4. 人力资源管理面临的问题
-  - [management/hrm/人力资源配置.html](https://www.netkiller.cn/management/hrm/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE.html): 7.10. 人力配置
-  - [management/hrm/企业与员工谁放弃了谁.html](https://www.netkiller.cn/management/hrm/%E4%BC%81%E4%B8%9A%E4%B8%8E%E5%91%98%E5%B7%A5%E8%B0%81%E6%94%BE%E5%BC%83%E4%BA%86%E8%B0%81.html): 7.8. 企业与员工谁放弃了谁
-  - [management/hrm/优秀员工的十个特征.html](https://www.netkiller.cn/management/hrm/%E4%BC%98%E7%A7%80%E5%91%98%E5%B7%A5%E7%9A%84%E5%8D%81%E4%B8%AA%E7%89%B9%E5%BE%81.html): 10.6. 优秀员工的十个特征
-  - [management/hrm/出问题的时候才会被想起的员工.html](https://www.netkiller.cn/management/hrm/%E5%87%BA%E9%97%AE%E9%A2%98%E7%9A%84%E6%97%B6%E5%80%99%E6%89%8D%E4%BC%9A%E8%A2%AB%E6%83%B3%E8%B5%B7%E7%9A%84%E5%91%98%E5%B7%A5.html): 10.7. 出问题的时候才会被想起的员工
-  - [management/hrm/加薪与跳槽的博弈.html](https://www.netkiller.cn/management/hrm/%E5%8A%A0%E8%96%AA%E4%B8%8E%E8%B7%B3%E6%A7%BD%E7%9A%84%E5%8D%9A%E5%BC%88.html): 9.5. 加薪与跳槽的博弈
-  - [management/hrm/员工的工作状态.html](https://www.netkiller.cn/management/hrm/%E5%91%98%E5%B7%A5%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%8A%B6%E6%80%81.html): 10.9. 员工的工作状态
-  - [management/hrm/员工的离职成本到底有多高.html](https://www.netkiller.cn/management/hrm/%E5%91%98%E5%B7%A5%E7%9A%84%E7%A6%BB%E8%81%8C%E6%88%90%E6%9C%AC%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E9%AB%98.html): 7.7. 员工的离职成本到底有多高？
-  - [management/hrm/团队建设.html](https://www.netkiller.cn/management/hrm/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE.html): 6.2. 团队建设
-  - [management/hrm/如何激励员工.html](https://www.netkiller.cn/management/hrm/%E5%A6%82%E4%BD%95%E6%BF%80%E5%8A%B1%E5%91%98%E5%B7%A5.html): 10.4. 如何激励员工
-  - [management/hrm/学历和能力哪个更重要.html](https://www.netkiller.cn/management/hrm/%E5%AD%A6%E5%8E%86%E5%92%8C%E8%83%BD%E5%8A%9B%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81.html): 7.2. 学历和能力哪个更重要
-  - [management/hrm/怎样提拔下属.html](https://www.netkiller.cn/management/hrm/%E6%80%8E%E6%A0%B7%E6%8F%90%E6%8B%94%E4%B8%8B%E5%B1%9E.html): 8.6. 怎样提拔下属
-  - [management/hrm/找到并留住最佳员工.html](https://www.netkiller.cn/management/hrm/%E6%89%BE%E5%88%B0%E5%B9%B6%E7%95%99%E4%BD%8F%E6%9C%80%E4%BD%B3%E5%91%98%E5%B7%A5.html): 7.5. 找到并留住最佳员工
-  - [management/hrm/把爱好变成工作.html](https://www.netkiller.cn/management/hrm/%E6%8A%8A%E7%88%B1%E5%A5%BD%E5%8F%98%E6%88%90%E5%B7%A5%E4%BD%9C.html): 8.8. 把爱好变成工作
-  - [management/hrm/招聘并挖掘有天赋的员工.html](https://www.netkiller.cn/management/hrm/%E6%8B%9B%E8%81%98%E5%B9%B6%E6%8C%96%E6%8E%98%E6%9C%89%E5%A4%A9%E8%B5%8B%E7%9A%84%E5%91%98%E5%B7%A5.html): 7.4. 招聘并挖掘有天赋的员工
-  - [management/hrm/招聘高管.html](https://www.netkiller.cn/management/hrm/%E6%8B%9B%E8%81%98%E9%AB%98%E7%AE%A1.html): 7.9. 招聘高管
-  - [management/hrm/末位淘汰.html](https://www.netkiller.cn/management/hrm/%E6%9C%AB%E4%BD%8D%E6%B7%98%E6%B1%B0.html): 10.10. 末位淘汰
-  - [management/hrm/管理好管理层.html](https://www.netkiller.cn/management/hrm/%E7%AE%A1%E7%90%86%E5%A5%BD%E7%AE%A1%E7%90%86%E5%B1%82.html): 10.2. 管理好管理层
-  - [management/hrm/组织结构.html](https://www.netkiller.cn/management/hrm/%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.html): 6.3. 组织结构
-  - [management/hrm/给团队充电.html](https://www.netkiller.cn/management/hrm/%E7%BB%99%E5%9B%A2%E9%98%9F%E5%85%85%E7%94%B5.html): 8.2. 给团队充电
-  - [management/hrm/老龄化问题.html](https://www.netkiller.cn/management/hrm/%E8%80%81%E9%BE%84%E5%8C%96%E9%97%AE%E9%A2%98.html): 8.5. 老龄化问题
-  - [management/hrm/自驱者的原动力是什么.html](https://www.netkiller.cn/management/hrm/%E8%87%AA%E9%A9%B1%E8%80%85%E7%9A%84%E5%8E%9F%E5%8A%A8%E5%8A%9B%E6%98%AF%E4%BB%80%E4%B9%88.html): 8.7. 自驱者的原动力是什么？
-  - [management/hrm/认识自己的差距.html](https://www.netkiller.cn/management/hrm/%E8%AE%A4%E8%AF%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%AE%E8%B7%9D.html): 8.3. 认识自己的差距
-  - [management/hrm/让员工更敬业.html](https://www.netkiller.cn/management/hrm/%E8%AE%A9%E5%91%98%E5%B7%A5%E6%9B%B4%E6%95%AC%E4%B8%9A.html): 10.3. 让员工更敬业
-  - [management/hrm/负激励.html](https://www.netkiller.cn/management/hrm/%E8%B4%9F%E6%BF%80%E5%8A%B1.html): 10.5. 负激励
-  - [management/hrm/软件行业绩效管理.html](https://www.netkiller.cn/management/hrm/%E8%BD%AF%E4%BB%B6%E8%A1%8C%E4%B8%9A%E7%BB%A9%E6%95%88%E7%AE%A1%E7%90%86.html): 10.12. 软件行业绩效管理
-  - [management/hrm/驱动员工做事的方法.html](https://www.netkiller.cn/management/hrm/%E9%A9%B1%E5%8A%A8%E5%91%98%E5%B7%A5%E5%81%9A%E4%BA%8B%E7%9A%84%E6%96%B9%E6%B3%95.html): 10.8. 驱动员工做事的方法
+  - [management/hrm/个人能力大于团队力量.html](https://www.netkiller.cn/management/hrm/%E4%B8%AA%E4%BA%BA%E8%83%BD%E5%8A%9B%E5%A4%A7%E4%BA%8E%E5%9B%A2%E9%98%9F%E5%8A%9B%E9%87%8F.html): 个人能力大于团队力量
+  - [management/hrm/中国企业的等级制度.html](https://www.netkiller.cn/management/hrm/%E4%B8%AD%E5%9B%BD%E4%BC%81%E4%B8%9A%E7%9A%84%E7%AD%89%E7%BA%A7%E5%88%B6%E5%BA%A6.html): 中国企业的等级制度
+  - [management/hrm/中国员工的诉求.html](https://www.netkiller.cn/management/hrm/%E4%B8%AD%E5%9B%BD%E5%91%98%E5%B7%A5%E7%9A%84%E8%AF%89%E6%B1%82.html): 中国员工和老板的诉求
+  - [management/hrm/为什么中国大学培养不出企业需要的人才.html](https://www.netkiller.cn/management/hrm/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E5%9F%B9%E5%85%BB%E4%B8%8D%E5%87%BA%E4%BC%81%E4%B8%9A%E9%9C%80%E8%A6%81%E7%9A%84%E4%BA%BA%E6%89%8D.html): 为什么中国大学培养不出企业需要的人才?
+  - [management/hrm/为什么你读了那么多书依然没有改变命运.html](https://www.netkiller.cn/management/hrm/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E8%AF%BB%E4%BA%86%E9%82%A3%E4%B9%88%E5%A4%9A%E4%B9%A6%E4%BE%9D%E7%84%B6%E6%B2%A1%E6%9C%89%E6%94%B9%E5%8F%98%E5%91%BD%E8%BF%90.html): 为什么你读了那么多书依然没有改变命运？
+  - [management/hrm/买土豆的故事.html](https://www.netkiller.cn/management/hrm/%E4%B9%B0%E5%9C%9F%E8%B1%86%E7%9A%84%E6%95%85%E4%BA%8B.html): 买土豆的故事
+  - [management/hrm/人力资源管理面临的问题.html](https://www.netkiller.cn/management/hrm/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E9%9D%A2%E4%B8%B4%E7%9A%84%E9%97%AE%E9%A2%98.html): 人力资源管理面临的问题
+  - [management/hrm/人力资源配置.html](https://www.netkiller.cn/management/hrm/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE.html): 人力配置
+  - [management/hrm/企业与员工谁放弃了谁.html](https://www.netkiller.cn/management/hrm/%E4%BC%81%E4%B8%9A%E4%B8%8E%E5%91%98%E5%B7%A5%E8%B0%81%E6%94%BE%E5%BC%83%E4%BA%86%E8%B0%81.html): 企业与员工谁放弃了谁
+  - [management/hrm/优秀员工的十个特征.html](https://www.netkiller.cn/management/hrm/%E4%BC%98%E7%A7%80%E5%91%98%E5%B7%A5%E7%9A%84%E5%8D%81%E4%B8%AA%E7%89%B9%E5%BE%81.html): 优秀员工的十个特征
+  - [management/hrm/出问题的时候才会被想起的员工.html](https://www.netkiller.cn/management/hrm/%E5%87%BA%E9%97%AE%E9%A2%98%E7%9A%84%E6%97%B6%E5%80%99%E6%89%8D%E4%BC%9A%E8%A2%AB%E6%83%B3%E8%B5%B7%E7%9A%84%E5%91%98%E5%B7%A5.html): 出问题的时候才会被想起的员工
+  - [management/hrm/加薪与跳槽的博弈.html](https://www.netkiller.cn/management/hrm/%E5%8A%A0%E8%96%AA%E4%B8%8E%E8%B7%B3%E6%A7%BD%E7%9A%84%E5%8D%9A%E5%BC%88.html): 加薪与跳槽的博弈
+  - [management/hrm/员工的工作状态.html](https://www.netkiller.cn/management/hrm/%E5%91%98%E5%B7%A5%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%8A%B6%E6%80%81.html): 员工的工作状态
+  - [management/hrm/员工的离职成本到底有多高.html](https://www.netkiller.cn/management/hrm/%E5%91%98%E5%B7%A5%E7%9A%84%E7%A6%BB%E8%81%8C%E6%88%90%E6%9C%AC%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E9%AB%98.html): 员工的离职成本到底有多高？
+  - [management/hrm/团队建设.html](https://www.netkiller.cn/management/hrm/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE.html): 团队建设
+  - [management/hrm/如何激励员工.html](https://www.netkiller.cn/management/hrm/%E5%A6%82%E4%BD%95%E6%BF%80%E5%8A%B1%E5%91%98%E5%B7%A5.html): 如何激励员工
+  - [management/hrm/学历和能力哪个更重要.html](https://www.netkiller.cn/management/hrm/%E5%AD%A6%E5%8E%86%E5%92%8C%E8%83%BD%E5%8A%9B%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81.html): 学历和能力哪个更重要
+  - [management/hrm/怎样提拔下属.html](https://www.netkiller.cn/management/hrm/%E6%80%8E%E6%A0%B7%E6%8F%90%E6%8B%94%E4%B8%8B%E5%B1%9E.html): 怎样提拔下属
+  - [management/hrm/找到并留住最佳员工.html](https://www.netkiller.cn/management/hrm/%E6%89%BE%E5%88%B0%E5%B9%B6%E7%95%99%E4%BD%8F%E6%9C%80%E4%BD%B3%E5%91%98%E5%B7%A5.html): 找到并留住最佳员工
+  - [management/hrm/把爱好变成工作.html](https://www.netkiller.cn/management/hrm/%E6%8A%8A%E7%88%B1%E5%A5%BD%E5%8F%98%E6%88%90%E5%B7%A5%E4%BD%9C.html): 把爱好变成工作
+  - [management/hrm/招聘并挖掘有天赋的员工.html](https://www.netkiller.cn/management/hrm/%E6%8B%9B%E8%81%98%E5%B9%B6%E6%8C%96%E6%8E%98%E6%9C%89%E5%A4%A9%E8%B5%8B%E7%9A%84%E5%91%98%E5%B7%A5.html): 招聘并挖掘有天赋的员工
+  - [management/hrm/招聘高管.html](https://www.netkiller.cn/management/hrm/%E6%8B%9B%E8%81%98%E9%AB%98%E7%AE%A1.html): 招聘高管
+  - [management/hrm/末位淘汰.html](https://www.netkiller.cn/management/hrm/%E6%9C%AB%E4%BD%8D%E6%B7%98%E6%B1%B0.html): 末位淘汰
+  - [management/hrm/管理好管理层.html](https://www.netkiller.cn/management/hrm/%E7%AE%A1%E7%90%86%E5%A5%BD%E7%AE%A1%E7%90%86%E5%B1%82.html): 管理好管理层
+  - [management/hrm/组织结构.html](https://www.netkiller.cn/management/hrm/%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.html): 组织结构
+  - [management/hrm/给团队充电.html](https://www.netkiller.cn/management/hrm/%E7%BB%99%E5%9B%A2%E9%98%9F%E5%85%85%E7%94%B5.html): 给团队充电
+  - [management/hrm/老龄化问题.html](https://www.netkiller.cn/management/hrm/%E8%80%81%E9%BE%84%E5%8C%96%E9%97%AE%E9%A2%98.html): 老龄化问题
+  - [management/hrm/自驱者的原动力是什么.html](https://www.netkiller.cn/management/hrm/%E8%87%AA%E9%A9%B1%E8%80%85%E7%9A%84%E5%8E%9F%E5%8A%A8%E5%8A%9B%E6%98%AF%E4%BB%80%E4%B9%88.html): 自驱者的原动力是什么？
+  - [management/hrm/认识自己的差距.html](https://www.netkiller.cn/management/hrm/%E8%AE%A4%E8%AF%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%AE%E8%B7%9D.html): 认识自己的差距
+  - [management/hrm/让员工更敬业.html](https://www.netkiller.cn/management/hrm/%E8%AE%A9%E5%91%98%E5%B7%A5%E6%9B%B4%E6%95%AC%E4%B8%9A.html): 让员工更敬业
+  - [management/hrm/负激励.html](https://www.netkiller.cn/management/hrm/%E8%B4%9F%E6%BF%80%E5%8A%B1.html): 负激励
+  - [management/hrm/软件行业绩效管理.html](https://www.netkiller.cn/management/hrm/%E8%BD%AF%E4%BB%B6%E8%A1%8C%E4%B8%9A%E7%BB%A9%E6%95%88%E7%AE%A1%E7%90%86.html): 软件行业绩效管理
+  - [management/hrm/驱动员工做事的方法.html](https://www.netkiller.cn/management/hrm/%E9%A9%B1%E5%8A%A8%E5%91%98%E5%B7%A5%E5%81%9A%E4%BA%8B%E7%9A%84%E6%96%B9%E6%B3%95.html): 驱动员工做事的方法
 - [management/marketing/](https://www.netkiller.cn/management/marketing/index.html): 第 3 章 市场营销
-  - [management/marketing/产品定位.html](https://www.netkiller.cn/management/marketing/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D.html): 3.5. 产品定位
-  - [management/marketing/从小智停服说起：AI精神陪伴与社交产品硬伤分析.html](https://www.netkiller.cn/management/marketing/%E4%BB%8E%E5%B0%8F%E6%99%BA%E5%81%9C%E6%9C%8D%E8%AF%B4%E8%B5%B7%EF%BC%9AAI%E7%B2%BE%E7%A5%9E%E9%99%AA%E4%BC%B4%E4%B8%8E%E7%A4%BE%E4%BA%A4%E4%BA%A7%E5%93%81%E7%A1%AC%E4%BC%A4%E5%88%86%E6%9E%90.html): 3.13. 从小智停服说起：AI精神陪伴与社交产品硬伤分析
-  - [management/marketing/免费续杯.html](https://www.netkiller.cn/management/marketing/%E5%85%8D%E8%B4%B9%E7%BB%AD%E6%9D%AF.html): 3.8. 为什么美国的肯德基可乐饮料可以免费续杯
-  - [management/marketing/危机公关的困局.html](https://www.netkiller.cn/management/marketing/%E5%8D%B1%E6%9C%BA%E5%85%AC%E5%85%B3%E7%9A%84%E5%9B%B0%E5%B1%80.html): 3.12. 从“罗永浩与西贝事件”看大企业的危机公关的困局
-  - [management/marketing/品牌忠诚度.html](https://www.netkiller.cn/management/marketing/%E5%93%81%E7%89%8C%E5%BF%A0%E8%AF%9A%E5%BA%A6.html): 3.4. 品牌忠诚度
-  - [management/marketing/大数据时代营销.html](https://www.netkiller.cn/management/marketing/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3%E8%90%A5%E9%94%80.html): 3.3. 大数据时代营销
-  - [management/marketing/得屌丝者得天下.html](https://www.netkiller.cn/management/marketing/%E5%BE%97%E5%B1%8C%E4%B8%9D%E8%80%85%E5%BE%97%E5%A4%A9%E4%B8%8B.html): 3.6. 小米「得屌丝者得天下」
-  - [management/marketing/怎么赚富人的钱.html](https://www.netkiller.cn/management/marketing/%E6%80%8E%E4%B9%88%E8%B5%9A%E5%AF%8C%E4%BA%BA%E7%9A%84%E9%92%B1.html): 3.10. 怎么赚富人的钱？
-  - [management/marketing/渠道.html](https://www.netkiller.cn/management/marketing/%E6%B8%A0%E9%81%93.html): 3.2. 渠道
-  - [management/marketing/爱国营销.html](https://www.netkiller.cn/management/marketing/%E7%88%B1%E5%9B%BD%E8%90%A5%E9%94%80.html): 3.11. 爱国营销
-  - [management/marketing/老干妈.html](https://www.netkiller.cn/management/marketing/%E8%80%81%E5%B9%B2%E5%A6%88.html): 3.9. 「老干妈」销量为何「暴跌」？
-  - [management/marketing/认知差.html](https://www.netkiller.cn/management/marketing/%E8%AE%A4%E7%9F%A5%E5%B7%AE.html): 3.7. 「信息差」与「认知差」
+  - [management/marketing/产品定位.html](https://www.netkiller.cn/management/marketing/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D.html): 产品定位
+  - [management/marketing/从小智停服说起：AI精神陪伴与社交产品硬伤分析.html](https://www.netkiller.cn/management/marketing/%E4%BB%8E%E5%B0%8F%E6%99%BA%E5%81%9C%E6%9C%8D%E8%AF%B4%E8%B5%B7%EF%BC%9AAI%E7%B2%BE%E7%A5%9E%E9%99%AA%E4%BC%B4%E4%B8%8E%E7%A4%BE%E4%BA%A4%E4%BA%A7%E5%93%81%E7%A1%AC%E4%BC%A4%E5%88%86%E6%9E%90.html): 从小智停服说起：AI精神陪伴与社交产品硬伤分析
+  - [management/marketing/免费续杯.html](https://www.netkiller.cn/management/marketing/%E5%85%8D%E8%B4%B9%E7%BB%AD%E6%9D%AF.html): 中国消费者素质问题
+  - [management/marketing/危机公关的困局.html](https://www.netkiller.cn/management/marketing/%E5%8D%B1%E6%9C%BA%E5%85%AC%E5%85%B3%E7%9A%84%E5%9B%B0%E5%B1%80.html): 从“罗永浩与西贝事件”看大企业的危机公关的困局
+  - [management/marketing/品牌忠诚度.html](https://www.netkiller.cn/management/marketing/%E5%93%81%E7%89%8C%E5%BF%A0%E8%AF%9A%E5%BA%A6.html): 品牌忠诚度
+  - [management/marketing/大数据时代营销.html](https://www.netkiller.cn/management/marketing/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3%E8%90%A5%E9%94%80.html): 大数据时代营销
+  - [management/marketing/得屌丝者得天下.html](https://www.netkiller.cn/management/marketing/%E5%BE%97%E5%B1%8C%E4%B8%9D%E8%80%85%E5%BE%97%E5%A4%A9%E4%B8%8B.html): 小米「得屌丝者得天下」
+  - [management/marketing/怎么赚富人的钱.html](https://www.netkiller.cn/management/marketing/%E6%80%8E%E4%B9%88%E8%B5%9A%E5%AF%8C%E4%BA%BA%E7%9A%84%E9%92%B1.html): 怎么赚富人的钱？
+  - [management/marketing/渠道.html](https://www.netkiller.cn/management/marketing/%E6%B8%A0%E9%81%93.html): 渠道
+  - [management/marketing/爱国营销.html](https://www.netkiller.cn/management/marketing/%E7%88%B1%E5%9B%BD%E8%90%A5%E9%94%80.html): 爱国营销
+  - [management/marketing/老干妈.html](https://www.netkiller.cn/management/marketing/%E8%80%81%E5%B9%B2%E5%A6%88.html): 「老干妈」销量为何「暴跌」？
+  - [management/marketing/认知差.html](https://www.netkiller.cn/management/marketing/%E8%AE%A4%E7%9F%A5%E5%B7%AE.html): 「信息差」与「认知差」
 - [management/operation/](https://www.netkiller.cn/management/operation/index.html): 第 4 章 运营手札
-  - [management/operation/InfluencerMarketing.html](https://www.netkiller.cn/management/operation/InfluencerMarketing.html): 4.3. 为什么网红容易塌房？
-  - [management/operation/如何提高拣货速度.html](https://www.netkiller.cn/management/operation/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%8B%A3%E8%B4%A7%E9%80%9F%E5%BA%A6.html): 4.2. 如何提高拣货速度
+  - [management/operation/InfluencerMarketing.html](https://www.netkiller.cn/management/operation/InfluencerMarketing.html): 为什么网红容易塌房？
+  - [management/operation/如何提高拣货速度.html](https://www.netkiller.cn/management/operation/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%8B%A3%E8%B4%A7%E9%80%9F%E5%BA%A6.html): 如何提高拣货速度
 - [management/product/](https://www.netkiller.cn/management/product/index.html): 第 2 章 产品手札
-  - [management/product/5G 消息将来带哪些变化.html](https://www.netkiller.cn/management/product/5G%20%E6%B6%88%E6%81%AF%E5%B0%86%E6%9D%A5%E5%B8%A6%E5%93%AA%E4%BA%9B%E5%8F%98%E5%8C%96.html): 2.6. 5G 消息将来带哪些变化
-  - [management/product/APP将取代H5成为主流.html](https://www.netkiller.cn/management/product/APP%E5%B0%86%E5%8F%96%E4%BB%A3H5%E6%88%90%E4%B8%BA%E4%B8%BB%E6%B5%81.html): 2.5. APP将取代H5成为主流
-  - [management/product/sns.html](https://www.netkiller.cn/management/product/sns.html): 2.7. SNS(Social Network Services)
-  - [management/product/产品设计人员常犯的错误.html](https://www.netkiller.cn/management/product/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%BA%BA%E5%91%98%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99%E8%AF%AF.html): 2.4. 产品设计人员常犯的错误
-  - [management/product/人工智能「精神陪伴」是个伪需求.html](https://www.netkiller.cn/management/product/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8C%E7%B2%BE%E7%A5%9E%E9%99%AA%E4%BC%B4%E3%80%8D%E6%98%AF%E4%B8%AA%E4%BC%AA%E9%9C%80%E6%B1%82.html): 2.10. 人工智能「精神陪伴」是个伪需求
-  - [management/product/央行数字货币.html](https://www.netkiller.cn/management/product/%E5%A4%AE%E8%A1%8C%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81.html): 2.12. 央行数字货币（DCEP）
-  - [management/product/我们会被人工智能取代吗.html](https://www.netkiller.cn/management/product/%E6%88%91%E4%BB%AC%E4%BC%9A%E8%A2%AB%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%96%E4%BB%A3%E5%90%97.html): 2.11. 我们会被人工智能取代吗
-  - [management/product/是什么限制了我们的想象力.html](https://www.netkiller.cn/management/product/%E6%98%AF%E4%BB%80%E4%B9%88%E9%99%90%E5%88%B6%E4%BA%86%E6%88%91%E4%BB%AC%E7%9A%84%E6%83%B3%E8%B1%A1%E5%8A%9B.html): 2.14. 是什么限制了我们的想象力？
-  - [management/product/是算法推荐还是隐私窃取.html](https://www.netkiller.cn/management/product/%E6%98%AF%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E8%BF%98%E6%98%AF%E9%9A%90%E7%A7%81%E7%AA%83%E5%8F%96.html): 2.13. 是"算法推荐"还是"隐私窃取"？
-  - [management/product/游戏.html](https://www.netkiller.cn/management/product/%E6%B8%B8%E6%88%8F.html): 2.16. 游戏
-  - [management/product/用户思维.html](https://www.netkiller.cn/management/product/%E7%94%A8%E6%88%B7%E6%80%9D%E7%BB%B4.html): 2.9. 用户思维
-  - [management/product/用户空间.html](https://www.netkiller.cn/management/product/%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4.html): 2.8. 用户空间
-  - [management/product/谈设计.html](https://www.netkiller.cn/management/product/%E8%B0%88%E8%AE%BE%E8%AE%A1.html): 2.3. 谈设计
-  - [management/product/软件交互设计.html](https://www.netkiller.cn/management/product/%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1.html): 2.15. 软件交互设计
-  - [management/product/需求.html](https://www.netkiller.cn/management/product/%E9%9C%80%E6%B1%82.html): 2.2. 需求
-- [management/project/](https://www.netkiller.cn/management/project/index.html): 部分 III. 软件项目管理
-  - [management/project/BUG率的误区.html](https://www.netkiller.cn/management/project/BUG%E7%8E%87%E7%9A%84%E8%AF%AF%E5%8C%BA.html): 16.4. BUG率的误区
-  - [management/project/ch12s04.html](https://www.netkiller.cn/management/project/ch12s04.html): 12.4. 时间管理的最高境界
-  - [management/project/ch19s03.html](https://www.netkiller.cn/management/project/ch19s03.html): 19.3. 岗位描述怎么写？
-  - [management/project/ch19s06.html](https://www.netkiller.cn/management/project/ch19s06.html): 19.6. 架构师面试题
-  - [management/project/ch19s07.html](https://www.netkiller.cn/management/project/ch19s07.html): 19.7. 数据库管理员
-  - [management/project/ch19s08.html](https://www.netkiller.cn/management/project/ch19s08.html): 19.8. 测试工程师
+  - [management/product/5G 消息将来带哪些变化.html](https://www.netkiller.cn/management/product/5G%20%E6%B6%88%E6%81%AF%E5%B0%86%E6%9D%A5%E5%B8%A6%E5%93%AA%E4%BA%9B%E5%8F%98%E5%8C%96.html): 5G 消息将来带哪些变化
+  - [management/product/APP将取代H5成为主流.html](https://www.netkiller.cn/management/product/APP%E5%B0%86%E5%8F%96%E4%BB%A3H5%E6%88%90%E4%B8%BA%E4%B8%BB%E6%B5%81.html): APP将取代H5成为主流
+  - [management/product/sns.html](https://www.netkiller.cn/management/product/sns.html): SNS(Social Network Services)
+  - [management/product/产品设计人员常犯的错误.html](https://www.netkiller.cn/management/product/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%BA%BA%E5%91%98%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99%E8%AF%AF.html): 产品设计人员常犯的错误
+  - [management/product/人工智能「精神陪伴」是个伪需求.html](https://www.netkiller.cn/management/product/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8C%E7%B2%BE%E7%A5%9E%E9%99%AA%E4%BC%B4%E3%80%8D%E6%98%AF%E4%B8%AA%E4%BC%AA%E9%9C%80%E6%B1%82.html): 人工智能「精神陪伴」是个伪需求
+  - [management/product/央行数字货币.html](https://www.netkiller.cn/management/product/%E5%A4%AE%E8%A1%8C%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81.html): 央行数字货币（DCEP）
+  - [management/product/我们会被人工智能取代吗.html](https://www.netkiller.cn/management/product/%E6%88%91%E4%BB%AC%E4%BC%9A%E8%A2%AB%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%96%E4%BB%A3%E5%90%97.html): 我们会被人工智能取代吗
+  - [management/product/是什么限制了我们的想象力.html](https://www.netkiller.cn/management/product/%E6%98%AF%E4%BB%80%E4%B9%88%E9%99%90%E5%88%B6%E4%BA%86%E6%88%91%E4%BB%AC%E7%9A%84%E6%83%B3%E8%B1%A1%E5%8A%9B.html): 是什么限制了我们的想象力？
+  - [management/product/是算法推荐还是隐私窃取.html](https://www.netkiller.cn/management/product/%E6%98%AF%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E8%BF%98%E6%98%AF%E9%9A%90%E7%A7%81%E7%AA%83%E5%8F%96.html): 是"算法推荐"还是"隐私窃取"？
+  - [management/product/游戏.html](https://www.netkiller.cn/management/product/%E6%B8%B8%E6%88%8F.html): 游戏
+  - [management/product/用户思维.html](https://www.netkiller.cn/management/product/%E7%94%A8%E6%88%B7%E6%80%9D%E7%BB%B4.html): 用户思维
+  - [management/product/谈设计.html](https://www.netkiller.cn/management/product/%E8%B0%88%E8%AE%BE%E8%AE%A1.html): 谈设计
+  - [management/product/软件交互设计.html](https://www.netkiller.cn/management/product/%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1.html): 软件交互设计
+  - [management/product/需求.html](https://www.netkiller.cn/management/product/%E9%9C%80%E6%B1%82.html): 需求
+- [management/project/](https://www.netkiller.cn/management/project/index.html): 部分 II. 软件项目管理
+  - [management/project/BUG率的误区.html](https://www.netkiller.cn/management/project/BUG%E7%8E%87%E7%9A%84%E8%AF%AF%E5%8C%BA.html): BUG率的误区
+  - [management/project/ch12s04.html](https://www.netkiller.cn/management/project/ch12s04.html): 时间管理的最高境界
+  - [management/project/ch19s03.html](https://www.netkiller.cn/management/project/ch19s03.html): 岗位描述怎么写？
+  - [management/project/ch19s06.html](https://www.netkiller.cn/management/project/ch19s06.html): 架构师面试题
+  - [management/project/ch19s07.html](https://www.netkiller.cn/management/project/ch19s07.html): 数据库管理员
+  - [management/project/ch19s08.html](https://www.netkiller.cn/management/project/ch19s08.html): 测试工程师
   - [management/project/project.hr.html](https://www.netkiller.cn/management/project/project.hr.html): 第 19 章 人力资源管理
-  - [management/project/software.html](https://www.netkiller.cn/management/project/software.html): 19.5. 软件工程师面试题
-  - [management/project/system.html](https://www.netkiller.cn/management/project/system.html): 19.4. 运维工程师面试题
-  - [management/project/为什么持续集成难以普及.html](https://www.netkiller.cn/management/project/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E9%9A%BE%E4%BB%A5%E6%99%AE%E5%8F%8A.html): 15.2. 为什么持续集成难以普及
-  - [management/project/为什么自动化测试难以推广.html](https://www.netkiller.cn/management/project/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E4%BB%A5%E6%8E%A8%E5%B9%BF.html): 16.3. 为什么自动化测试难以推广
-  - [management/project/任务分配.html](https://www.netkiller.cn/management/project/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D.html): 12.8. 任务分配
-  - [management/project/优先级管理.html](https://www.netkiller.cn/management/project/%E4%BC%98%E5%85%88%E7%BA%A7%E7%AE%A1%E7%90%86.html): 12.2. 优先级管理
-  - [management/project/会议管理.html](https://www.netkiller.cn/management/project/%E4%BC%9A%E8%AE%AE%E7%AE%A1%E7%90%86.html): 13.3. 会议管理
-  - [management/project/你清楚你的工作职责吗.html](https://www.netkiller.cn/management/project/%E4%BD%A0%E6%B8%85%E6%A5%9A%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%81%8C%E8%B4%A3%E5%90%97.html): 11.2. 你清楚你的工作职责吗？
-  - [management/project/内部外包与悬赏.html](https://www.netkiller.cn/management/project/%E5%86%85%E9%83%A8%E5%A4%96%E5%8C%85%E4%B8%8E%E6%82%AC%E8%B5%8F.html): 11.4. 内部外包与悬赏
-  - [management/project/制度流程和规范的误区.html](https://www.netkiller.cn/management/project/%E5%88%B6%E5%BA%A6%E6%B5%81%E7%A8%8B%E5%92%8C%E8%A7%84%E8%8C%83%E7%9A%84%E8%AF%AF%E5%8C%BA.html): 17.3. 制度、流程和规范的误区
-  - [management/project/升级风险.html](https://www.netkiller.cn/management/project/%E5%8D%87%E7%BA%A7%E9%A3%8E%E9%99%A9.html): 17.7. 升级风险
+  - [management/project/software.html](https://www.netkiller.cn/management/project/software.html): 软件工程师面试题
+  - [management/project/system.html](https://www.netkiller.cn/management/project/system.html): 运维工程师面试题
+  - [management/project/为什么持续集成难以普及.html](https://www.netkiller.cn/management/project/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E9%9A%BE%E4%BB%A5%E6%99%AE%E5%8F%8A.html): 为什么持续集成难以普及
+  - [management/project/为什么自动化测试难以推广.html](https://www.netkiller.cn/management/project/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E4%BB%A5%E6%8E%A8%E5%B9%BF.html): 为什么自动化测试难以推广
+  - [management/project/任务分配.html](https://www.netkiller.cn/management/project/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D.html): 任务分配
+  - [management/project/优先级管理.html](https://www.netkiller.cn/management/project/%E4%BC%98%E5%85%88%E7%BA%A7%E7%AE%A1%E7%90%86.html): 优先级管理
+  - [management/project/会议管理.html](https://www.netkiller.cn/management/project/%E4%BC%9A%E8%AE%AE%E7%AE%A1%E7%90%86.html): 会议管理
+  - [management/project/你清楚你的工作职责吗.html](https://www.netkiller.cn/management/project/%E4%BD%A0%E6%B8%85%E6%A5%9A%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%81%8C%E8%B4%A3%E5%90%97.html): 你清楚你的工作职责吗？
+  - [management/project/内部外包与悬赏.html](https://www.netkiller.cn/management/project/%E5%86%85%E9%83%A8%E5%A4%96%E5%8C%85%E4%B8%8E%E6%82%AC%E8%B5%8F.html): 内部外包与悬赏
+  - [management/project/制度流程和规范的误区.html](https://www.netkiller.cn/management/project/%E5%88%B6%E5%BA%A6%E6%B5%81%E7%A8%8B%E5%92%8C%E8%A7%84%E8%8C%83%E7%9A%84%E8%AF%AF%E5%8C%BA.html): 制度、流程和规范的误区
+  - [management/project/升级风险.html](https://www.netkiller.cn/management/project/%E5%8D%87%E7%BA%A7%E9%A3%8E%E9%99%A9.html): 升级风险
   - [management/project/变更管理.html](https://www.netkiller.cn/management/project/%E5%8F%98%E6%9B%B4%E7%AE%A1%E7%90%86.html): 第 14 章 变更管理(Change Management)
-  - [management/project/因果图在运维工作中的应用.html](https://www.netkiller.cn/management/project/%E5%9B%A0%E6%9E%9C%E5%9B%BE%E5%9C%A8%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8.html): 17.4. 因果图在运维工作中的应用
-  - [management/project/团队膨胀的原因分析.html](https://www.netkiller.cn/management/project/%E5%9B%A2%E9%98%9F%E8%86%A8%E8%83%80%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90.html): 11.5. 团队膨胀的原因分析
-  - [management/project/工作报告.html](https://www.netkiller.cn/management/project/%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A.html): 13.4. 工作报告
-  - [management/project/工时计算.html](https://www.netkiller.cn/management/project/%E5%B7%A5%E6%97%B6%E8%AE%A1%E7%AE%97.html): 12.5. 项目管理中工时计算的问题
-  - [management/project/当日事当日毕.html](https://www.netkiller.cn/management/project/%E5%BD%93%E6%97%A5%E4%BA%8B%E5%BD%93%E6%97%A5%E6%AF%95.html): 12.7. 当日事当日毕
-  - [management/project/怎样防止踢皮球.html](https://www.netkiller.cn/management/project/%E6%80%8E%E6%A0%B7%E9%98%B2%E6%AD%A2%E8%B8%A2%E7%9A%AE%E7%90%83.html): 11.3. 怎样防止踢皮球
+  - [management/project/因果图在运维工作中的应用.html](https://www.netkiller.cn/management/project/%E5%9B%A0%E6%9E%9C%E5%9B%BE%E5%9C%A8%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8.html): 因果图在运维工作中的应用
+  - [management/project/团队膨胀的原因分析.html](https://www.netkiller.cn/management/project/%E5%9B%A2%E9%98%9F%E8%86%A8%E8%83%80%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90.html): 团队膨胀的原因分析
+  - [management/project/工作报告.html](https://www.netkiller.cn/management/project/%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A.html): 工作报告
+  - [management/project/工时计算.html](https://www.netkiller.cn/management/project/%E5%B7%A5%E6%97%B6%E8%AE%A1%E7%AE%97.html): 项目管理中工时计算的问题
+  - [management/project/当日事当日毕.html](https://www.netkiller.cn/management/project/%E5%BD%93%E6%97%A5%E4%BA%8B%E5%BD%93%E6%97%A5%E6%AF%95.html): 当日事当日毕
+  - [management/project/怎样防止踢皮球.html](https://www.netkiller.cn/management/project/%E6%80%8E%E6%A0%B7%E9%98%B2%E6%AD%A2%E8%B8%A2%E7%9A%AE%E7%90%83.html): 怎样防止踢皮球
   - [management/project/成本管理.html](https://www.netkiller.cn/management/project/%E6%88%90%E6%9C%AC%E7%AE%A1%E7%90%86.html): 第 18 章 成本管理
-  - [management/project/技术岗怎样做工作交接.html](https://www.netkiller.cn/management/project/%E6%8A%80%E6%9C%AF%E5%B2%97%E6%80%8E%E6%A0%B7%E5%81%9A%E5%B7%A5%E4%BD%9C%E4%BA%A4%E6%8E%A5.html): 19.2. 技术岗怎样做工作交接
-  - [management/project/投诉处理.html](https://www.netkiller.cn/management/project/%E6%8A%95%E8%AF%89%E5%A4%84%E7%90%86.html): 13.6. 投诉处理
-  - [management/project/拥抱变更.html](https://www.netkiller.cn/management/project/%E6%8B%A5%E6%8A%B1%E5%8F%98%E6%9B%B4.html): 14.3. 拥抱变更
-  - [management/project/敏捷开发为什么会以失败告终.html](https://www.netkiller.cn/management/project/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E4%BB%A5%E5%A4%B1%E8%B4%A5%E5%91%8A%E7%BB%88.html): 16.5. 敏捷开发为什么会以失败告终？
+  - [management/project/技术岗怎样做工作交接.html](https://www.netkiller.cn/management/project/%E6%8A%80%E6%9C%AF%E5%B2%97%E6%80%8E%E6%A0%B7%E5%81%9A%E5%B7%A5%E4%BD%9C%E4%BA%A4%E6%8E%A5.html): 技术岗怎样做工作交接
+  - [management/project/投诉处理.html](https://www.netkiller.cn/management/project/%E6%8A%95%E8%AF%89%E5%A4%84%E7%90%86.html): 投诉处理
+  - [management/project/拥抱变更.html](https://www.netkiller.cn/management/project/%E6%8B%A5%E6%8A%B1%E5%8F%98%E6%9B%B4.html): 拥抱变更
+  - [management/project/敏捷开发为什么会以失败告终.html](https://www.netkiller.cn/management/project/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E4%BB%A5%E5%A4%B1%E8%B4%A5%E5%91%8A%E7%BB%88.html): 敏捷开发为什么会以失败告终？
   - [management/project/时间管理.html](https://www.netkiller.cn/management/project/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86.html): 第 12 章 时间管理
-  - [management/project/时间管理的误区.html](https://www.netkiller.cn/management/project/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E7%9A%84%E8%AF%AF%E5%8C%BA.html): 12.3. 时间管理的误区
+  - [management/project/时间管理的误区.html](https://www.netkiller.cn/management/project/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E7%9A%84%E8%AF%AF%E5%8C%BA.html): 时间管理的误区
   - [management/project/沟通管理.html](https://www.netkiller.cn/management/project/%E6%B2%9F%E9%80%9A%E7%AE%A1%E7%90%86.html): 第 13 章 沟通管理（Communication Management）
-  - [management/project/监控的艺术.html](https://www.netkiller.cn/management/project/%E7%9B%91%E6%8E%A7%E7%9A%84%E8%89%BA%E6%9C%AF.html): 17.5. 监控的艺术
-  - [management/project/程序猿说的「优化」是什么意思.html](https://www.netkiller.cn/management/project/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E8%AF%B4%E7%9A%84%E3%80%8C%E4%BC%98%E5%8C%96%E3%80%8D%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D.html): 17.2. 程序猿说的「优化」是什么意思？
-  - [management/project/突发事件管理.html](https://www.netkiller.cn/management/project/%E7%AA%81%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86.html): 17.6. Incident Management(突发事件管理)
-  - [management/project/自动化测试如何破局.html](https://www.netkiller.cn/management/project/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A6%82%E4%BD%95%E7%A0%B4%E5%B1%80.html): 16.2. 自动化测试如何破局？
+  - [management/project/监控的艺术.html](https://www.netkiller.cn/management/project/%E7%9B%91%E6%8E%A7%E7%9A%84%E8%89%BA%E6%9C%AF.html): 监控的艺术
+  - [management/project/程序猿说的「优化」是什么意思.html](https://www.netkiller.cn/management/project/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E8%AF%B4%E7%9A%84%E3%80%8C%E4%BC%98%E5%8C%96%E3%80%8D%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D.html): 程序猿说的「优化」是什么意思？
+  - [management/project/突发事件管理.html](https://www.netkiller.cn/management/project/%E7%AA%81%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86.html): Incident Management(突发事件管理)
+  - [management/project/自动化测试如何破局.html](https://www.netkiller.cn/management/project/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%A6%82%E4%BD%95%E7%A0%B4%E5%B1%80.html): 自动化测试如何破局？
   - [management/project/范围管理.html](https://www.netkiller.cn/management/project/%E8%8C%83%E5%9B%B4%E7%AE%A1%E7%90%86.html): 第 11 章 范围管理
-  - [management/project/表达方式.html](https://www.netkiller.cn/management/project/%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F.html): 13.2. 表达方式
-  - [management/project/负面信息处理.html](https://www.netkiller.cn/management/project/%E8%B4%9F%E9%9D%A2%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86.html): 13.7. 负面信息处理
+  - [management/project/表达方式.html](https://www.netkiller.cn/management/project/%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F.html): 表达方式
+  - [management/project/负面信息处理.html](https://www.netkiller.cn/management/project/%E8%B4%9F%E9%9D%A2%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86.html): 负面信息处理
   - [management/project/质量管理.html](https://www.netkiller.cn/management/project/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86.html): 第 16 章 质量管理
-  - [management/project/越级和跨部门沟通.html](https://www.netkiller.cn/management/project/%E8%B6%8A%E7%BA%A7%E5%92%8C%E8%B7%A8%E9%83%A8%E9%97%A8%E6%B2%9F%E9%80%9A.html): 13.5. 越级和跨部门沟通
-  - [management/project/通知管理.html](https://www.netkiller.cn/management/project/%E9%80%9A%E7%9F%A5%E7%AE%A1%E7%90%86.html): 13.8. 通知管理
+  - [management/project/越级和跨部门沟通.html](https://www.netkiller.cn/management/project/%E8%B6%8A%E7%BA%A7%E5%92%8C%E8%B7%A8%E9%83%A8%E9%97%A8%E6%B2%9F%E9%80%9A.html): 越级和跨部门沟通
+  - [management/project/通知管理.html](https://www.netkiller.cn/management/project/%E9%80%9A%E7%9F%A5%E7%AE%A1%E7%90%86.html): 通知管理
   - [management/project/采购管理.html](https://www.netkiller.cn/management/project/%E9%87%87%E8%B4%AD%E7%AE%A1%E7%90%86.html): 第 20 章 采购管理
   - [management/project/集成管理.html](https://www.netkiller.cn/management/project/%E9%9B%86%E6%88%90%E7%AE%A1%E7%90%86.html): 第 15 章 集成管理
-  - [management/project/需求变更.html](https://www.netkiller.cn/management/project/%E9%9C%80%E6%B1%82%E5%8F%98%E6%9B%B4.html): 14.2. 需求变更
-  - [management/project/需求评审和代码审查.html](https://www.netkiller.cn/management/project/%E9%9C%80%E6%B1%82%E8%AF%84%E5%AE%A1%E5%92%8C%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5.html): 17.8. 需求评审和代码审查
-  - [management/project/项目延期.html](https://www.netkiller.cn/management/project/%E9%A1%B9%E7%9B%AE%E5%BB%B6%E6%9C%9F.html): 12.6. 项目延期
+  - [management/project/需求变更.html](https://www.netkiller.cn/management/project/%E9%9C%80%E6%B1%82%E5%8F%98%E6%9B%B4.html): 需求变更
+  - [management/project/需求评审和代码审查.html](https://www.netkiller.cn/management/project/%E9%9C%80%E6%B1%82%E8%AF%84%E5%AE%A1%E5%92%8C%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5.html): 需求评审和代码审查
+  - [management/project/项目延期.html](https://www.netkiller.cn/management/project/%E9%A1%B9%E7%9B%AE%E5%BB%B6%E6%9C%9F.html): 项目延期
   - [management/project/风险管理.html](https://www.netkiller.cn/management/project/%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86.html): 第 17 章 风险管理
-- [management/utilities/](https://www.netkiller.cn/management/utilities/index.html): 1.5. 管理工具(Utilities)
-- [management/workplace/](https://www.netkiller.cn/management/workplace/index.html): 第 21 章 自我管理
-  - [management/workplace/ch21s02.html](https://www.netkiller.cn/management/workplace/ch21s02.html): 21.2. 职场中的贵人
-  - [management/workplace/也谈程序猿的职业规划.html](https://www.netkiller.cn/management/workplace/%E4%B9%9F%E8%B0%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E7%9A%84%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92.html): 21.4. 也谈程序猿的职业规划
-  - [management/workplace/如何定期评估自己的职业风险.html](https://www.netkiller.cn/management/workplace/%E5%A6%82%E4%BD%95%E5%AE%9A%E6%9C%9F%E8%AF%84%E4%BC%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E8%81%8C%E4%B8%9A%E9%A3%8E%E9%99%A9.html): 21.5. 如何定期评估自己的职业风险？
-  - [management/workplace/职场中的第一印象.html](https://www.netkiller.cn/management/workplace/%E8%81%8C%E5%9C%BA%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E5%8D%B0%E8%B1%A1.html): 21.3. 职场中的第一印象
+- [management/utilities/](https://www.netkiller.cn/management/utilities/index.html): 管理工具(Utilities)
 - [monitor/](https://www.netkiller.cn/monitor/index.html): Netkiller Monitor 手札
   - [monitor/OpenTSDB.html](https://www.netkiller.cn/monitor/OpenTSDB.html): 第 6 章 OpenTSDB
   - [monitor/OpenView.html](https://www.netkiller.cn/monitor/OpenView.html): 5.17. 商业软件
