@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>7.3. join</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="table.html" title="第 7 章 表格操作/行列转换" /><link rel="prev" href="paste.html" title="7.2. paste - merge lines of files" /><link rel="next" href="io.html" title="第 8 章 standard input/output" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.3. join</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="paste.html">上一页</a> </td><th width="60%" align="center">第 7 章 表格操作/行列转换</th><td width="20%" align="right"> <a accesskey="n" href="io.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="join"></a>7.3. join</h3></div></div></div>
+		
+		<p>join 命令就是一个根据关键字合并数据文件的命令(join lines of two files on a common field),类似于数据库中两张表关联查询.</p>
+		<pre class="screen">
+		
+
+
+内连接（inner join）                            格式：join &lt;FILE1&gt; &lt;FILE2&gt;
+左连接（left join, 左外连接, left outer join）   格式：join -a1 &lt;FILE1&gt; &lt;FILE2&gt;
+右连接（right join, 右外连接,right outer join）  格式：join -a2 &lt;FILE1&gt; &lt;FILE2&gt;
+全连接（full join, 全外连接, full outer join）   格式：join -a1 -a2 &lt;FILE1&gt; &lt;FILE2&gt;
+
+// 注意 使用 join 来合并两个文件的数据行时, 这两个文件必须要被正确排序.
+
+1) 差集
+[root@test23 ~]# cat a.txt | sort &gt; file1; cat b.txt | sort &gt; file2; join  -v 1   file1 file2
+1.1.1.1
+3.3.3.3
+[root@test23 ~]# cat a.txt | sort &gt; file1; cat b.txt | sort &gt; file2; join  -v 2   file1 file2
+4.4.4.4
+a.b.c.d
+
+2) 并集
+[root@test23 ~]# cat a.txt | sort &gt; file1; cat b.txt | sort &gt; file2; join  -a1 -a2   file1 file2
+1.1.1.1
+1.2.3.4
+2.2.2.2
+3.3.3.3
+4.4.4.4
+a.b.c.d
+
+3) 交集
+// 不指定任何参数的情况下使用join命令,相当于数据库中的内连接,(关键字,默认用第一列[使用空格作为分割符]作为关键字)不匹配的行不会输出.
+[root@test23 ~]# cat a.txt | sort &gt; file1; cat b.txt | sort &gt; file2; join     file1 file2
+1.2.3.4
+2.2.2.2
+
+
+join 其他用法
+
+-t &lt;CHAR&gt; 指定分隔符,比如: -t ':' 使用冒号作为分隔符,默认的分隔符是空白.
+
+-o &lt;FILENO.FIELDNO&gt; ... 指定输出字段 其中FILENO=1表示第一个文件,FILENO=2表示第二个文件,FIELDNO表示字段序号,从1开始编号.默认会全部输出,但关键字列只输出一次.
+		
+		</pre>
+	</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="paste.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="table.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="io.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">7.2. paste - merge lines of files </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 第 8 章 standard input/output</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>

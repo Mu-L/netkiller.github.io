@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>6.15. grep, egrep, fgrep, rgrep - print lines matching a pattern</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="text.html" title="第 6 章 文本处理" /><link rel="prev" href="expand.html" title="6.14. TAB符号与空格处理" /><link rel="next" href="sort.html" title="6.16. sort - sort lines of text files" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6.15. grep, egrep, fgrep, rgrep - print lines matching a pattern</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="expand.html">上一页</a> </td><th width="60%" align="center">第 6 章 文本处理</th><td width="20%" align="right"> <a accesskey="n" href="sort.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="grep"></a>6.15. grep, egrep, fgrep, rgrep - print lines matching a pattern</h3></div></div></div>
+	
+	<pre class="screen">
+	
+Linux grep (global regular expression) 命令用于查找文件里符合条件的字符串或正则表达式。
+grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 -，则 grep 指令会从标准输入设备读取数据。
+
+语法 grep [options] pattern [files]
+或
+grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示行数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]
+pattern - 表示要查找的字符串或正则表达式。
+files - 表示要查找的文件名，可以同时查找多个文件，如果省略 files 参数，则默认从标准输入中读取数据。
+
+常用选项：：
+-i：忽略大小写进行匹配。
+-v：反向查找，只打印不匹配的行。
+-n：显示匹配行的行号。
+-r：递归查找子目录中的文件。
+-l：只打印匹配的文件名。
+-c：只打印匹配的行数。
+更多参数说明：
+-a 或 --text : 不要忽略二进制的数据。
+-A&lt;显示行数&gt; 或 --after-context=&lt;显示行数&gt; : 除了显示符合范本样式的那一列之外，并显示该行之后的内容。
+-b 或 --byte-offset : 在显示符合样式的那一行之前，标示出该行第一个字符的编号。
+-B&lt;显示行数&gt; 或 --before-context=&lt;显示行数&gt; : 除了显示符合样式的那一行之外，并显示该行之前的内容。
+-c 或 --count : 计算符合样式的列数。
+-C&lt;显示行数&gt; 或 --context=&lt;显示行数&gt;或-&lt;显示行数&gt; : 除了显示符合样式的那一行之外，并显示该行之前后的内容。
+-d &lt;动作&gt; 或 --directories=&lt;动作&gt; : 当指定要查找的是目录而非文件时，必须使用这项参数，否则grep指令将回报信息并停止动作。
+-e&lt;范本样式&gt; 或 --regexp=&lt;范本样式&gt; : 指定字符串做为查找文件内容的样式。
+-E 或 --extended-regexp : 将样式为延伸的正则表达式来使用。
+-f&lt;规则文件&gt; 或 --file=&lt;规则文件&gt; : 指定规则文件，其内容含有一个或多个规则样式，让grep查找符合规则条件的文件内容，格式为每行一个规则样式。
+-F 或 --fixed-regexp : 将样式视为固定字符串的列表。
+-G 或 --basic-regexp : 将样式视为普通的表示法来使用。
+-h 或 --no-filename : 在显示符合样式的那一行之前，不标示该行所属的文件名称。
+-H 或 --with-filename : 在显示符合样式的那一行之前，表示该行所属的文件名称。
+-i 或 --ignore-case : 忽略字符大小写的差别。
+-l 或 --file-with-matches : 列出文件内容符合指定的样式的文件名称。
+-L 或 --files-without-match : 列出文件内容不符合指定的样式的文件名称。
+-n 或 --line-number : 在显示符合样式的那一行之前，标示出该行的列数编号。
+-o 或 --only-matching : 只显示匹配PATTERN 部分。
+-q 或 --quiet或--silent : 不显示任何信息。
+-r 或 --recursive : 此参数的效果和指定"-d recurse"参数相同。
+-s 或 --no-messages : 不显示错误信息。
+-v 或 --invert-match : 显示不包含匹配文本的所有行。
+-V 或 --version : 显示版本信息。
+-w 或 --word-regexp : 只显示全字符合的列。
+-x --line-regexp : 只显示全列符合的列。
+-y : 此参数的效果和指定"-i"参数相同。	
+	
+	</pre>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id861"></a>6.15.1. 删除空行</h4></div></div></div>
+		
+		<pre class="screen">
+$ cat file | grep '.'
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="miscellaneous"></a>6.15.2. -v, --invert-match</h4></div></div></div>
+		
+		<p>grep -v "grep"</p>
+		<pre class="screen">
+[root@development ~]# ps ax | grep httpd
+ 6284 ?        Ss     0:10 /usr/local/httpd-2.2.14/bin/httpd -k start
+ 8372 ?        S      0:00 perl ./wrapper.pl -chdir -name httpd -class com.caucho.server.resin.Resin restart
+19136 ?        S      0:00 /usr/local/httpd-2.2.14/bin/httpd -k start
+19749 pts/1    R+     0:00 grep httpd
+31530 ?        Sl     0:57 /usr/local/httpd-2.2.14/bin/httpd -k start
+31560 ?        Sl     1:12 /usr/local/httpd-2.2.14/bin/httpd -k start
+31623 ?        Sl     1:06 /usr/local/httpd-2.2.14/bin/httpd -k start
+[root@development ~]# ps ax | grep httpd | grep -v grep
+ 6284 ?        Ss     0:10 /usr/local/httpd-2.2.14/bin/httpd -k start
+ 8372 ?        S      0:00 perl ./wrapper.pl -chdir -name httpd -class com.caucho.server.resin.Resin restart
+19136 ?        S      0:00 /usr/local/httpd-2.2.14/bin/httpd -k start
+31530 ?        Sl     0:57 /usr/local/httpd-2.2.14/bin/httpd -k start
+31560 ?        Sl     1:12 /usr/local/httpd-2.2.14/bin/httpd -k start
+31623 ?        Sl     1:06 /usr/local/httpd-2.2.14/bin/httpd -k start
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="grep.output"></a>6.15.3. 输出控制（Output control）</h4></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id862"></a>显示行号</h5></div></div></div>
+			
+			<pre class="screen">
+			
+[root@localhost ~]# grep -n 'ftp' /etc/passwd
+12:ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id868"></a>-o, --only-matching show only the part of a line matching PATTERN</h5></div></div></div>
+			
+			<pre class="screen">
+			
+$ curl -s http://www.example.com | egrep -o '&lt;a href="(.*)"&gt;.*&lt;/a&gt;' | sed -e 's/.*href="\([^"]*\)".*/\1/'
+			
+			</pre>
+			<pre class="screen">
+$ mysqlshow | egrep -o "|\w(.*)\w|"
+Databases
+information_schema
+test
+			</pre>
+			<pre class="screen">
+			
+$ cat file.html | grep -o \
+    -E '\b(([\w-]+://?|www[.])[^\s()&lt;&gt;]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))'
+
+$ cat file.html | grep -o -E 'href="([^"#]+)"'
+
+$ cat sss.html | grep -o -E 'thunder://([^&lt;]+)'
+			
+			</pre>
+			<pre class="screen">
+			
+neo@MacBook-Pro ~/project % cat WikiTest.java  | grep '@Api'
+    @Api(method = GET, uri = "/project/:projectName/wikis/page")
+    @Api(method = POST, uri = "/project/:projectName/wiki")
+    @Api(method = POST, uri = "/project/:projectName/wiki")
+    @Api(method = POST, uri = "/project/:projectName/wiki")
+
+neo@MacBook-Pro ~/project % cat WikiTest.java  | egrep -o 'method\s=\s.+,\suri\s=\s.+"'
+method = GET, uri = "/project/:projectName/wikis/page"
+method = POST, uri = "/project/:projectName/wiki"
+method = POST, uri = "/project/:projectName/wiki"
+method = POST, uri = "/project/:projectName/wiki"
+			
+			</pre>
+			<div class="section"><div class="titlepage"><div><div><h6 class="title"><a id="id863"></a>stroke="rgb(227, 119, 194)" 取出 rgb(227, 119, 194)</h6></div></div></div>
+				
+				<pre class="screen">
+				
+echo 'stroke="rgb(227, 119, 194)"' | egrep -o 'rgb\([0-9]+, [0-9]+, [0-9]+\)'				
+				
+				</pre>
+			</div>
+			<div class="section"><div class="titlepage"><div><div><h6 class="title"><a id="id864"></a>取出 HTML 中的 RGB 色彩 #d62728</h6></div></div></div>
+				
+				<pre class="screen">
+				
+echo '&lt;line stroke="#d62728" stroke-width="1.1875" x1="-1" x2="82" y1="20.59375" y2="20.59375"&gt;' | egrep -o '#[0-9a-fA-F]{6}'		
+				
+				</pre>
+				<p>禁止跨过标签</p>
+				<pre class="screen">
+				
+echo '&lt;line stroke="#d62728" stroke-width="1.1875" x1="-1" x2="82" y1="20.59375" y2="20.59375"&gt;&lt;/line&gt;&lt;circle stroke-width="1.5" r="6" stroke="#d62728" fill="var(--markmap-circle-open-bg)" cx="80" cy="20.59375"&gt;' | egrep -o '&lt;line[^&gt;]+stroke="#([0-9a-fA-F]{6})"' | egrep -o '#[0-9a-fA-F]{6}'				
+
+# 其中 [^&gt;]+ 标识禁止跨越标签，匹配到 &gt; 为止
+				
+				</pre>
+			</div>
+			<div class="section"><div class="titlepage"><div><div><h6 class="title"><a id="id865"></a>IP 地址</h6></div></div></div>
+				
+				<pre class="screen">
+# grep rhost /var/log/secure | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"
+				</pre>
+			</div>
+			<div class="section"><div class="titlepage"><div><div><h6 class="title"><a id="id866"></a>UUID</h6></div></div></div>
+				
+				<pre class="screen">
+				
+neo@MacBook-Pro ~ % curl -s -X POST --user 'api:secret' -d 'grant_type=password&amp;username=netkiller@msn.com&amp;password=123456' http://localhost:8080/oauth/token | grep -o -E '"access_token":"([0-9a-f-]+)"'
+"access_token":"863ef5df-6448-40a6-8809-f6f4b680689b"
+				
+				</pre>
+			</div>
+			<div class="section"><div class="titlepage"><div><div><h6 class="title"><a id="id867"></a>行列转换</h6></div></div></div>
+				
+				<pre class="screen">
+				
+$ grep -o . &lt;&lt;&lt; "Helloworld"
+H
+e
+l
+l
+o
+w
+o
+r
+l
+d
+				
+				</pre>
+			</div>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id869"></a>递归操作</h5></div></div></div>
+			
+			<p>递归查询</p>
+			<pre class="screen">
+$ sudo grep -r 'neo' /etc/*
+			</pre>
+			<p>递归替换</p>
+			<pre class="screen">
+			&lt;![CDATA[
+for file in $( grep -rl '8800.org' *  | grep -v .svn ); do
+    echo item: $file
+	[ -f $file ] &amp;&amp; sed -e 's/8800\.org/sf\.net/g' -e 's/netkiller/neo/g' $file &gt;$file.bak; cp $file.bak $file;
+done
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id870"></a>-c, --count print only a count of matching lines per FILE</h5></div></div></div>
+			
+			<pre class="screen">
+$ cat /etc/resolv.conf
+nameserver localhost
+nameserver 208.67.222.222
+nameserver 208.67.220.220
+nameserver 202.96.128.166
+nameserver 202.96.134.133
+$ grep -c nameserver /etc/resolv.conf
+5
+			</pre>
+			<pre class="screen">
+# grep -c GET /www/logs/access.log
+188460
+
+# grep -c POST /www/logs/access.log
+421
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id871"></a>binary file matches</h5></div></div></div>
+			
+			<pre class="screen">
+			
+log@logging ~/netkiller&gt; grep '1052302282228360003' spring.2023-02-28.log
+grep: spring.2023-02-28.log: binary file matches		
+			
+			</pre>
+			<p>虽然这是文本文件，但是文件中含有二进制内容输出，导致 grep 误以为是二进制文件</p>
+			<p>解决方法 -a, --text equivalent to --binary-files=text</p>
+			<pre class="screen">
+		
+log@logging ~/netkiller&gt; grep -a '1052302282228360003' spring.2023-02-28.log
+		
+			</pre>
+		</div>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="grep.context"></a>6.15.4. Context control</h4></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id872"></a>-A, --after-context=NUM print NUM lines of trailing context</h5></div></div></div>
+			
+			<p>返回匹配当前行至下面N行</p>
+			<pre class="screen">
+# grep -A1 game /etc/passwd
+games:x:12:100:games:/usr/games:/sbin/nologin
+gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
+
+# grep -A2 game /etc/passwd
+games:x:12:100:games:/usr/games:/sbin/nologin
+gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id873"></a>-B, --before-context=NUM print NUM lines of leading context</h5></div></div></div>
+			
+			<p>返回匹配当前行至上面N行</p>
+			<pre class="screen">
+# grep -B1 game /etc/passwd
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+
+# grep -B2 game /etc/passwd
+uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id874"></a>-C, --context=NUM print NUM lines of output context</h5></div><div><h6 class="subtitle">-NUM same as --context=NUM</h6></div></div></div>
+			
+			
+			<pre class="screen">
+neo@neo-OptiPlex-380:~$ grep -C 1 new /etc/passwd
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+
+neo@neo-OptiPlex-380:~$ grep -C 5 new /etc/passwd
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+
+# grep -3 game /etc/passwd
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id875"></a>--color</h5></div></div></div>
+			
+			<pre class="screen">
+# grep --color root  /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+			</pre>
+			<p>可以通过alias别名启用--color选项</p>
+			<pre class="screen">
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+			</pre>
+			<p>加入.bashrc中，每次用户登录将自动生效</p>
+			<pre class="screen">
+			
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors &amp;&amp; eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+			
+			</pre>
+		</div>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="regexp"></a>6.15.5. Regexp selection and interpretation</h4></div></div></div>
+		
+		<p>n 开头</p>
+		<pre class="screen">
+$ grep '^n' /etc/passwd
+news:x:9:9:news:/var/spool/news:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+neo:x:1000:1000:neo chan,,,:/home/neo:/bin/bash
+nagios:x:116:127::/var/run/nagios2:/bin/false
+		</pre>
+		<p>bash 结尾</p>
+		<pre class="screen">
+$ grep 'bash$' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+neo:x:1000:1000:neo chan,,,:/home/neo:/bin/bash
+postgres:x:114:124:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+cvsroot:x:1001:1001:cvsroot,,,,:/home/cvsroot:/bin/bash
+svnroot:x:1002:1002:subversion,,,,:/home/svnroot:/bin/bash
+		</pre>
+		<p>中间包含 root</p>
+		<pre class="screen">
+$ grep '.*root' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+cvsroot:x:1001:1001:cvsroot,,,,:/home/cvsroot:/bin/bash
+svnroot:x:1002:1002:subversion,,,,:/home/svnroot:/bin/bash
+		</pre>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id876"></a>.*</h5></div></div></div>
+			
+			<pre class="screen">
+			
+$ curl -s http://www.example.com | egrep -o '&lt;a href=(.*)&gt;.*&lt;/a&gt;'
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id877"></a>2010:(13|14|15|16)</h5></div></div></div>
+			
+			<p>regular 匹配一组</p>
+			<pre class="screen">
+egrep "2010:(13|14|15|16)"  access.2010-11-18.log &gt; apache.log
+			</pre>
+			<pre class="screen">
+ps ax |grep -E "mysqld|httpd|resin"
+			</pre>
+			<pre class="screen">
+			
+neo@MacBook-Pro-Neo ~&gt; cat /etc/passwd | egrep -e "root|daemon"
+root:*:0:0:System Administrator:/var/root:/bin/sh
+daemon:*:1:1:System Services:/var/root:/usr/bin/false
+_cvmsroot:*:212:212:CVMS Root:/var/empty:/usr/bin/false			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id878"></a>[]与{}</h5></div></div></div>
+			
+			<p>源文件</p>
+			<pre class="screen">
+# cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Sat Sep 10 00:25:46 2011
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=091f295e-ea6d-4f57-9314-e2333f7ebff7 /                       ext4    defaults        1 1
+UUID=b3661a0b-2c50-4e18-8030-be2d043cbfc4 /www                    ext4    defaults        1 2
+UUID=4d3468de-a2ac-451c-b693-3bdca8832096 swap                    swap    defaults        0 0
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+sysfs                   /sys                    sysfs   defaults        0 0
+proc                    /proc                   proc    defaults        0 0
+
+			</pre>
+			<p>匹配每行包含4个连续字符的字符串的行。</p>
+			<pre class="screen">
+# grep '[A-Z]\{4\}' /etc/fstab
+UUID=091f295e-ea6d-4f57-9314-e2333f7ebff7 /                       ext4    defaults        1 1
+UUID=b3661a0b-2c50-4e18-8030-be2d043cbfc4 /www                    ext4    defaults        1 2
+UUID=4d3468de-a2ac-451c-b693-3bdca8832096 swap                    swap    defaults        0 0
+			</pre>
+
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id879"></a>-P, --perl-regexp Perl正则表达式</h5></div></div></div>
+			
+			<p>Interpret PATTERN as a Perl regular expression. This is highly experimental and grep -P may warn of unimplemented features.</p>
+			<p>取网卡IP地址</p>
+			<pre class="screen">
+			
+[root@netkiller ~]# ifconfig eth0
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255
+        ether 00:16:3e:14:2f:9e  txqueuelen 1000  (Ethernet)
+        RX packets 3192683236  bytes 793770390138 (739.2 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3115395437  bytes 2842927192254 (2.5 TiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@netkiller ~]# ip -4 addr show "eth0" | grep -oP '(?&lt;=inet\s)\d+(\.\d+){3}'
+192.168.1.104
+[root@netkiller ~]# 			
+			
+			</pre>
+			<p>取出 orderId=105230428153439001 中的订单号</p>
+			<pre class="screen">
+			
+root@logging ~# echo "&lt;a href='https://api.netkiller.cn/neo-service/orderComputerRetry?orderId=1052304281534390016&amp;orderStatus=1'&gt;重试&lt;/a&gt;" | grep -oP '(?&lt;=orderId\=\d)\d+'	
+			
+			</pre>
+			<pre class="screen">
+			
+[neo@netkiller nginx]$ grep -Po '\w+\.js' www.netkiller.cn.access.log
+index.js
+min.js
+min.js
+mCustomScrollbar.js
+min.js
+ajax_gd.js
+ajax.js
+validation.js
+AC_RunActiveContent.js
+WdatePicker.js
+cookie.js
+msg_modal.js
+all.js
+common.js
+commonjs.js
+swfobject.js
+dateutil.js
+form.js
+live800.js
+lang.js
+cycle2.js
+min.js
+carousel.js
+tabify.js
+image.js
+min.js
+ctrl.js
+packed.js
+min.js
+common.js
+			
+			</pre>
+		</div>
+		
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="fgrep"></a>6.15.6. fgrep</h4></div></div></div>
+		
+		<p>^M 处理</p>
+		<pre class="screen">
+fgrep -rl `echo -ne '\r'` .
+
+find . -type f -exec grep $'\r' {} +
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="egrep"></a>6.15.7. egrep</h4></div></div></div>
+		
+		<p>egrep = grep -E 在egrep中不许看使用转意字符，例如</p>
+		<pre class="screen">
+# grep '\(oo\).*\1' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+
+# grep -E '(oo).*\1' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+
+# egrep '(oo).*\1' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+			</pre>
+
+		<pre class="screen">
+$ snmpwalk -v2c -c public 172.16.1.254 | egrep -i 'if(in|out)'
+
+for pid in $(ps -axf |grep 'php-cgi' | egrep egrep "0:00.(6|7|8|9)"'{print $1}'); do kill -9 $pid; done
+
+for pid in $(ps -axf |grep 'php-cgi' | egrep "0:(0|1|2|3|4|5)0.(6|7|8|9)" |awk '{print $1}'); do kill -9 $pid; done
+		</pre>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id880"></a>匹配多个条件</h5></div></div></div>
+			
+			<pre class="screen">
+			
+[root@localhost src]# egrep "^r|^d" /etc/group
+root:x:0:
+daemon:x:2:
+disk:x:6:
+dialout:x:18:
+dbus:x:81:
+render:x:998:
+docker:x:991:www,gitlab-runner			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h5 class="title"><a id="id881"></a></h5></div></div></div>
+			
+			<p>需求：日志如下，需要取出 orderId=1052304281528490008 中的订单号 1052304281528490008</p>
+			<pre class="screen">
+			
+[2023-04-28 15:28:54] [netkiller-5f6fb96b97-mh4rm] [ERROR] [ConsumeMessageThread_3] cn.netkiller.service.factory.OrderComputeFactory.execute(OrderComputeFactory.java:86) - &lt;a href='https://api.netkiller.cn/netkiller/orderComputerRetry?orderId=1052304281528380003&amp;orderStatus=1'&gt;重试&lt;/a&gt;,订单计算执行失败，OrderComputeDto{orderId=1052304281528380003, orderStatus=1, orderType=10, platformId=103, platformName='全球购骑士卡', productType=79, stationId=9482},异常信息：192.168.11.107:8080 failed to respond executing POST http://test-service/test-service/order/addOrderPayInfo
+[2023-04-28 15:29:01] [netkiller-5f6fb96b97-mh4rm] [ERROR] [ConsumeMessageThread_19] cn.netkiller.service.factory.OrderComputeFactory.execute(OrderComputeFactory.java:86) - &lt;a href='https://api.netkiller.cn/netkiller/orderComputerRetry?orderId=1052304281528410008&amp;orderStatus=1'&gt;重试&lt;/a&gt;,订单计算执行失败，OrderComputeDto{orderId=1052304281528410008, orderStatus=1, orderType=10, platformId=103, platformName='全球购骑士卡', productType=79, stationId=39094},异常信息：192.168.9.78:8080 failed to respond executing POST http://test-service/test-service/station/settleInfo/getSettleInfoByStationId?stationId=39094
+[2023-04-28 15:29:00] [netkiller-5f6fb96b97-6qgqj] [ERROR] [ConsumeMessageThread_1] cn.netkiller.service.factory.OrderComputeFactory.execute(OrderComputeFactory.java:86) - &lt;a href='https://api.netkiller.cn/netkiller/orderComputerRetry?orderId=1052304281528430003&amp;orderStatus=1'&gt;重试&lt;/a&gt;,订单计算执行失败，OrderComputeDto{orderId=1052304281528430003, orderStatus=1, orderType=10, platformId=1587, platformName='平安好车主', productType=820, stationId=17749},异常信息：Connect to 192.168.9.78:8080 [/192.168.9.78] failed: Connection refused (Connection refused) executing POST http://test-service/test-service/order/addOrderStationSettleInfo
+[2023-04-28 15:29:13] [netkiller-5f6fb96b97-6qgqj] [ERROR] [ConsumeMessageThread_3] cn.netkiller.service.factory.OrderComputeFactory.execute(OrderComputeFactory.java:86) - &lt;a href='https://api.netkiller.cn/netkiller/orderComputerRetry?orderId=1052304281528490008&amp;orderStatus=1'&gt;重试&lt;/a&gt;,订单计算执行失败，OrderComputeDto{orderId=1052304281528490008, orderStatus=1, orderType=10, platformId=1293, platformName='高德地图-api', productType=674, stationId=39697},异常信息：192.168.10.10:8080 failed to respond executing POST http://test-service/test-service/order/addOrderBaseInfo
+[2023-04-28 15:32:14] [netkiller-5f6fb96b97-mh4rm] [ERROR] [ConsumeMessageThread_14] cn.netkiller.service.factory.OrderComputeFactory.execute(OrderComputeFactory.java:86) - &lt;a href='https://api.netkiller.cn/netkiller/orderComputerRetry?orderId=1052304281532030009&amp;orderStatus=1'&gt;重试&lt;/a&gt;,订单计算执行失败，OrderComputeDto{orderId=1052304281532030009, orderStatus=1, orderType=10, platformId=531, platformName='货拉拉API', productType=293, stationId=39496},异常信息：192.168.10.12:8080 failed to respond executing POST http://test-service/test-service/order/addOrderStationSettleInfo
+[2023-04-28 15:34:53] [netkiller-5f6fb96b97-mh4rm] [ERROR] [ConsumeMessageThread_18] cn.netkiller.service.factory.OrderComputeFactory.execute(OrderComputeFactory.java:86) - &lt;a href='https://api.netkiller.cn/netkiller/orderComputerRetry?orderId=1052304281534390016&amp;orderStatus=1'&gt;重试&lt;/a&gt;,订单计算执行失败，OrderComputeDto{orderId=1052304281534390016, orderStatus=1, orderType=10, platformId=1587, platformName='平安好车主', productType=820, stationId=37711},异常信息：192.168.14.155:8080 failed to respond executing POST http://test-service/test-service/order/addOrderStationSettleInfo			
+			
+			</pre>
+			<p>第一步、先初步取出需要的数据</p>
+			<pre class="screen">
+			
+root@logging ~# cat prod/netkiller/04/failed.log | egrep -o 'orderId=(.*)&amp;'
+orderId=1052304281517470004&amp;
+orderId=1052304281517280005&amp;
+orderId=1052304281517060003&amp;
+orderId=1052304281517370019&amp;
+orderId=1052304281517140014&amp;
+orderId=1052304281517250005&amp;
+orderId=1052304281517140006&amp;			
+			
+			</pre>
+			<p>第二步、去掉不需要的字符串，只保留订单号</p>
+			<pre class="screen">
+			
+root@logging ~# cat prod/netkiller/04/failed.log | egrep -o 'orderId=(.*)&amp;' | sed -e 's/orderId=//' -e 's/&amp;//' 
+1052304281517470004
+1052304281517280005
+1052304281517060003
+1052304281517370019
+1052304281517140014
+1052304281517250005
+1052304281517140006
+1052304281517190008
+1052304281517440008			
+			
+			</pre>
+			<p>第三步、对数据排序</p>
+			<pre class="screen">
+			
+root@logging ~# cat prod/netkiller/04/failed.log | egrep -o 'orderId=(.*)&amp;' | sed -e 's/orderId=//' -e 's/&amp;//' | sort 
+1052304281439440007
+1052304281516190004
+1052304281517060003
+1052304281517070003
+1052304281517110004
+1052304281517140006
+1052304281517140014
+1052304281517160006
+1052304281517160013			
+			
+			</pre>
+			<p>第四步、去除重复数据</p>
+			<pre class="screen">
+			
+root@logging ~# cat prod/netkiller/04/failed.log | egrep -o 'orderId=(.*)&amp;' | sed -e 's/orderId=//' -e 's/&amp;//' | sort | uniq
+1052304281439440007
+1052304281516190004
+1052304281517060003
+1052304281517070003
+1052304281517110004
+1052304281517140006
+1052304281517140014
+			
+			</pre>
+			<p>第五步、确认一下去掉了多少重复数据</p>
+			<pre class="screen">
+			
+root@logging ~# cat prod/netkiller/04/failed.log | egrep -o 'orderId=(.*)&amp;' | sed -e 's/orderId=//' -e 's/&amp;//' | sort | wc -l
+208
+root@logging ~# cat prod/netkiller/04/failed.log | egrep -o 'orderId=(.*)&amp;' | sed -e 's/orderId=//' -e 's/&amp;//' | sort | uniq | wc -l
+205
+			
+			
+			</pre>
+			<p>第一步</p>
+			<pre class="screen">
+			
+			
+			
+			</pre>
+			<p>第一步</p>
+			<pre class="screen">
+			
+			
+			
+			</pre>
+		</div>
+	</div>
+</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="expand.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="text.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="sort.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">6.14. TAB符号与空格处理 </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 6.16. sort - sort lines of text files</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. test - 条件判断命令</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="index.html" title="Netkiller Shell 手札" /><link rel="prev" href="shell.interesting.html" title="15.2. 有趣的 Shell 应用" /><link rel="next" href="apa.html" title="附录 1. 附录" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. test - 条件判断命令</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="shell.interesting.html">上一页</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="apa.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="cmd.test"></a>2. test - 条件判断命令</h2></div></div></div>
+		
+
+		<p>test 命令用于条件判断，返回 0（真）或非 0（假）。在 shell 脚本中常用于 if、while 等控制结构。方括号 <code class="literal">[ ]</code> 是 test 命令的另一种写法。</p>
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1047"></a>判断目录</h3></div></div></div>
+			
+			<pre class="screen">
+				
+	test -d /path/to/directory || mkdir -p /path/to/directory
+				
+			</pre>
+		</div>
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1048"></a>检查环境变量</h3></div></div></div>
+			
+			<pre class="screen">
+			
+		test -x $HAPROXY || exit 0
+		test -f "$CONFIG" || exit 0
+			
+			</pre>
+
+		</div>
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1049"></a>基本语法</h3></div></div></div>
+			
+			<pre class="screen">
+test EXPRESSION
+[ EXPRESSION ]
+
+# 两种写法等价：
+test -f /etc/passwd
+[ -f /etc/passwd ]
+			</pre>
+			<p>注意：<code class="literal">[</code> 和 <code class="literal">EXPRESSION</code> 以及 <code class="literal">]</code> 之间必须有空格。</p>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1050"></a>文件测试操作符</h3></div></div></div>
+			
+			<p>测试文件属性的常用操作符：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>-e file</em></span> - 文件存在</p></li><li class="listitem"><p><span class="emphasis"><em>-f file</em></span> - 文件存在且是普通文件</p></li><li class="listitem"><p><span class="emphasis"><em>-d file</em></span> - 文件存在且是目录</p></li><li class="listitem"><p><span class="emphasis"><em>-r file</em></span> - 文件存在且可读</p></li><li class="listitem"><p><span class="emphasis"><em>-w file</em></span> - 文件存在且可写</p></li><li class="listitem"><p><span class="emphasis"><em>-x file</em></span> - 文件存在且可执行</p></li><li class="listitem"><p><span class="emphasis"><em>-s file</em></span> - 文件存在且大小大于 0</p></li><li class="listitem"><p><span class="emphasis"><em>-L file</em></span> - 文件存在且是符号链接</p></li><li class="listitem"><p><span class="emphasis"><em>-O file</em></span> - 文件存在且属于当前用户</p></li><li class="listitem"><p><span class="emphasis"><em>-G file</em></span> - 文件存在且属于当前组</p></li><li class="listitem"><p><span class="emphasis"><em>-N file</em></span> - 文件存在且上次读取后被修改过</p></li><li class="listitem"><p><span class="emphasis"><em>-c file</em></span> - 文件存在且是字符特殊文件</p></li><li class="listitem"><p><span class="emphasis"><em>-b file</em></span> - 文件存在且是块特殊文件</p></li><li class="listitem"><p><span class="emphasis"><em>-S file</em></span> - 文件存在且是套接字</p></li><li class="listitem"><p><span class="emphasis"><em>-p file</em></span> - 文件存在且是命名管道</p></li></ul></div>
+
+			<p>文件比较：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>file1 -nt file2</em></span> - file1 比 file2 新（mtime）</p></li><li class="listitem"><p><span class="emphasis"><em>file1 -ot file2</em></span> - file1 比 file2 旧</p></li><li class="listitem"><p><span class="emphasis"><em>file1 -ef file2</em></span> - file1 和 file2 有相同的 device 和 inode</p></li></ul></div>
+
+			<p>示例：</p>
+			<pre class="screen">
+# 检查文件是否存在
+test -f /etc/passwd &amp;&amp; echo "文件存在"
+
+# 检查目录是否存在
+[ -d /var/log ] &amp;&amp; echo "目录存在"
+
+# 检查文件是否可执行
+[ -x /usr/bin/munin-cron ] &amp;&amp; /usr/bin/munin-cron
+
+# 检查文件是否为空
+if [ ! -s /tmp/log.txt ]; then
+    echo "文件为空或不存在"
+fi
+
+# 比较两个文件的新旧
+if [ file1.txt -nt file2.txt ]; then
+    echo "file1.txt 比 file2.txt 新"
+fi
+			</pre>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1051"></a>字符串测试操作符</h3></div></div></div>
+			
+			<p>字符串比较操作符：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>-z string</em></span> - 字符串长度为 0（空字符串）</p></li><li class="listitem"><p><span class="emphasis"><em>-n string</em></span> - 字符串长度不为 0（非空字符串）</p></li><li class="listitem"><p><span class="emphasis"><em>string1 = string2</em></span> - 字符串相等</p></li><li class="listitem"><p><span class="emphasis"><em>string1 != string2</em></span> - 字符串不等</p></li></ul></div>
+
+			<p>示例：</p>
+			<pre class="screen">
+# 检查变量是否为空
+name=""
+if [ -z "$name" ]; then
+    echo "变量为空"
+fi
+
+# 检查变量是否非空
+name="neo"
+[ -n "$name" ] &amp;&amp; echo "变量非空: $name"
+
+# 字符串相等比较
+user="root"
+if [ "$user" = "root" ]; then
+    echo "是 root 用户"
+fi
+
+# 字符串不等比较
+if [ "$user" != "guest" ]; then
+    echo "不是 guest 用户"
+fi
+
+# 注意：变量应该用引号包裹，防止 word splitting
+[ "$var" = "value" ]  # 正确
+[ $var = "value" ]    # 危险：如果 $var 为空会报错
+			</pre>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1052"></a>整数比较操作符</h3></div></div></div>
+			
+			<p>整数比较操作符：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>n1 -eq n2</em></span> - n1 等于 n2</p></li><li class="listitem"><p><span class="emphasis"><em>n1 -ne n2</em></span> - n1 不等于 n2</p></li><li class="listitem"><p><span class="emphasis"><em>n1 -lt n2</em></span> - n1 小于 n2</p></li><li class="listitem"><p><span class="emphasis"><em>n1 -le n2</em></span> - n1 小于等于 n2</p></li><li class="listitem"><p><span class="emphasis"><em>n1 -gt n2</em></span> - n1 大于 n2</p></li><li class="listitem"><p><span class="emphasis"><em>n1 -ge n2</em></span> - n1 大于等于 n2</p></li></ul></div>
+
+			<p>示例：</p>
+			<pre class="screen">
+# 检查数字是否相等
+count=5
+if [ "$count" -eq 5 ]; then
+    echo "计数为 5"
+fi
+
+# 检查数字范围
+age=25
+if [ "$age" -ge 18 ] &amp;&amp; [ "$age" -le 65 ]; then
+    echo "年龄在 18-65 之间"
+fi
+
+# 检查进程数
+procs=$(ps aux | wc -l)
+if [ "$procs" -gt 100 ]; then
+    echo "进程数过多: $procs"
+fi
+
+# 检查返回值
+command
+if [ $? -ne 0 ]; then
+    echo "命令执行失败"
+fi
+			</pre>
+
+			<p>记忆技巧：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>eq = equal</p></li><li class="listitem"><p>ne = not equal</p></li><li class="listitem"><p>lt = less than</p></li><li class="listitem"><p>le = less than or equal</p></li><li class="listitem"><p>gt = greater than</p></li><li class="listitem"><p>ge = greater than or equal</p></li></ul></div>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1053"></a>逻辑操作符</h3></div></div></div>
+			
+			<p>组合多个条件：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>expr1 -a expr2</em></span> - 逻辑与（expr1 和 expr2 都为真）</p></li><li class="listitem"><p><span class="emphasis"><em>expr1 -o expr2</em></span> - 逻辑或（expr1 或 expr2 为真）</p></li><li class="listitem"><p><span class="emphasis"><em>! expr</em></span> - 逻辑非</p></li></ul></div>
+
+			<p>使用 shell 操作符（推荐）：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>expr1 &amp;&amp; expr2</em></span> - 逻辑与</p></li><li class="listitem"><p><span class="emphasis"><em>expr1 || expr2</em></span> - 逻辑或</p></li><li class="listitem"><p><span class="emphasis"><em>! expr</em></span> - 逻辑非</p></li></ul></div>
+
+			<p>示例：</p>
+			<pre class="screen">
+# 逻辑与：文件存在且可执行
+[ -f /usr/bin/munin-cron ] &amp;&amp; [ -x /usr/bin/munin-cron ] &amp;&amp; /usr/bin/munin-cron
+
+# 使用 test 的 -a 操作符
+test -f /etc/passwd -a -r /etc/passwd &amp;&amp; echo "文件存在且可读"
+
+# 逻辑或：目录不存在则创建
+[ -d /tmp/test ] || mkdir /tmp/test
+
+# 逻辑非：文件不存在
+[ ! -f /tmp/lock ] &amp;&amp; echo "锁文件不存在"
+
+# 复杂条件组合
+if [ -f "$file" ] &amp;&amp; [ -r "$file" ] &amp;&amp; [ -s "$file" ]; then
+    echo "文件存在、可读且非空"
+fi
+
+# 嵌套条件
+if [ "$user" = "root" ] || ([ "$user" = "admin" ] &amp;&amp; [ -w "$file" ]); then
+    echo "有权限"
+fi
+			</pre>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1054"></a>在 if 语句中使用</h3></div></div></div>
+			
+			<pre class="screen">
+# 基本 if 结构
+if [ -f /etc/passwd ]; then
+    echo "文件存在"
+fi
+
+# if-else 结构
+if [ -d /var/log ]; then
+    echo "目录存在"
+else
+    echo "目录不存在"
+fi
+
+# if-elif-else 结构
+if [ -f "$file" ]; then
+    echo "是普通文件"
+elif [ -d "$file" ]; then
+    echo "是目录"
+elif [ -L "$file" ]; then
+    echo "是符号链接"
+else
+    echo "未知类型"
+fi
+
+# 多条件判断
+if [ -f "$config" ] &amp;&amp; [ -r "$config" ]; then
+    source "$config"
+elif [ -f "$default_config" ]; then
+    source "$default_config"
+else
+    echo "没有配置文件"
+    exit 1
+fi
+			</pre>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1055"></a>在 while/until 循环中使用</h3></div></div></div>
+			
+			<pre class="screen">
+# while 循环：条件为真时执行
+count=0
+while [ $count -lt 5 ]; do
+    echo "计数: $count"
+    count=$((count + 1))
+done
+
+# until 循环：条件为假时执行
+until [ -f /tmp/ready ]; do
+    echo "等待文件创建..."
+    sleep 2
+done
+
+# 读取用户输入
+while [ "$answer" != "yes" ] &amp;&amp; [ "$answer" != "no" ]; do
+    read -p "请输入 yes 或 no: " answer
+done
+			</pre>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1056"></a>实际应用示例</h3></div></div></div>
+			
+
+			<pre class="screen">
+# 检查命令是否存在
+if [ -x /usr/bin/git ]; then
+    echo "git 已安装"
+else
+    echo "git 未安装"
+    exit 1
+fi
+
+# 检查用户权限
+if [ "$(id -u)" -ne 0 ]; then
+    echo "需要 root 权限运行"
+    exit 1
+fi
+
+# 文件备份脚本
+src="/data/important.db"
+backup="/backup/$(date +%Y%m%d)_important.db"
+if [ -f "$src" ] &amp;&amp; [ -s "$src" ]; then
+    cp "$src" "$backup"
+    echo "备份成功: $backup"
+else
+    echo "源文件不存在或为空"
+    exit 1
+fi
+
+# 检查磁盘空间
+available=$(df / | tail -1 | awk '{print $4}')
+threshold=1048576  # 1GB in KB
+if [ "$available" -lt "$threshold" ]; then
+    echo "警告：磁盘空间不足 1GB"
+fi
+
+# 等待服务启动
+timeout=30
+count=0
+while [ $count -lt $timeout ]; do
+    if [ -S /var/run/mysql.sock ]; then
+        echo "MySQL 已启动"
+        break
+    fi
+    sleep 1
+    count=$((count + 1))
+done
+
+if [ $count -eq $timeout ]; then
+    echo "MySQL 启动超时"
+    exit 1
+fi
+			</pre>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1057"></a>[[ ]] 扩展测试（Bash 特有）</h3></div></div></div>
+			
+			<p>Bash 提供 <code class="literal">[[ ]]</code> 作为 <code class="literal">[ ]</code> 的增强版本：</p>
+			<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>支持正则表达式匹配：<code class="literal">=~</code></p></li><li class="listitem"><p>支持 <code class="literal">&amp;&amp;</code> 和 <code class="literal">||</code> 在测试内部使用</p></li><li class="listitem"><p>不需要对变量加引号（自动处理）</p></li><li class="listitem"><p>支持模式匹配：<code class="literal">==</code> 配合通配符</p></li></ul></div>
+
+			<pre class="screen">
+# 正则表达式匹配
+if [[ "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+    echo "有效的邮箱地址"
+fi
+
+# 模式匹配
+if [[ "$filename" == *.jpg ]]; then
+    echo "是 JPEG 图片"
+fi
+
+# 内部使用逻辑操作符
+if [[ -f "$file" &amp;&amp; -r "$file" ]]; then
+    echo "文件存在且可读"
+fi
+
+# 字符串比较（不需要引号）
+if [[ $user == root ]]; then
+    echo "是 root 用户"
+fi
+
+# 字典序比较
+if [[ "apple" &lt; "banana" ]]; then
+    echo "apple 在 banana 之前"
+fi
+			</pre>
+
+			<p>注意：<code class="literal">[[ ]]</code> 是 Bash 扩展，不兼容 POSIX sh。如果需要可移植性，使用 <code class="literal">[ ]</code>。</p>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1058"></a>常见陷阱</h3></div></div></div>
+			
+			<pre class="screen">
+# 错误：方括号内没有空格
+if [-f /etc/passwd]; then  # 错误！
+if [ -f /etc/passwd ]; then  # 正确
+
+# 错误：整数比较使用字符串操作符
+if [ "$count" = "5" ]; then  # 字符串比较
+if [ "$count" -eq 5 ]; then  # 整数比较（正确）
+
+# 危险：未加引号的变量
+if [ $file = "test.txt" ]; then  # 如果 $file 为空会报错
+if [ "$file" = "test.txt" ]; then  # 安全
+
+# 错误：使用 = 比较数字
+if [ $age = 18 ]; then  # 字符串比较
+if [ $age -eq 18 ]; then  # 整数比较（正确）
+
+# 错误：在 [ ] 中使用 &amp;&amp; 和 ||
+if [ -f file1 &amp;&amp; -f file2 ]; then  # 错误！
+if [ -f file1 ] &amp;&amp; [ -f file2 ]; then  # 正确
+			</pre>
+		</div>
+
+		<div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1059"></a>返回值检查</h3></div></div></div>
+			
+			<p>test 命令的返回值（<code class="literal">$?</code>）：</p>
+			<pre class="screen">
+# 0 表示真，非 0 表示假
+test -f /etc/passwd
+echo $?  # 输出: 0（文件存在）
+
+test -f /nonexistent
+echo $?  # 输出: 1（文件不存在）
+
+# 在脚本中检查返回值
+command
+if [ $? -eq 0 ]; then
+    echo "命令成功"
+else
+    echo "命令失败，退出码: $?"
+fi
+
+# 简写形式
+command &amp;&amp; echo "成功" || echo "失败"
+			</pre>
+		</div>
+	</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="shell.interesting.html">上一页</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="apa.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">15.2. 有趣的 Shell 应用 </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 附录 1. 附录</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>

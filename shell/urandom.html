@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>6.9. /dev/urandom 随机字符串</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="text.html" title="第 6 章 文本处理" /><link rel="prev" href="recode.html" title="6.8. Free `recode' converts files between various character sets and surfaces." /><link rel="next" href="col.html" title="6.10. col - filter reverse line feeds from input" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6.9. /dev/urandom 随机字符串</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="recode.html">上一页</a> </td><th width="60%" align="center">第 6 章 文本处理</th><td width="20%" align="right"> <a accesskey="n" href="col.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="urandom"></a>6.9. /dev/urandom 随机字符串</h3></div></div></div>
+		
+		<pre class="screen">
+		
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc A-Z-a-z-0-9 | head -c 8`
+GidAuuNN
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc A-Z-a-z-0-9 | head -c 8`
+UyGaWSKr
+		
+		</pre>
+		<p>我常常使用这样的随机字符初始化密码</p>
+		<pre class="screen">
+		
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:alnum:] | head -c 8`
+xig8Meym
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:alnum:] | head -c 8`
+23Ac1vZg
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:digit:] | head -c 8`
+73652314
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:graph:] | head -c 8`
+GO_o&gt;OnJ
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:graph:] | head -c 10`
+iGy0FS/aO5
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:graph:] | head -c 50`
+;`E^{5(T4v~5$YovW.?%_?9la&lt;`+qPcRh@7mD\!Whx;MJZVQ\K
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:print:] | head -c 50`
+fy$[#:'(')jt'gp1/g-)d~p]8 :r9i;MO2d!8M&lt;?Qs3t:QgK$O
+[neo@test .deploy]$ echo `&lt; /dev/urandom tr -dc [:graph:] | head -c 50`
+6SivJ5y$/FTi8mf}rrqE&amp;s0"WkA}r;uK-=MT!Wp0UlL_lF0|bL
+		
+		</pre>
+		<p>批量生成</p>
+		<pre class="screen">
+		
+for i in {1..10}
+do
+echo `&lt; /dev/urandom tr -dc A-Z-a-z-0-9 | head -c 8`
+done
+		
+		</pre>
+		<pre class="screen">
+		
+# cat /dev/urandom | tr -cd [:alnum:] | fold -w30 | head -n 20
+AVqROzjF6ZATJGv2J6PzDHp3jLpKV4
+ONt68UFNDwgXpSnLBV7oRDX3VLRYsX
+EZTWCGvZc3mIEeuw9sxMtV8ZkzVRJv
+BhUiv0a7utsjZFLYpKGZrY5aDXcZL4
+5YfUl2hmDT1O9X61DRYg4wSp4lXoXX
+ykyPJxH47PzxnNGlujIUF98ZtB01H0
+QyP53mksQN8bCNNo1fSD3RtqhhEGfa
+u2RkT1M9GUQF4a6O18tG5WD97OOXze
+Whm5X7398Q8L9BONN8k2oLy9CL37JO
+TmGQz7WB6WnkjhyB4wrBHBJ3HMIRyf
+hww43yvddUDYUnbNOKjhv3sLhCA4YD
+uY6zQtBC6miwLUl3jkCVVA0Xu8ASgj
+jv58qu46VW7LvRIq4txNE8bG9NBlZl
+pzaMkydAiCHCF5H2oQVqMn4DTTYgNL
+yoN2A9LyrCwLfjP1ad9HMAwxExJL5i
+J27iy2L90m9dpcPLJ8tl46GGb9xqmQ
+6YwFCvuPHyyEwnctUTpqLFcvUafVZ2
+Nuq9XgIgRQGynjlVqGLMOpO0MkGpsn
+tChkRG7eoRuKVXgW7ccTGx45E54K3Y
+qPv48XqdGlOrdULCOGZ45kwJ1v5kVX
+		
+		</pre>
+	</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="recode.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="text.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="col.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">6.8. Free `recode' converts files between various character sets and surfaces. </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 6.10. col - filter reverse line feeds from input</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>

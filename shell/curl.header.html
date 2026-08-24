@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>12.14. -H/--header &lt;line&gt; Custom header to pass to server (H)</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="curl.html" title="第 12 章 CURL - transfer a URL" /><link rel="prev" href="curl.L.html" title="12.13. -L, --location" /><link rel="next" href="curl-config.html" title="12.15. curl-config" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">12.14. -H/--header &lt;line&gt; Custom header to pass to server (H)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="curl.L.html">上一页</a> </td><th width="60%" align="center">第 12 章 CURL - transfer a URL</th><td width="20%" align="right"> <a accesskey="n" href="curl-config.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="curl.header"></a>12.14. -H/--header &lt;line&gt; Custom header to pass to server (H)</h3></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id910"></a>12.14.1. Last-Modified / If-Modified-Since</h4></div></div></div>
+			
+			<p>If-Modified-Since</p>
+			<pre class="screen">
+			
+neo@neo-OptiPlex-780:/tmp$ curl -I http://images.example.com/test/test.html
+HTTP/1.0 200 OK
+Cache-Control: s-maxage=7200, max-age=900
+Expires: Mon, 16 May 2011 08:10:37 GMT
+Content-Type: text/html
+Accept-Ranges: bytes
+ETag: "1205579110"
+Last-Modified: Mon, 16 May 2011 06:57:39 GMT
+Content-Length: 11
+Date: Mon, 16 May 2011 07:55:37 GMT
+Server: lighttpd/1.4.26
+Age: 604
+X-Via: 1.0 ls71:80 (Cdn Cache Server V2.0), 1.0 lydx136:8105 (Cdn Cache Server V2.0)
+Connection: keep-alive
+
+neo@neo-OptiPlex-780:/tmp$ curl -H
+"If-Modified-Since: Fri, 12 May 2011 18:53:33 GMT" -I http://images.example.com/test/test.html
+HTTP/1.0 304 Not Modified
+Date: Mon, 16 May 2011 07:56:19 GMT
+Content-Type: text/html
+Expires: Mon, 16 May 2011 08:11:19 GMT
+Last-Modified: Mon, 16 May 2011 06:57:39 GMT
+ETag: "1205579110"
+Cache-Control: s-maxage=7200, max-age=900
+Age: 790
+X-Via: 1.0 wzdx168:8080 (Cdn Cache Server V2.0)
+Connection: keep-alive
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id911"></a>12.14.2. ETag / If-None-Match</h4></div></div></div>
+			
+			<pre class="screen">
+			
+neo@neo-OptiPlex-780:/tmp$ curl -I http://images.example.com/test/test.html
+HTTP/1.1 200 OK
+Cache-Control: s-maxage=7200, max-age=900
+Expires: Mon, 16 May 2011 09:48:45 GMT
+Content-Type: text/html
+Accept-Ranges: bytes
+ETag: "1984705864"
+Last-Modified: Mon, 16 May 2011 09:01:07 GMT
+Content-Length: 22
+Date: Mon, 16 May 2011 09:33:45 GMT
+Server: lighttpd/1.4.26
+			
+			</pre>
+			<pre class="screen">
+			
+neo@neo-OptiPlex-780:/tmp$ curl -H 'If-None-Match: "1984705864"' -I http://images.example.com/test/test.html
+HTTP/1.1 304 Not Modified
+Cache-Control: s-maxage=7200, max-age=900
+Expires: Mon, 16 May 2011 09:48:32 GMT
+Content-Type: text/html
+Accept-Ranges: bytes
+ETag: "1984705864"
+Last-Modified: Mon, 16 May 2011 09:01:07 GMT
+Date: Mon, 16 May 2011 09:33:32 GMT
+Server: lighttpd/1.4.26
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id912"></a>12.14.3. Accept-Encoding:gzip,defalte</h4></div></div></div>
+			
+			<pre class="screen">
+			
+$ curl -H Accept-Encoding:gzip,defalte -I http://www.example.com/product/374218.html
+HTTP/1.1 200 OK
+Date: Mon, 16 May 2011 09:13:18 GMT
+Server: Apache
+Accept-Ranges: bytes
+Content-Encoding: gzip
+Content-Length: 16660
+Content-Type: text/html; charset=UTF-8
+X-Pad: avoid browser bug
+Age: 97
+X-Via: 1.1 dg44:8888 (Cdn Cache Server V2.0)
+Connection: keep-alive
+			
+			</pre>
+			<p></p>
+			<pre class="screen">
+			
+$ curl -H Accept-Encoding:gzip,defalte http://www.example.com/product/374218.html | gunzip
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id913"></a>12.14.4. HOST</h4></div></div></div>
+			
+			<pre class="screen">
+			
+curl -H HOST:www.example.com -I http://172.16.1.10/product/374218.html
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id914"></a>12.14.5. HTTP 认证</h4></div></div></div>
+			
+			<p>未认证返回401</p>
+			<pre class="screen">
+			
+# curl --compressed http://webservice.example.com/members
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+&lt;center&gt;&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+			
+			</pre>
+			<p>-u/--user &lt;user[:password]&gt; Set server user and password</p>
+			<p>使用 -u或者 --user 指定用户与密码</p>
+			<pre class="screen">
+				# curl --compressed -uneo:chen http://webservice.example.com/members
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="Accept"></a>12.14.6. Accept</h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+-H "Accept: application/json"		
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="Content-Type"></a>12.14.7. Content-Type</h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+-H "Content-Type: application/json"			
+			
+			</pre>
+		</div>
+	</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="curl.L.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="curl.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="curl-config.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">12.13. -L, --location </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 12.15. curl-config</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>

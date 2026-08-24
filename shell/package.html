@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>第 3 章 包管理 / 压缩 / 解压</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="index.html" title="Netkiller Shell 手札" /><link rel="prev" href="find.html" title="2.17. find - search for files in a directory hierarchy" /><link rel="next" href="cpio.html" title="3.2. cpio - copy files to and from archives" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">第 3 章 包管理 / 压缩 / 解压</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="find.html">上一页</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="cpio.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="package"></a>第 3 章 包管理 / 压缩 / 解压</h1></div><div><h3 class="subtitle"><em>package / compress and decompress</em></h3></div></div></div><div class="toc"><p><strong>目录</strong></p><dl class="toc"><dt><span class="section"><a href="package.html#tar">3.1. tar — The GNU version of the tar archiving utility</a></span></dt><dd><dl><dt><span class="section"><a href="package.html#tar.cvf">3.1.1. tar examples</a></span></dt><dt><span class="section"><a href="package.html#tar.gunzip">3.1.2. gunzip</a></span></dt><dt><span class="section"><a href="package.html#tar.b2zip">3.1.3. b2zip</a></span></dt><dt><span class="section"><a href="package.html#tar.compress">3.1.4. compress</a></span></dt><dt><span class="section"><a href="package.html#id836">3.1.5. .xz 文件</a></span></dt><dt><span class="section"><a href="package.html#tar.list">3.1.6. -t, --list</a></span></dt><dt><span class="section"><a href="package.html#tar.absolute-names">3.1.7. tar: Removing leading `/’ from member names</a></span></dt><dt><span class="section"><a href="package.html#tar.directory">3.1.8. -C, --directory=DIR</a></span></dt><dt><span class="section"><a href="package.html#tar.exclude">3.1.9. --exclude</a></span></dt><dt><span class="section"><a href="package.html#tar.T">3.1.10. -T </a></span></dt><dt><span class="section"><a href="package.html#tar.N">3.1.11. 日期过滤</a></span></dt><dt><span class="section"><a href="package.html#tar.f">3.1.12. 保留权限</a></span></dt><dt><span class="section"><a href="package.html#tar.append">3.1.13. -r, --append</a></span></dt><dt><span class="section"><a href="package.html#tar.ssh">3.1.14. 远程传输</a></span></dt><dt><span class="section"><a href="package.html#tar.split">3.1.15. 分卷压缩</a></span></dt></dl></dd><dt><span class="section"><a href="cpio.html">3.2. cpio - copy files to and from archives</a></span></dt><dt><span class="section"><a href="gzip.html">3.3. gzip</a></span></dt><dt><span class="section"><a href="zip.html">3.4. zip, zipcloak, zipnote, zipsplit - package and compress (archive) files</a></span></dt><dt><span class="section"><a href="bzip2.html">3.5. bzip2, bunzip2 - a block-sorting file compressor</a></span></dt><dt><span class="section"><a href="rar.html">3.6. RAR</a></span></dt><dt><span class="section"><a href="7zip.html">3.7. 7-Zip</a></span></dt><dd><dl><dt><span class="section"><a href="7zip.html#id837">3.7.1. 压缩</a></span></dt><dt><span class="section"><a href="7zip.html#id838">3.7.2. 浏览压缩包</a></span></dt><dt><span class="section"><a href="7zip.html#id839">3.7.3. 解压</a></span></dt><dt><span class="section"><a href="7zip.html#id840">3.7.4. Creates self extracting archive.</a></span></dt></dl></dd><dt><span class="section"><a href="unrar.html">3.8. RAR</a></span></dt><dt><span class="section"><a href="xz.html">3.9. xz, unxz, xzcat, lzma, unlzma, lzcat - Compress or decompress .xz and .lzma files</a></span></dt></dl></div>
+	
+	
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="tar"></a>3.1. tar — The GNU version of the tar archiving utility</h3></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.cvf"></a>3.1.1. tar examples</h4></div></div></div>
+			
+			<p>tar</p>
+			<pre class="screen">
+tar -cvf foo.tar foo/
+       tar contents of folder foo in foo.tar
+
+tar -xvf foo.tar
+       extract foo.tar
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.gunzip"></a>3.1.2. gunzip</h4></div></div></div>
+			
+			<pre class="screen">
+tar -zcvf foo.tar foo/
+       tar contents of folder foo in foo.tar.gz
+			</pre>
+			<pre class="screen">
+tar -xvzf foo.tar.gz
+       extract gzipped foo.tar.gz
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.b2zip"></a>3.1.3. b2zip</h4></div></div></div>
+			
+			<span class="command"><strong>b2zip</strong></span>
+			<pre class="screen">
+tar -jcvf foo.tar.bz2 foo/
+       tar contents of folder foo in foo.tar.bz2
+
+tar -jxvf foo.tar.bz2
+       extract b2zip foo.tar.bz2
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.compress"></a>3.1.4. compress</h4></div></div></div>
+			
+			<span class="command"><strong>compress/uncompress</strong></span>
+			<pre class="screen">
+tar -Zcvf foo.tar.Z foo/
+       tar contents of folder foo in foo.tar.Z
+
+tar -Zxvf foo.tar.Z
+       extract compress foo.tar.Z
+      		</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id836"></a>3.1.5. .xz 文件</h4></div></div></div>
+			
+			<pre class="screen">
+			
+tar -Jxf file.pkg.tar.xz
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.list"></a>3.1.6. -t, --list</h4></div></div></div>
+			
+			<p>-t, --list	list the contents of an archive</p>
+			<p>列出tar包中的文件</p>
+			<pre class="screen">
+tar tvf neo.tar.gz
+			</pre>
+			<pre class="screen">
+# mkdir -p /www/test.com/www.test.com/
+# echo helloworld &gt; /www/test.com/www.test.com/test.txt
+# tar zcvf www.test.com.tar.gz /www/test.com/www.test.com/
+
+# tar ztvf www.test.com.tar.gz
+drwxr-xr-x root/root         0 2013-08-08 15:24 www/test.com/www.test.com/
+-rw-r--r-- root/root        11 2013-08-08 15:24 www/test.com/www.test.com/test.txt
+
+# tar zxvf www.test.com.tar.gz
+www/test.com/www.test.com/
+www/test.com/www.test.com/test.txt
+
+# find www
+www
+www/test.com
+www/test.com/www.test.com
+www/test.com/www.test.com/test.txt
+			</pre>
+		</div>
+
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.absolute-names"></a>3.1.7. tar: Removing leading `/’ from member names</h4></div></div></div>
+			
+			<p>-P, --absolute-names       don't strip leading `/'s from file names</p>
+			<pre class="screen">
+$ tar -czvPf neo.tar.gz /home/neo/
+$ tar -xzvPf neo.tar.gz
+			</pre>
+			<pre class="screen">
+tar zcvfP www.test.com.tar.gz /www/test.com/www.test.com/
+tar zxvfP www.test.com.tar.gz
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.directory"></a>3.1.8. -C, --directory=DIR</h4></div></div></div>
+			
+			<p>-C, --directory=DIR        change to directory DIR</p>
+			<p>解压到目标目录</p>
+			<pre class="screen">
+tar -xzvf neo.tar.gz -C /tmp
+			</pre>
+			<pre class="screen">
+# tar zxvf www.test.com.tar.gz -C /tmp
+www/test.com/www.test.com/
+www/test.com/www.test.com/test.txt
+
+# find /tmp/www/
+/tmp/www/
+/tmp/www/test.com
+/tmp/www/test.com/www.test.com
+/tmp/www/test.com/www.test.com/test.txt
+
+
+
+# rm -rf /www/test.com/*
+
+# tar zxvf www.test.com.tar.gz -C /
+www/test.com/www.test.com/
+www/test.com/www.test.com/test.txt
+
+# find /www/test.com/
+/www/test.com/
+/www/test.com/www.test.com
+/www/test.com/www.test.com/test.txt
+			</pre>
+		</div>
+		
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.exclude"></a>3.1.9. --exclude</h4></div></div></div>
+			
+			<p>排除neo目录</p>
+			<pre class="screen">
+tar --exclude /home/neo -zcvf myfile.tar.gz /home/* /etc
+
+tar zcvf rpmbuild/SOURCES/netkiller-1.0.tar.gz ~/workspace/public_html/* --exclude .git --exclude .svn
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.T"></a>3.1.10. -T </h4></div></div></div>
+			
+			<pre class="screen">
+find . -name "*.jpg" -print &gt;list
+tar -T list -czvf picture.tar.gz
+
+find /etc/ | tar czvf xxx1.tar.gz -T -
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.N"></a>3.1.11. 日期过滤</h4></div></div></div>
+			
+			<p>打包 2010/08/01 之后的文件和目录</p>
+			<pre class="screen">
+tar -N '2010/08/01' -zcvf home.tar.gz /home
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.f"></a>3.1.12. 保留权限</h4></div></div></div>
+			
+			<pre class="screen">
+tar -zxvpf /tmp/etc.tar.gz /etc
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.append"></a>3.1.13. -r, --append</h4></div></div></div>
+			
+			<p>追加最近7天更改过的文件</p>
+			<pre class="screen">
+find / -type f -mtime -7 | xargs tar -rf weekly_incremental.tar
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.ssh"></a>3.1.14. 远程传输</h4></div></div></div>
+			
+			<span class="command"><strong>tar -jcpvf - file | ssh remote "tar -jxpvf -"</strong></span>
+			<pre class="screen">
+tar -jcpvf - file.php | ssh root@172.16.3.1 "tar -jxpvf -"
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tar.split"></a>3.1.15. 分卷压缩</h4></div></div></div>
+			
+			<pre class="screen">
+分卷压缩一个目录：如doc
+
+在doc目录的上次目录
+
+#tar cvf doc | split -b 2m (已2M大小分卷压缩)
+#cat x* &gt; doc.tar (合成分卷压缩包)
+			</pre>
+			<p>或者</p>
+			<pre class="screen">
+#tar czvf doc.tar.gz doc/
+#tar czvfp - doc.tar.gz | split -b 5m
+#cat x* &gt; doc.tar.gz
+
+查看压缩包里面的内容:
+
+#tar -tf doc.tar
+#tar -tzvf doc.tar.gz
+			</pre>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="find.html">上一页</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="cpio.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">2.17. find - search for files in a directory hierarchy </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 3.2. cpio - copy files to and from archives</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>

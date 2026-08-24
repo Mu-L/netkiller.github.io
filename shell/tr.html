@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>6.5. tr - translate or delete characters</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="text.html" title="第 6 章 文本处理" /><link rel="prev" href="nl.html" title="6.4. nl - number lines of files" /><link rel="next" href="cut.html" title="6.6. cut - remove sections from each line of files" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6.5. tr - translate or delete characters</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="nl.html">上一页</a> </td><th width="60%" align="center">第 6 章 文本处理</th><td width="20%" align="right"> <a accesskey="n" href="cut.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="tr"></a>6.5. tr - translate or delete characters</h3></div></div></div>
+		
+		<pre class="screen">
+		
+[:alnum:] ：所有字母字符与数字
+[:alpha:] ：所有字母字符
+[:blank:] ：所有水平空格
+[:cntrl:] ：所有控制字符
+[:digit:] ：所有数字
+[:graph:] ：所有可打印的字符(不包含空格符)
+[:lower:] ：所有小写字母
+[:print:] ：所有可打印的字符(包含空格符)
+[:punct:] ：所有标点字符
+[:space:] ：所有水平与垂直空格符
+[:upper:] ：所有大写字母
+[:xdigit:] ：所有 16 进位制的数字
+		
+		</pre>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id852"></a>6.5.1. 替换字符</h4></div></div></div>
+			
+			<p>":"替换为"\n"</p>
+			<pre class="screen">
+			
+$ cat /etc/passwd |tr ":" "\n"
+			
+			</pre>
+			<pre class="screen">
+			
+[root@gitlab ~]# echo "/opt/netkiller.cn/www.netkiller.cn" | tr -- '/.' ':-'
+:opt:netkiller-cn:www-netkiller-cn
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id853"></a>6.5.2. 英文大小写转换</h4></div></div></div>
+			
+			<p>使用 tr '[:lower:]' '[:upper:]' 将小写字母替换成大写字母</p>
+			<pre class="screen">
+			
+[root@localhost ~]# echo "Helloworld" | tr '[:lower:]' '[:upper:]'
+HELLOWORLD
+			
+			</pre>
+			<p>替换整段文字</p>
+			<pre class="screen">
+			
+[root@localhost ~]# cat /etc/redhat-release
+CentOS Linux release 7.5.1804 (Core)
+
+[root@localhost ~]# cat /etc/redhat-release | tr '[:lower:]' '[:upper:]'
+CENTOS LINUX RELEASE 7.5.1804 (CORE)
+			
+			</pre>
+			<p></p>
+			<pre class="screen">
+			
+[root@localhost ~]# echo "Netkiller" |  tr ‘a-z’ ‘A-Z’
+NETKILLER
+			
+			</pre>
+			<pre class="screen">
+			
+neo@MacBook-Pro-M2 ~&gt; uuidgen
+71386AEE-C468-44E1-A0A3-FB4EBB4600AA
+
+neo@MacBook-Pro-M2 ~&gt; uuidgen | tr [:upper:] [:lower:]
+3d807c48-ef5f-4297-869f-120cb713f752
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id854"></a>6.5.3. [CHAR*] 和 [CHAR*REPEAT]</h4></div></div></div>
+			
+			<p></p>
+			<pre class="screen">
+			
+[root@localhost ~]# echo "1234567890" | tr ‘1-5′ ‘[A*]‘
+AAAAA67890
+
+[root@localhost ~]# echo "1234567890" | tr ‘1-9′ ‘[A*5]BCDE’
+AAAAABCDE0
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tr.squeeze"></a>6.5.4. -s, --squeeze-repeats replace each input sequence of a repeated character that is listed in SET1 with a single occurrence of that character</h4></div></div></div>
+			
+			<p>删除重复的字符</p>
+			<pre class="screen">
+			
+[root@localhost ~]# echo "My      nickname  is      netkiller." | tr -s ' '
+My nickname is netkiller.
+
+[root@localhost ~]# echo "aaaabbbbccccdddd." | tr -s 'a'
+abbbbccccdddd.
+
+[root@localhost ~]# echo "aaaabbbbccccdddd." | tr -s 'a-z'
+abcd.
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="tr.delete"></a>6.5.5. -d, --delete
+				delete characters in SET1, do not translate
+			</h4></div></div></div>
+			
+			<p>删除字符</p>
+			<pre class="screen">
+			
+[root@localhost ~]# echo "My nickname is netkiller" | tr -d ' '
+Mynicknameisnetkiller
+
+[root@localhost ~]# md5sum /etc/issue | tr -d [0-9]
+ffedfcfbdcaebdec  /etc/issue
+			
+			</pre>
+			<p>删除控制字符</p>
+			<pre class="screen">
+			
+[root@netkiller ~]# cat file | tr -d [:cntrl:]
+			
+			</pre>
+		</div>
+	</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="nl.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="text.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="cut.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">6.4. nl - number lines of files </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 6.6. cut - remove sections from each line of files</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>

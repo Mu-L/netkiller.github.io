@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>第 3 章 Podman</title><link rel="stylesheet" type="text/css" href="../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="qmeu,kvm,xen,openvz, docker, coreos,docker-compose, kubernetes,kubeadmin,kubectl, netkiller-devops" /><link rel="home" href="../index.html" title="Netkiller Container 手札" /><link rel="up" href="../index.html" title="Netkiller Container 手札" /><link rel="prev" href="../docker/docker.faq.html" title="2.15. Docker FAQ" /><link rel="next" href="podman.manual.html" title="3.2. podman 管理" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
-		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">第 3 章 Podman</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="../docker/docker.faq.html">上一页</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="podman.manual.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="index"></a>第 3 章 Podman</h1></div></div></div><div class="toc"><p><strong>目录</strong></p><dl class="toc"><dt><span class="section"><a href="index.html#podman.install">3.1. 安装 Podman</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#id941">3.1.1. RockyLinux 安装 Podman</a></span></dt><dt><span class="section"><a href="index.html#id942">3.1.2. Almalinux 9.0</a></span></dt><dt><span class="section"><a href="index.html#id943">3.1.3. MacOS 安装 Podman</a></span></dt><dt><span class="section"><a href="index.html#id944">3.1.4. 初始化 Podman</a></span></dt><dt><span class="section"><a href="index.html#podman.docker">3.1.5. 兼容 Docker</a></span></dt><dt><span class="section"><a href="index.html#podman-compose">3.1.6. 安装 podman-compose</a></span></dt><dt><span class="section"><a href="index.html#podmain.config">3.1.7. 配置 Podman</a></span></dt></dl></dd><dt><span class="section"><a href="podman.manual.html">3.2. podman 管理</a></span></dt><dd><dl><dt><span class="section"><a href="podman.manual.html#podman.machine">3.2.1. 虚拟机管理</a></span></dt><dt><span class="section"><a href="podman.manual.html#podman.images">3.2.2. 镜像管理</a></span></dt><dt><span class="section"><a href="podman.manual.html#podman.run">3.2.3. 运行命令</a></span></dt></dl></dd><dt><span class="section"><a href="podman.example.html">3.3. 按例</a></span></dt><dd><dl><dt><span class="section"><a href="podman.example.html#id951">3.3.1. podman run 用法</a></span></dt><dt><span class="section"><a href="podman.example.html#id952">3.3.2. mysql</a></span></dt><dt><span class="section"><a href="podman.example.html#id953">3.3.3. 制作镜像</a></span></dt></dl></dd></dl></div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>第 3 章 Podman</title><link rel="stylesheet" type="text/css" href="../docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="qmeu,kvm,xen,openvz, docker, coreos,docker-compose, kubernetes,kubeadmin,kubectl, netkiller-devops" /><link rel="home" href="../index.html" title="Netkiller Container 手札" /><link rel="up" href="../index.html" title="Netkiller Container 手札" /><link rel="prev" href="../docker/docker.faq.html" title="2.15. Docker FAQ" /><link rel="next" href="podman.manual.html" title="3.2. podman 管理" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">第 3 章 Podman</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="../docker/docker.faq.html">上一页</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="podman.manual.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="index"></a>第 3 章 Podman</h1></div></div></div><div class="toc"><p><strong>目录</strong></p><dl class="toc"><dt><span class="section"><a href="index.html#podman.install">3.1. 安装 Podman</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#id938">3.1.1. RockyLinux 安装 Podman</a></span></dt><dt><span class="section"><a href="index.html#id939">3.1.2. Almalinux 9.0</a></span></dt><dt><span class="section"><a href="index.html#id940">3.1.3. MacOS 安装 Podman</a></span></dt><dt><span class="section"><a href="index.html#id941">3.1.4. 初始化 Podman</a></span></dt><dt><span class="section"><a href="index.html#podman.docker">3.1.5. 兼容 Docker</a></span></dt><dt><span class="section"><a href="index.html#podman-compose">3.1.6. 安装 podman-compose</a></span></dt><dt><span class="section"><a href="index.html#podmain.config">3.1.7. 配置 Podman</a></span></dt></dl></dd><dt><span class="section"><a href="podman.manual.html">3.2. podman 管理</a></span></dt><dd><dl><dt><span class="section"><a href="podman.manual.html#podman.machine">3.2.1. 虚拟机管理</a></span></dt><dt><span class="section"><a href="podman.manual.html#podman.images">3.2.2. 镜像管理</a></span></dt><dt><span class="section"><a href="podman.manual.html#podman.run">3.2.3. 运行命令</a></span></dt></dl></dd><dt><span class="section"><a href="podman.example.html">3.3. 按例</a></span></dt><dd><dl><dt><span class="section"><a href="podman.example.html#id948">3.3.1. podman run 用法</a></span></dt><dt><span class="section"><a href="podman.example.html#id949">3.3.2. mysql</a></span></dt><dt><span class="section"><a href="podman.example.html#id950">3.3.3. 制作镜像</a></span></dt></dl></dd></dl></div>
     
     
 <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="podman.install"></a>3.1. 安装 Podman</h2></div></div></div>
 	
-	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id941"></a>3.1.1. RockyLinux 安装 Podman</h3></div></div></div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id938"></a>3.1.1. RockyLinux 安装 Podman</h3></div></div></div>
 		
 		<p>某些 Redhat 家族的 Linux 是自带 Podman，例如 Almalinux 9.0，RockyLinux没有自带
 			podman
@@ -17,7 +23,7 @@
 		
 		</pre>
 	</div>
-	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id942"></a>3.1.2. Almalinux 9.0</h3></div></div></div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id939"></a>3.1.2. Almalinux 9.0</h3></div></div></div>
 		
 		<p>Almalinux 9.0 自带 podman</p>
 		<pre class="screen">
@@ -26,7 +32,7 @@ systemctl enable podman
 		
 		</pre>
 	</div>
-	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id943"></a>3.1.3. MacOS 安装 Podman</h3></div></div></div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id940"></a>3.1.3. MacOS 安装 Podman</h3></div></div></div>
 		
 		<p>MacOS 安装方法</p>
 		<pre class="screen">
@@ -35,7 +41,7 @@ brew install podman
             
 		</pre>
 	</div>
-	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id944"></a>3.1.4. 初始化 Podman</h3></div></div></div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id941"></a>3.1.4. 初始化 Podman</h3></div></div></div>
 		
 		<p>初始化，启动 Podman</p>
 		<pre class="screen">
@@ -205,7 +211,7 @@ command:
     images              List images used by the created containers		
 		
 		</pre>
-		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id945"></a>3.1.6.1. 让 Podman 支持 Docker Compose(旧版本)</h4></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id942"></a>3.1.6.1. 让 Podman 支持 Docker Compose(旧版本)</h4></div></div></div>
 			
 			<p>启用 socket</p>
 			<pre class="screen">
@@ -257,7 +263,15 @@ registries = ['localhost:5000']
 
     
 
-</div><script xmlns="" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=r5HG&amp;d=9mi5r_kkDC8uxG8HuY3p4-2qgeeVypAK9vMD-2P6BYM"></script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="../docker/docker.faq.html">上一页</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="podman.manual.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">2.15. Docker FAQ </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 3.2. podman 管理</td></tr></table></div><script xmlns="">
+</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="../docker/docker.faq.html">上一页</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="podman.manual.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">2.15. Docker FAQ </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 3.2. podman 管理</td></tr></table></div><script xmlns="">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -273,18 +287,5 @@ registries = ['localhost:5000']
 			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
 			var s = document.getElementsByTagName("script")[0];
 			s.parentNode.insertBefore(hm, s);
-			})();
-</script><script xmlns="" async="async">
-			(function(){
-			var bp = document.createElement('script');
-			var curProtocol = window.location.protocol.split(':')[0];
-			if (curProtocol === 'https') {
-			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-			}
-			else {
-			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-			}
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(bp, s);
 			})();
 </script></body></html>

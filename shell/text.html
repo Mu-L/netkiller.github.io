@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>第 6 章 文本处理</title><link rel="stylesheet" type="text/css" href="docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="shell,bash,zsh, awk,sed,curl,expect, grep,sort" /><link rel="home" href="index.html" title="Netkiller Shell 手札" /><link rel="up" href="index.html" title="Netkiller Shell 手札" /><link rel="prev" href="bc.html" title="5.3. bc - An arbitrary precision calculator language" /><link rel="next" href="expr.html" title="6.2. 字符串处理命令expr" /><link xmlns="" rel="llms" href="/llms.txt" /><script xmlns="" async="async" src="https://www.googletagmanager.com/gtag/js?id=G-M26C2M82YK"></script><script xmlns="">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M26C2M82YK');
+</script></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> | <a xmlns="" href="//netkiller.github.io/">简体中文</a> | <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> | <a xmlns="" href="/journal/index.html">杂文</a>
+		| <a xmlns="" href="https://github.com/netkiller">Github</a> | <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> | <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> | <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> | <a xmlns="" href="https://www.youtube.com/user/bg7nyt/videos">Youtube</a> | <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> | <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">第 6 章 文本处理</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="bc.html">上一页</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="expr.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a></td><td></td><td></td><td></td><td></td></tr></table><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="text"></a>第 6 章 文本处理</h1></div></div></div><div class="toc"><p><strong>目录</strong></p><dl class="toc"><dt><span class="section"><a href="text.html#iconv">6.1. iconv - Convert encoding of given files from one encoding to another</a></span></dt><dd><dl><dt><span class="section"><a href="text.html#id847">6.1.1. cconv - A iconv based simplified-traditional chinese conversion tool</a></span></dt><dt><span class="section"><a href="text.html#id848">6.1.2. uconv - convert data from one encoding to another</a></span></dt></dl></dd><dt><span class="section"><a href="expr.html">6.2. 字符串处理命令expr</a></span></dt><dt><span class="section"><a href="cat.html">6.3. cat - concatenate files and print on the standard output</a></span></dt><dd><dl><dt><span class="section"><a href="cat.html#id849">6.3.1. -s, --squeeze-blank suppress repeated empty output lines</a></span></dt><dt><span class="section"><a href="cat.html#id850">6.3.2. -v, --show-nonprinting use ^ and M- notation, except for LFD and TAB</a></span></dt><dt><span class="section"><a href="cat.html#id851">6.3.3. 与管道配合使用</a></span></dt></dl></dd><dt><span class="section"><a href="nl.html">6.4. nl - number lines of files</a></span></dt><dt><span class="section"><a href="tr.html">6.5. tr - translate or delete characters</a></span></dt><dd><dl><dt><span class="section"><a href="tr.html#id852">6.5.1. 替换字符</a></span></dt><dt><span class="section"><a href="tr.html#id853">6.5.2. 英文大小写转换</a></span></dt><dt><span class="section"><a href="tr.html#id854">6.5.3. [CHAR*] 和 [CHAR*REPEAT]</a></span></dt><dt><span class="section"><a href="tr.html#tr.squeeze">6.5.4. -s, --squeeze-repeats replace each input sequence of a repeated character that is listed in SET1 with a single occurrence of that character</a></span></dt><dt><span class="section"><a href="tr.html#tr.delete">6.5.5. -d, --delete
+				delete characters in SET1, do not translate
+			</a></span></dt></dl></dd><dt><span class="section"><a href="cut.html">6.6. cut - remove sections from each line of files</a></span></dt><dd><dl><dt><span class="section"><a href="cut.html#id855">6.6.1. 字符操作</a></span></dt><dt><span class="section"><a href="cut.html#id856">6.6.2. 列操作</a></span></dt></dl></dd><dt><span class="section"><a href="printf.html">6.7. printf - format and print data</a></span></dt><dt><span class="section"><a href="recode.html">6.8. Free `recode' converts files between various character sets and surfaces.</a></span></dt><dt><span class="section"><a href="urandom.html">6.9. /dev/urandom 随机字符串</a></span></dt><dt><span class="section"><a href="col.html">6.10. col - filter reverse line feeds from input</a></span></dt><dt><span class="section"><a href="apg.html">6.11. apg - generates several random passwords</a></span></dt><dt><span class="section"><a href="head.html">6.12. head/tail</a></span></dt><dd><dl><dt><span class="section"><a href="head.html#id857">6.12.1. 彩色输出</a></span></dt><dt><span class="section"><a href="head.html#id858">6.12.2. 跳过 n 行，输出后面内容</a></span></dt><dt><span class="section"><a href="head.html#id859">6.12.3. 尾部剪掉 n 行</a></span></dt></dl></dd><dt><span class="section"><a href="rev.html">6.13. 反转字符串或文件内容</a></span></dt><dt><span class="section"><a href="expand.html">6.14. TAB符号与空格处理</a></span></dt><dd><dl><dt><span class="section"><a href="expand.html#id860">6.14.1. expand - convert tabs to spaces</a></span></dt><dt><span class="section"><a href="expand.html#unexpand">6.14.2. unexpand - convert spaces to tabs</a></span></dt></dl></dd><dt><span class="section"><a href="grep.html">6.15. grep, egrep, fgrep, rgrep - print lines matching a pattern</a></span></dt><dd><dl><dt><span class="section"><a href="grep.html#id861">6.15.1. 删除空行</a></span></dt><dt><span class="section"><a href="grep.html#miscellaneous">6.15.2. -v, --invert-match</a></span></dt><dt><span class="section"><a href="grep.html#grep.output">6.15.3. 输出控制（Output control）</a></span></dt><dt><span class="section"><a href="grep.html#grep.context">6.15.4. Context control</a></span></dt><dt><span class="section"><a href="grep.html#regexp">6.15.5. Regexp selection and interpretation</a></span></dt><dt><span class="section"><a href="grep.html#fgrep">6.15.6. fgrep</a></span></dt><dt><span class="section"><a href="grep.html#egrep">6.15.7. egrep</a></span></dt></dl></dd><dt><span class="section"><a href="sort.html">6.16. sort - sort lines of text files</a></span></dt><dd><dl><dt><span class="section"><a href="sort.html#id882">6.16.1. 对列排序</a></span></dt><dt><span class="section"><a href="sort.html#id883">6.16.2. -s, --stable              stabilize sort by disabling last-resort comparison</a></span></dt></dl></dd><dt><span class="section"><a href="uniq.html">6.17. uniq</a></span></dt><dt><span class="section"><a href="awk.html">6.18. awk</a></span></dt><dd><dl><dt><span class="section"><a href="awk.html#id884">6.18.1. 处理列</a></span></dt><dt><span class="section"><a href="awk.html#id885">6.18.2. printf</a></span></dt><dt><span class="section"><a href="awk.html#id887">6.18.3. Pattern(字符匹配)</a></span></dt><dt><span class="section"><a href="awk.html#nrnf">6.18.4. Built-in Variables (NR/NF)</a></span></dt><dt><span class="section"><a href="awk.html#awk.function">6.18.5. Built-in Functions</a></span></dt><dt><span class="section"><a href="awk.html#id892">6.18.6. 过滤相同的行</a></span></dt><dt><span class="section"><a href="awk.html#awk.array">6.18.7. 数组演示</a></span></dt></dl></dd><dt><span class="section"><a href="sed.html">6.19. sed</a></span></dt><dd><dl><dt><span class="section"><a href="sed.html#sed.replace">6.19.1. 查找与替换</a></span></dt><dt><span class="section"><a href="sed.html#sed.insert">6.19.2. insert 插入字符</a></span></dt><dt><span class="section"><a href="sed.html#sed.append">6.19.3. 追加字符</a></span></dt><dt><span class="section"><a href="sed.html#sed.change">6.19.4. 修改字符</a></span></dt><dt><span class="section"><a href="sed.html#sed.delete">6.19.5. 删除字符</a></span></dt><dt><span class="section"><a href="sed.html#sed.line">6.19.6. 行操作</a></span></dt><dt><span class="section"><a href="sed.html#sed.in-place">6.19.7. 编辑文件</a></span></dt><dt><span class="section"><a href="sed.html#sed.regular">6.19.8. 正则表达式</a></span></dt><dt><span class="section"><a href="sed.html#sed.pipeline">6.19.9. 管道操作</a></span></dt><dt><span class="section"><a href="sed.html#sed.tolowcase">6.19.10. 字母大小写转换</a></span></dt><dt><span class="section"><a href="sed.html#sed.perl">6.19.11. perl</a></span></dt><dt><span class="section"><a href="sed.html#id899">6.19.12. 案例</a></span></dt></dl></dd><dt><span class="section"><a href="ed.html">6.20. ed, red - text editor</a></span></dt><dt><span class="section"><a href="vim.html">6.21. vim</a></span></dt><dd><dl><dt><span class="section"><a href="vim.html#id900">6.21.1. vim 初始化</a></span></dt><dt><span class="section"><a href="vim.html#replace">6.21.2. 查找与替换</a></span></dt><dt><span class="section"><a href="vim.html#id901">6.21.3. 删除操作</a></span></dt><dt><span class="section"><a href="vim.html#file">6.21.4. 插入文件</a></span></dt><dt><span class="section"><a href="vim.html#batch">6.21.5. 批处理</a></span></dt><dt><span class="section"><a href="vim.html#line()">6.21.6. line()</a></span></dt><dt><span class="section"><a href="vim.html#vim.fileformat">6.21.7. set fileformat</a></span></dt><dt><span class="section"><a href="vim.html#vim.tab.space">6.21.8. 空格与TAB转换</a></span></dt></dl></dd><dt><span class="section"><a href="shell.xml.html">6.22. XML 工具</a></span></dt><dd><dl><dt><span class="section"><a href="shell.xml.html#id903">6.22.1. xmllint - command line XML tool</a></span></dt><dt><span class="section"><a href="shell.xml.html#id904">6.22.2. xmlstarlet - command line XML/XSLT toolkit</a></span></dt></dl></dd><dt><span class="section"><a href="jq.html">6.23. jq - Command-line JSON processor</a></span></dt><dd><dl><dt><span class="section"><a href="jq.html#id905">6.23.1. --raw-output</a></span></dt></dl></dd></dl></div>
+	
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="iconv"></a>6.1. iconv - Convert encoding of given files from one encoding to another</h3></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id847"></a>6.1.1. cconv - A iconv based simplified-traditional chinese conversion tool</h4></div></div></div>
+			
+			<p>cconv是建立在iconv之上，可以UTF8编码直接转换，并增加了词转换。</p>
+			<pre class="screen">
+sudo apt-get install cconv
+			</pre>
+			<p>使用cconv进行简繁转换的方法为：</p>
+			<pre class="screen">
+cconv -f UTF8-CN -t UTF8-HK zh-cn.txt -o zh-hk.txt
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id848"></a>6.1.2. uconv - convert data from one encoding to another</h4></div></div></div>
+			
+			<p>安装</p>
+			<pre class="screen">
+sudo apt-get install libicu-dev
+			</pre>
+			<p>例子</p>
+			<pre class="screen">
+$ uconv -f cp1252 -t UTF-8 -o file_in_utf8.txt file_in_cp1252_encoding.txt
+			</pre>
+		</div>
+	</div>
+
+	
+
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+	
+
+
+
+	
+
+
+
+
+ 
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+
+	
+	
+</div><noscript xmlns=""><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7478JZ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script xmlns="">
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?1473726cf923f03d15b9e592bd4637e465813b95ffbd1f67a14e4684e9e7c279bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="bc.html">上一页</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="expr.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">5.3. bc - An arbitrary precision calculator language </td><td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td><td width="40%" align="right" valign="top"> 6.2. 字符串处理命令expr</td></tr></table></div><script xmlns="">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-11694057-1', 'auto');
+			ga('send', 'pageview');
+
+		</script><script xmlns="" async="async">
+			var _hmt = _hmt || [];
+			(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+			})();
+</script></body></html>
